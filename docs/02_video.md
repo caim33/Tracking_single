@@ -16,7 +16,7 @@ ffmpeg -i /absolute/input.mp4 -vf fps=30 -an "$TRACKING_ROOT/data/dance_30fps.mp
 
 ```bash
 conda activate tracking-gvhmr
-cd "$TRACKING_ROOT/Retargeting/GVHMR"
+cd "$TRACKING_ROOT/GVHMR"
 python tools/demo/demo.py \
   --video "$TRACKING_ROOT/data/dance_30fps.mp4" \
   --output_root "$TRACKING_ROOT/outputs/gvhmr" -s
@@ -40,7 +40,7 @@ outputs/gvhmr/dance_30fps/2_global.mp4
 
 ```bash
 conda activate tracking-gmr
-cd "$TRACKING_ROOT/Retargeting/GMR"
+cd "$TRACKING_ROOT/GMR"
 python scripts/gvhmr_to_robot.py \
   --gvhmr_pred_file "$TRACKING_ROOT/outputs/gvhmr/dance_30fps/hmr4d_results.pt" \
   --save_path "$TRACKING_ROOT/outputs/gmr/dance.pkl" \

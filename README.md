@@ -12,6 +12,20 @@ video (30 fps)
   → Deploy: MuJoCo / Unitree G1
 ```
 
+四个主要模块直接放在仓库顶层：
+
+```text
+Tracking_single/
+├── GVHMR/       # 视频 → 人体动作
+├── GMR/         # 人体动作 → G1 参考动作
+├── RL_envs/     # 单动作 tracking 训练、回放和策略导出
+├── Deploy/      # 单动作 MuJoCo / G1 部署
+├── pipeline/    # 共用的动作格式、重采样和转换工具
+├── docs/        # 分阶段教程和逐文件索引
+├── tests/       # CPU 回归检查
+└── tools/       # 文档覆盖检查工具
+```
+
 | 阅读顺序 | 教程 |
 |---|---|
 | 1 | [安装、环境和模型资源](docs/01_install.md) |

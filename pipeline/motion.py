@@ -8,7 +8,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation, Slerp
 
 ROOT = Path(__file__).resolve().parents[1]
-ROBOT_DIR = ROOT / 'Retargeting/GMR/assets/unitree_g1'
+ROBOT_DIR = ROOT / 'GMR/assets/unitree_g1'
 ROBOT_XML = ROBOT_DIR / 'g1_mocap_29dof.xml'
 ROBOT_URDF = ROBOT_DIR / 'g1_custom_collision_29dof.urdf'
 ARRAY_DIMS = {'joint_pos': (29,), 'joint_vel': (29,), 'body_pos_w': (None, 3),

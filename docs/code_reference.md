@@ -124,83 +124,37 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `--steps` — help='Optional upper bound; defaults to full reference'
 - `--output` — help='Optional .npz trace: observations, q, targets, root height'
 
-## `pipeline/__init__.py`
+## `GMR/__init__.py`
 
-[源码](../pipeline/__init__.py) · [使用教程](03_motion.md) · 内容指纹 `89b6a7ed6026`
+[源码](../GMR/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
 
-职责：命名动作、时间采样、四元数和正向运动学。
-
-模块说明：Portable motion conversion and validation. See docs/03_motion.md.
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `pipeline/convert.py`
+## `GMR/general_motion_retargeting/__init__.py`
 
-[源码](../pipeline/convert.py) · [使用教程](03_motion.md) · 内容指纹 `471c30a43de2`
+[源码](../GMR/general_motion_retargeting/__init__.py) · [使用教程](02_video.md) · 内容指纹 `b1c238b2fd52`
 
-职责：命名动作、时间采样、四元数和正向运动学。
-
-模块说明：Convert trusted GMR pickle to a named 50 Hz training archive; see docs/03_motion.md.
-
-接口与职责：
-
-- `main()` — 行为见对应阶段教程及源码。
-
-命令行参数（运行所在目录与完整例子见上方教程）：
-
-- `--input` — required=True; help='Trusted local GMR .pkl (pickle executes code)'
-- `--output` — required=True; help='Output .npz archive'
-- `--fps` — default=50; help='Must equal tracking control rate (default 50 Hz)'
-- `--robot-xml` — default=ROBOT_XML
-
-## `pipeline/motion.py`
-
-[源码](../pipeline/motion.py) · [使用教程](03_motion.md) · 内容指纹 `116d2767314d`
-
-职责：命名动作、时间采样、四元数和正向运动学。
-
-模块说明：Named, validated tracking archive shared by training and deployment.
-
-接口与职责：
-
-- `validate_motion(data)` — Reject ambiguous names, corrupt quaternions, mismatched shapes and NaNs.
-- `load_motion(path)` — Load a non-pickle NPZ, close its descriptor, then validate its contract.
-- `name_indices(actual, requested)` — Map names explicitly; never assume MuJoCo and Isaac use the same order.
-- `resample_qpos(root_pos, root_xyzw, joints, source_fps, target_fps)` — Resample on a seconds-based grid without extending beyond the last frame.
-- `world_angular_velocity(quaternions, fps)` — Differentiate wxyz rotations in the world frame, with sign-invariant SO(3) differences.
-- `qpos_to_motion(qpos, fps, model)` — Evaluate every named link using MuJoCo FK; preserve explicit joint order.
-
-## `Retargeting/GMR/__init__.py`
-
-[源码](../Retargeting/GMR/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
-
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GMR/general_motion_retargeting/__init__.py`
+## `GMR/general_motion_retargeting/data_loader.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/__init__.py) · [使用教程](02_video.md) · 内容指纹 `b1c238b2fd52`
+[源码](../GMR/general_motion_retargeting/data_loader.py) · [使用教程](02_video.md) · 内容指纹 `3811cd168bc0`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。
-
-## `Retargeting/GMR/general_motion_retargeting/data_loader.py`
-
-[源码](../Retargeting/GMR/general_motion_retargeting/data_loader.py) · [使用教程](02_video.md) · 内容指纹 `3811cd168bc0`
-
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
 - `load_robot_motion(motion_file)` — Load robot motion data from a pickle file.
 
-## `Retargeting/GMR/general_motion_retargeting/kinematics_model.py`
+## `GMR/general_motion_retargeting/kinematics_model.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/kinematics_model.py) · [使用教程](02_video.md) · 内容指纹 `869e1bd0d0be`
+[源码](../GMR/general_motion_retargeting/kinematics_model.py) · [使用教程](02_video.md) · 内容指纹 `869e1bd0d0be`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -230,11 +184,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `KinematicsModel.get_parent_idx(self, idx)` — 行为见对应阶段教程及源码。
 - `KinematicsModel.get_dof_limits(self)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GMR/general_motion_retargeting/motion_retarget.py`
+## `GMR/general_motion_retargeting/motion_retarget.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/motion_retarget.py) · [使用教程](02_video.md) · 内容指纹 `5c3347df2333`
+[源码](../GMR/general_motion_retargeting/motion_retarget.py) · [使用教程](02_video.md) · 内容指纹 `5c3347df2333`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -252,19 +206,19 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `GeneralMotionRetargeting.set_ground_offset(self, ground_offset)` — 行为见对应阶段教程及源码。
 - `GeneralMotionRetargeting.apply_ground_offset(self, human_data)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GMR/general_motion_retargeting/params.py`
+## `GMR/general_motion_retargeting/params.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/params.py) · [使用教程](02_video.md) · 内容指纹 `ab6beccf980b`
+[源码](../GMR/general_motion_retargeting/params.py) · [使用教程](02_video.md) · 内容指纹 `ab6beccf980b`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`HERE`, `IK_CONFIG_ROOT`, `ASSET_ROOT`, `ROBOT_XML_DICT`, `IK_CONFIG_DICT`, `ROBOT_BASE_DICT`, `VIEWER_CAM_DISTANCE_DICT`.
 
-## `Retargeting/GMR/general_motion_retargeting/robot_motion_viewer.py`
+## `GMR/general_motion_retargeting/robot_motion_viewer.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/robot_motion_viewer.py) · [使用教程](02_video.md) · 内容指纹 `802c3fb659f0`
+[源码](../GMR/general_motion_retargeting/robot_motion_viewer.py) · [使用教程](02_video.md) · 内容指纹 `802c3fb659f0`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -274,11 +228,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `RobotMotionViewer.step(self, root_pos, root_rot, dof_pos, human_motion_data=None, show_human_body_name=False, human_point_scale=0.1, human_pos_offset=np.array([0.0, 0.0, 0]), rate_limit=True, follow_camera=True)` — by default visualize robot motion. also support visualize human motion by providing human_motion_data, to compare with robot motion.
 - `RobotMotionViewer.close(self)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GMR/general_motion_retargeting/rot_utils.py`
+## `GMR/general_motion_retargeting/rot_utils.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/rot_utils.py) · [使用教程](02_video.md) · 内容指纹 `e968bbc7a6c3`
+[源码](../GMR/general_motion_retargeting/rot_utils.py) · [使用教程](02_video.md) · 内容指纹 `e968bbc7a6c3`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -291,11 +245,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `euler_from_quaternion_np(quat, scalar_first=True)` — 行为见对应阶段教程及源码。
 - `quat_diff_np(q1, q2, scalar_first=True)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GMR/general_motion_retargeting/torch_utils.py`
+## `GMR/general_motion_retargeting/torch_utils.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/torch_utils.py) · [使用教程](02_video.md) · 内容指纹 `7f135802a296`
+[源码](../GMR/general_motion_retargeting/torch_utils.py) · [使用教程](02_video.md) · 内容指纹 `7f135802a296`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -327,37 +281,37 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `quat_diff_angle(q0, q1)` — 行为见对应阶段教程及源码。
 - `axis_angle_to_quat(axis, angle)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GMR/general_motion_retargeting/utils/__init__.py`
+## `GMR/general_motion_retargeting/utils/__init__.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/utils/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../GMR/general_motion_retargeting/utils/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GMR/general_motion_retargeting/utils/lafan1.py`
+## `GMR/general_motion_retargeting/utils/lafan1.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/utils/lafan1.py) · [使用教程](02_video.md) · 内容指纹 `83c549b420cd`
+[源码](../GMR/general_motion_retargeting/utils/lafan1.py) · [使用教程](02_video.md) · 内容指纹 `83c549b420cd`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
 - `load_lafan1_file(bvh_file)` — Must return a dictionary with the following structure: {     "Hips": (position, orientation),     "Spine": (position, orientation),     ... }
 
-## `Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py`
+## `GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/extract.py`
+## `GMR/general_motion_retargeting/utils/lafan_vendor/extract.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/extract.py) · [使用教程](02_video.md) · 内容指纹 `861165a4fbac`
+[源码](../GMR/general_motion_retargeting/utils/lafan_vendor/extract.py) · [使用教程](02_video.md) · 内容指纹 `861165a4fbac`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -367,11 +321,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_lafan1_set(bvh_path, actors, window=50, offset=20)` — Extract the same test set as in the article, given the location of the BVH files.
 - `get_train_stats(bvh_folder, train_set)` — Extract the same training set as in the paper in order to compute the normalizing statistics :return: Tuple of (local position mean vector, local position standard deviation vector, local joint offsets tensor)
 
-## `Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/utils.py`
+## `GMR/general_motion_retargeting/utils/lafan_vendor/utils.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/utils.py) · [使用教程](02_video.md) · 内容指纹 `9d15e75bb4f5`
+[源码](../GMR/general_motion_retargeting/utils/lafan_vendor/utils.py) · [使用教程](02_video.md) · 内容指纹 `9d15e75bb4f5`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -392,11 +346,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `rotate_at_frame(X, Q, parents, n_past=10)` — Re-orients the animation data according to the last frame of past context.
 - `extract_feet_contacts(pos, lfoot_idx, rfoot_idx, velfactor=0.02)` — Extracts binary tensors of feet contacts
 
-## `Retargeting/GMR/general_motion_retargeting/utils/smpl.py`
+## `GMR/general_motion_retargeting/utils/smpl.py`
 
-[源码](../Retargeting/GMR/general_motion_retargeting/utils/smpl.py) · [使用教程](02_video.md) · 内容指纹 `a188049b1ed8`
+[源码](../GMR/general_motion_retargeting/utils/smpl.py) · [使用教程](02_video.md) · 内容指纹 `a188049b1ed8`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 接口与职责：
 
@@ -408,11 +362,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_smplx_data_offline_fast(smplx_data, body_model, smplx_output, tgt_fps=30)` — Must return a dictionary with the following structure: {     "Hips": (position, orientation),     "Spine": (position, orientation),     ... }
 - `get_gvhmr_data_offline_fast(smplx_data, body_model, smplx_output, tgt_fps=30)` — Must return a dictionary with the following structure: {     "Hips": (position, orientation),     "Spine": (position, orientation),     ... }
 
-## `Retargeting/GMR/scripts/gvhmr_to_robot.py`
+## `GMR/scripts/gvhmr_to_robot.py`
 
-[源码](../Retargeting/GMR/scripts/gvhmr_to_robot.py) · [使用教程](02_video.md) · 内容指纹 `8ad24e99c5d9`
+[源码](../GMR/scripts/gvhmr_to_robot.py) · [使用教程](02_video.md) · 内容指纹 `8ad24e99c5d9`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 模块说明：Retarget every GVHMR frame to G1; headless CLI. See docs/02_video.md.
 
@@ -429,11 +383,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `--headless` — action='store_true'
 - `--rate_limit` — action='store_true'
 
-## `Retargeting/GMR/scripts/vis_robot_motion.py`
+## `GMR/scripts/vis_robot_motion.py`
 
-[源码](../Retargeting/GMR/scripts/vis_robot_motion.py) · [使用教程](02_video.md) · 内容指纹 `d7c70196c250`
+[源码](../GMR/scripts/vis_robot_motion.py) · [使用教程](02_video.md) · 内容指纹 `d7c70196c250`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 模块说明：Preview one GMR motion and close the viewer/recorder cleanly. See docs/02_video.md.
 
@@ -449,39 +403,39 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `--video_path` — default=Path('videos/example.mp4')
 - `--loop` — action='store_true'; help='Repeat until Ctrl+C; default is one pass'
 
-## `Retargeting/GMR/setup.py`
+## `GMR/setup.py`
 
-[源码](../Retargeting/GMR/setup.py) · [使用教程](02_video.md) · 内容指纹 `15dbddb85731`
+[源码](../GMR/setup.py) · [使用教程](02_video.md) · 内容指纹 `15dbddb85731`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体动作重定向、机器人模型及内部数学模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/__init__.py`
+## `GVHMR/hmr4d/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e8d5a0266592`
+[源码](../GVHMR/hmr4d/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e8d5a0266592`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `os_chdir_to_proj_root()` — useful for running notebooks in different directories.
 
-## `Retargeting/GVHMR/hmr4d/build_gvhmr.py`
+## `GVHMR/hmr4d/build_gvhmr.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/build_gvhmr.py) · [使用教程](02_video.md) · 内容指纹 `b89c4ebbc104`
+[源码](../GVHMR/hmr4d/build_gvhmr.py) · [使用教程](02_video.md) · 内容指纹 `b89c4ebbc104`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `build_gvhmr_demo()` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/configs/__init__.py`
+## `GVHMR/hmr4d/configs/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/configs/__init__.py) · [使用教程](02_video.md) · 内容指纹 `7607de90bd8c`
+[源码](../GVHMR/hmr4d/configs/__init__.py) · [使用教程](02_video.md) · 内容指纹 `7607de90bd8c`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -493,11 +447,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `--config-name, -cn` — default='train'
 - `overrides` — help='Any key=value arguments to override config values (use dots for.nested=overrides)'
 
-## `Retargeting/GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py`
+## `GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py) · [使用教程](02_video.md) · 内容指纹 `0e866c8f486b`
+[源码](../GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py) · [使用教程](02_video.md) · 内容指纹 `0e866c8f486b`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -506,11 +460,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `DemoPL.predict(self, data, static_cam=False)` — auto add batch dim data: {     "length": int, or Torch.Tensor,     "kp2d": (F, 3)     "bbx_xys": (F, 3)     "K_fullimg": (F, 3, 3)     "cam_angvel": (F, 3)     "f_imgseq": (F, 3, 256, 256) }
 - `DemoPL.load_pretrained_model(self, ckpt_path)` — Load pretrained checkpoint, and assign each weight to the corresponding part.
 
-## `Retargeting/GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py`
+## `GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py) · [使用教程](02_video.md) · 内容指纹 `c99d514136d3`
+[源码](../GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py) · [使用教程](02_video.md) · 内容指纹 `c99d514136d3`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -522,11 +476,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `compute_extra_global_loss(inputs, outputs, ppl)` — 行为见对应阶段教程及源码。
 - `get_smpl_params_w_Rt_v2(global_orient_gv, local_transl_vel, global_orient_c, cam_angvel)` — Get global R,t in GV0(ay) Args:     cam_angvel: (B, L, 6), defined as R @ R_{w2c}^{t} = R_{w2c}^{t+1}
 
-## `Retargeting/GVHMR/hmr4d/model/gvhmr/utils/endecoder.py`
+## `GVHMR/hmr4d/model/gvhmr/utils/endecoder.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/model/gvhmr/utils/endecoder.py) · [使用教程](02_video.md) · 内容指纹 `dd26cda551ec`
+[源码](../GVHMR/hmr4d/model/gvhmr/utils/endecoder.py) · [使用教程](02_video.md) · 内容指纹 `dd26cda551ec`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -541,11 +495,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `EnDecoder.decode_translw(self, x_norm)` — 行为见对应阶段教程及源码。
 - `EnDecoder.decode(self, x_norm)` — x_norm: (B, L, C)
 
-## `Retargeting/GVHMR/hmr4d/model/gvhmr/utils/postprocess.py`
+## `GVHMR/hmr4d/model/gvhmr/utils/postprocess.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/model/gvhmr/utils/postprocess.py) · [使用教程](02_video.md) · 内容指纹 `4125839f3925`
+[源码](../GVHMR/hmr4d/model/gvhmr/utils/postprocess.py) · [使用教程](02_video.md) · 内容指纹 `4125839f3925`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -553,21 +507,21 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `pp_static_joint_cam(outputs, endecoder: EnDecoder)` — Use static joint and static camera assumption to postprocess the global transl
 - `process_ik(outputs, endecoder)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py`
+## `GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py) · [使用教程](02_video.md) · 内容指纹 `102d34db55d5`
+[源码](../GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py) · [使用教程](02_video.md) · 内容指纹 `102d34db55d5`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `compose(targets, sources)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py`
+## `GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py) · [使用教程](02_video.md) · 内容指纹 `590f00248bc5`
+[源码](../GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py) · [使用教程](02_video.md) · 内容指纹 `590f00248bc5`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -578,11 +532,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `ROPE.__init__(self, d_model, max_seq_len=4096)` — 行为见对应阶段教程及源码。
 - `ROPE.rotate_queries_or_keys(self, x)` — Args:     x : (B, H, L, D) Returns:     rotated_x: (B, H, L, D)
 
-## `Retargeting/GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py`
+## `GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py) · [使用教程](02_video.md) · 内容指纹 `ee979aff549f`
+[源码](../GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py) · [使用教程](02_video.md) · 内容指纹 `ee979aff549f`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -594,21 +548,21 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `EncoderRoPEBlock.forward(self, x, attn_mask=None, tgt_key_padding_mask=None)` — 行为见对应阶段教程及源码。
 - `EncoderRoPEBlock._sa_block(self, x, attn_mask=None, key_padding_mask=None)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/network/base_arch/transformer/layer.py`
+## `GVHMR/hmr4d/network/base_arch/transformer/layer.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/base_arch/transformer/layer.py) · [使用教程](02_video.md) · 内容指纹 `17394bafe0a8`
+[源码](../GVHMR/hmr4d/network/base_arch/transformer/layer.py) · [使用教程](02_video.md) · 内容指纹 `17394bafe0a8`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `zero_module(module)` — Zero out the parameters of a module and return it.
 
-## `Retargeting/GVHMR/hmr4d/network/gvhmr/relative_transformer.py`
+## `GVHMR/hmr4d/network/gvhmr/relative_transformer.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/gvhmr/relative_transformer.py) · [使用教程](02_video.md) · 内容指纹 `436fc3d71232`
+[源码](../GVHMR/hmr4d/network/gvhmr/relative_transformer.py) · [使用教程](02_video.md) · 内容指纹 `436fc3d71232`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -617,29 +571,29 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `NetworkEncoderRoPE._build_condition_embedder(self)` — 行为见对应阶段教程及源码。
 - `NetworkEncoderRoPE.forward(self, length, obs=None, f_cliffcam=None, f_cam_angvel=None, f_imgseq=None)` — Args:     x: None we do not use it     timesteps: (B,)     length: (B), valid length of x, if None then use x.shape[2]     f_imgseq: (B, L, C)     f_cliffcam: (B, L, 3), CLIFF-Cam parameters (bbx-detection in the full-image)     f_noisyobs: (B, L, C), nosiy pose observation     f_cam_angvel: (B, L, 6), Camera angular velocity
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/__init__.py`
+## `GVHMR/hmr4d/network/hmr2/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/__init__.py) · [使用教程](02_video.md) · 内容指纹 `4cd96c68e3cc`
+[源码](../GVHMR/hmr4d/network/hmr2/__init__.py) · [使用教程](02_video.md) · 内容指纹 `4cd96c68e3cc`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `load_hmr2(checkpoint_path=HMR2A_CKPT)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/components/__init__.py`
+## `GVHMR/hmr4d/network/hmr2/components/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/components/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../GVHMR/hmr4d/network/hmr2/components/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/components/pose_transformer.py`
+## `GVHMR/hmr4d/network/hmr2/components/pose_transformer.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/components/pose_transformer.py) · [使用教程](02_video.md) · 内容指纹 `36419f21f247`
+[源码](../GVHMR/hmr4d/network/hmr2/components/pose_transformer.py) · [使用教程](02_video.md) · 内容指纹 `36419f21f247`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -676,11 +630,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `TransformerDecoder.__init__(self, num_tokens: int, token_dim: int, dim: int, depth: int, heads: int, mlp_dim: int, dim_head: int=64, dropout: float=0.0, emb_dropout: float=0.0, emb_dropout_type: str='drop', norm: str='layer', norm_cond_dim: int=-1, context_dim: Optional[int]=None, skip_token_embedding: bool=False)` — 行为见对应阶段教程及源码。
 - `TransformerDecoder.forward(self, inp: torch.Tensor, *args, context=None, context_list=None)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py`
+## `GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py) · [使用教程](02_video.md) · 内容指纹 `7346d751ffaf`
+[源码](../GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py) · [使用教程](02_video.md) · 内容指纹 `7346d751ffaf`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -702,11 +656,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `FrequencyEmbedder.__init__(self, num_frequencies, max_freq_log2)` — 行为见对应阶段教程及源码。
 - `FrequencyEmbedder.forward(self, x)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/configs/__init__.py`
+## `GVHMR/hmr4d/network/hmr2/configs/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/configs/__init__.py) · [使用教程](02_video.md) · 内容指纹 `3d995db69b12`
+[源码](../GVHMR/hmr4d/network/hmr2/configs/__init__.py) · [使用教程](02_video.md) · 内容指纹 `3d995db69b12`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -716,11 +670,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `dataset_eval_config() -> CN` — 行为见对应阶段教程及源码。
 - `get_config(config_file: str, merge: bool=True) -> CN` — Read a config file and optionally merge it with the default config file. Args:   config_file (str): Path to config file.   merge (bool): Whether to merge with the default config or not. Returns:   CfgNode: Config as a yacs CfgNode object.
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/hmr2.py`
+## `GVHMR/hmr4d/network/hmr2/hmr2.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/hmr2.py) · [使用教程](02_video.md) · 内容指纹 `486676043f87`
+[源码](../GVHMR/hmr4d/network/hmr2/hmr2.py) · [使用教程](02_video.md) · 内容指纹 `486676043f87`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -728,11 +682,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `HMR2.__init__(self, cfg: CfgNode)` — 行为见对应阶段教程及源码。
 - `HMR2.forward(self, batch, feat_mode=True)` — this file has been modified Args:     feat_mode: default True, as we only need the feature token output for the HMR4D project;                when False, the full process of HMR2 will be executed.
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/smpl_head.py`
+## `GVHMR/hmr4d/network/hmr2/smpl_head.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/smpl_head.py) · [使用教程](02_video.md) · 内容指纹 `72008bf76b23`
+[源码](../GVHMR/hmr4d/network/hmr2/smpl_head.py) · [使用教程](02_video.md) · 内容指纹 `72008bf76b23`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -740,11 +694,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `SMPLTransformerDecoderHead.__init__(self, cfg)` — 行为见对应阶段教程及源码。
 - `SMPLTransformerDecoderHead.forward(self, x, only_return_token_out=False)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/utils/geometry.py`
+## `GVHMR/hmr4d/network/hmr2/utils/geometry.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/utils/geometry.py) · [使用教程](02_video.md) · 内容指纹 `6c39dcf44e0b`
+[源码](../GVHMR/hmr4d/network/hmr2/utils/geometry.py) · [使用教程](02_video.md) · 内容指纹 `6c39dcf44e0b`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -753,22 +707,22 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `rot6d_to_rotmat(x: torch.Tensor) -> torch.Tensor` — Convert 6D rotation representation to 3x3 rotation matrix. Based on Zhou et al., "On the Continuity of Rotation Representations in Neural Networks", CVPR 2019 Args:     x (torch.Tensor): (B,6) Batch of 6-D rotation representations. Returns:     torch.Tensor: Batch of corresponding rotation matrices with shape (B,3,3).
 - `perspective_projection(points: torch.Tensor, translation: torch.Tensor, focal_length: torch.Tensor, camera_center: Optional[torch.Tensor]=None, rotation: Optional[torch.Tensor]=None) -> torch.Tensor` — Computes the perspective projection of a set of 3D points. Args:     points (torch.Tensor): Tensor of shape (B, N, 3) containing the input 3D points.     translation (torch.Tensor): Tensor of shape (B, 3) containing the 3D camera translation.     focal_length (torch.Tensor): Tensor of shape (B, 2) containing the focal length in pixels.     camera_c
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/utils/preproc.py`
+## `GVHMR/hmr4d/network/hmr2/utils/preproc.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/utils/preproc.py) · [使用教程](02_video.md) · 内容指纹 `79c2c177f2f6`
+[源码](../GVHMR/hmr4d/network/hmr2/utils/preproc.py) · [使用教程](02_video.md) · 内容指纹 `79c2c177f2f6`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `expand_to_aspect_ratio(input_shape, target_aspect_ratio=[192, 256])` — Increase the size of the bounding box to match the target shape.
 - `crop_and_resize(img, bbx_xy, bbx_s, dst_size=256, enlarge_ratio=1.2)` — Args:     img: (H, W, 3)     bbx_xy: (2,)     bbx_s: scalar
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py`
+## `GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py) · [使用教程](02_video.md) · 内容指纹 `b2c49a214ae8`
+[源码](../GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py) · [使用教程](02_video.md) · 内容指纹 `b2c49a214ae8`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -776,11 +730,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `SMPL.__init__(self, *args, joint_regressor_extra: Optional[str]=None, update_hips: bool=False, **kwargs)` — Extension of the official SMPL implementation to support more joints. Args:     Same as SMPLLayer.     joint_regressor_extra (str): Path to extra joint regressor.
 - `SMPL.forward(self, *args, **kwargs) -> SMPLOutput` — Run forward pass. Same as SMPL and also append an extra set of joints if joint_regressor_extra is specified.
 
-## `Retargeting/GVHMR/hmr4d/network/hmr2/vit.py`
+## `GVHMR/hmr4d/network/hmr2/vit.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/network/hmr2/vit.py) · [使用教程](02_video.md) · 内容指纹 `faf546a0d9a2`
+[源码](../GVHMR/hmr4d/network/hmr2/vit.py) · [使用教程](02_video.md) · 内容指纹 `faf546a0d9a2`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -815,19 +769,19 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `ViT.forward(self, x)` — 行为见对应阶段教程及源码。
 - `ViT.train(self, mode=True)` — Convert the model into training mode.
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/__init__.py`
+## `GVHMR/hmr4d/utils/body_model/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/__init__.py) · [使用教程](02_video.md) · 内容指纹 `ab0b77594374`
+[源码](../GVHMR/hmr4d/utils/body_model/__init__.py) · [使用教程](02_video.md) · 内容指纹 `ab0b77594374`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/body_model.py`
+## `GVHMR/hmr4d/utils/body_model/body_model.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/body_model.py) · [使用教程](02_video.md) · 内容指纹 `4f5789bcc883`
+[源码](../GVHMR/hmr4d/utils/body_model/body_model.py) · [使用教程](02_video.md) · 内容指纹 `4f5789bcc883`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -836,11 +790,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `BodyModel.forward(self, root_orient=None, pose_body=None, pose_hand=None, pose_jaw=None, pose_eye=None, betas=None, trans=None, dmpls=None, expression=None, return_dict=False, **kwargs)` — Note dmpls are not supported.
 - `BodyModel.forward_motion(self, **kwargs)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplh.py`
+## `GVHMR/hmr4d/utils/body_model/body_model_smplh.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplh.py) · [使用教程](02_video.md) · 内容指纹 `a55922e3d908`
+[源码](../GVHMR/hmr4d/utils/body_model/body_model_smplh.py) · [使用教程](02_video.md) · 内容指纹 `a55922e3d908`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -849,11 +803,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `BodyModelSMPLH.forward(self, betas=None, global_orient=None, transl=None, body_pose=None, left_hand_pose=None, right_hand_pose=None, **kwargs)` — 行为见对应阶段教程及源码。
 - `BodyModelSMPLH.get_skeleton(self, betas)` — betas: (*, 10) -> skeleton_beta: (*, 22, 3)
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplx.py`
+## `GVHMR/hmr4d/utils/body_model/body_model_smplx.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplx.py) · [使用教程](02_video.md) · 内容指纹 `89205d282f26`
+[源码](../GVHMR/hmr4d/utils/body_model/body_model_smplx.py) · [使用教程](02_video.md) · 内容指纹 `89205d282f26`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -863,11 +817,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `BodyModelSMPLX.get_skeleton(self, betas)` — betas: (*, 10) -> skeleton_beta: (*, 22, 3)
 - `BodyModelSMPLX.forward_bfc(self, **kwargs)` — Wrap (B, F, C) to (B*F, C) and unwrap (B*F, C) to (B, F, C)
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/min_lbs.py`
+## `GVHMR/hmr4d/utils/body_model/min_lbs.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/min_lbs.py) · [使用教程](02_video.md) · 内容指纹 `ab2a94fb71d9`
+[源码](../GVHMR/hmr4d/utils/body_model/min_lbs.py) · [使用教程](02_video.md) · 内容指纹 `ab2a94fb71d9`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -876,11 +830,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `MinimalLBS.load_struct_on_sp(self, bm_path, prefix='m')` — Load 4 weights from body-model-struct. Keep the sensor points only. Use prefix to label different bm.
 - `MinimalLBS.forward(self, root_orient=None, pose_body=None, trans=None, betas=None, A=None, recompute_A=False, genders=None, joints_zero=None)` — Args:     root_orient, Optional: (B, T, 3)     pose_body: (B, T, J*3)     trans: (B, T, 3)     betas: (B, T, 16)     A, Optional: (B, T, J+1, 4, 4)     recompute_A: if True, root_orient should be given, otherwise use A     genders, List: ['male', 'female', ...]     joints_zero: (B, J+1, 3), required when recompute_A is True Returns:     sensor_vert
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/smpl_lite.py`
+## `GVHMR/hmr4d/utils/body_model/smpl_lite.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/smpl_lite.py) · [使用教程](02_video.md) · 内容指纹 `ff88785ea067`
+[源码](../GVHMR/hmr4d/utils/body_model/smpl_lite.py) · [使用教程](02_video.md) · 内容指纹 `ff88785ea067`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -894,11 +848,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `SmplxLiteJ24.__init__(self, **kwargs)` — 行为见对应阶段教程及源码。
 - `SmplxLiteJ24.forward(self, body_pose, betas, global_orient, transl)` — Returns: joints (*, J, 3). (B, L) or  (B,) are both supported.
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/smplx_lite.py`
+## `GVHMR/hmr4d/utils/body_model/smplx_lite.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/smplx_lite.py) · [使用教程](02_video.md) · 内容指纹 `f64ce5c324ab`
+[源码](../GVHMR/hmr4d/utils/body_model/smplx_lite.py) · [使用教程](02_video.md) · 内容指纹 `f64ce5c324ab`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -922,21 +876,21 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `batch_rigid_transform_v2(rot_mats, joints, parents)` — Args:     rot_mats: (*, J, 3, 3)     joints: (*, J, 3)
 - `sync_time()` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/body_model/utils.py`
+## `GVHMR/hmr4d/utils/body_model/utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/body_model/utils.py) · [使用教程](02_video.md) · 内容指纹 `dec29039e53a`
+[源码](../GVHMR/hmr4d/utils/body_model/utils.py) · [使用教程](02_video.md) · 内容指纹 `dec29039e53a`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `smpl_to_openpose(model_type='smplx', use_hands=True, use_face=True, use_face_contour=False, openpose_format='coco25')` — Returns the indices of the permutation that maps SMPL to OpenPose
 
-## `Retargeting/GVHMR/hmr4d/utils/eval/eval_utils.py`
+## `GVHMR/hmr4d/utils/eval/eval_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/eval/eval_utils.py) · [使用教程](02_video.md) · 内容指纹 `6c32fea0b006`
+[源码](../GVHMR/hmr4d/utils/eval/eval_utils.py) · [使用教程](02_video.md) · 内容指纹 `6c32fea0b006`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -958,11 +912,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `rearrange_by_mask(x, mask)` — x (L, *) mask (M,), M >= L
 - `as_np_array(d)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/geo/augment_noisy_pose.py`
+## `GVHMR/hmr4d/utils/geo/augment_noisy_pose.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/geo/augment_noisy_pose.py) · [使用教程](02_video.md) · 内容指纹 `5fb1ddffea99`
+[源码](../GVHMR/hmr4d/utils/geo/augment_noisy_pose.py) · [使用教程](02_video.md) · 内容指纹 `5fb1ddffea99`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -979,11 +933,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `randomly_occlude_lower_half(i_x2d, s_mask=0.03)` — Randomly occlude the lower half of the image.
 - `randomly_modify_hands_legs(j3d)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/geo/flip_utils.py`
+## `GVHMR/hmr4d/utils/geo/flip_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/geo/flip_utils.py) · [使用教程](02_video.md) · 内容指纹 `c0c8190637e9`
+[源码](../GVHMR/hmr4d/utils/geo/flip_utils.py) · [使用教程](02_video.md) · 内容指纹 `c0c8190637e9`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -993,11 +947,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `flip_smplx_params(smplx_params)` — Flip pose. The flipping is based on SMPLX parameters.
 - `avg_smplx_aa(aa1, aa2)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/geo/hmr_cam.py`
+## `GVHMR/hmr4d/utils/geo/hmr_cam.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/geo/hmr_cam.py) · [使用教程](02_video.md) · 内容指纹 `d81e2528b10a`
+[源码](../GVHMR/hmr4d/utils/geo/hmr_cam.py) · [使用教程](02_video.md) · 内容指纹 `d81e2528b10a`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1023,11 +977,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_mesh_in_fov_category(mask)` — mask: (L, V) The definition: 1. FullyVisible: The mesh in every frame is entirely within the field of view (FOV). 2. PartiallyVisible: In some frames, parts of the mesh are outside the FOV, while other parts are within the FOV. 3. PartiallyOut: In some frames, the mesh is completely outside the FOV, while in others, it is visible. 4. FullyOut: The
 - `get_infov_mask(p2d, w_real, h_real)` — Args:     p2d: (B, L, V, 2)     w_real, h_real: (B, L) or int Returns:     mask: (B, L, V)
 
-## `Retargeting/GVHMR/hmr4d/utils/geo/hmr_global.py`
+## `GVHMR/hmr4d/utils/geo/hmr_global.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/geo/hmr_global.py) · [使用教程](02_video.md) · 内容指纹 `2bf268e8b504`
+[源码](../GVHMR/hmr4d/utils/geo/hmr_global.py) · [使用教程](02_video.md) · 内容指纹 `2bf268e8b504`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1046,11 +1000,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `rollout_vel(vel, transl_0=None)` — Args:     vel: (*, L, 3)     transl_0: (*, 1, 3), if not provided, the start point is 0 Returns:     transl: (*, L, 3)
 - `get_static_joint_mask(w_j3d, vel_thr=0.25, smooth=False, repeat_last=False)` — w_j3d: (*, L, J, 3) vel_thr: HuMoR uses 0.15m/s
 
-## `Retargeting/GVHMR/hmr4d/utils/geo/quaternion.py`
+## `GVHMR/hmr4d/utils/geo/quaternion.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/geo/quaternion.py) · [使用教程](02_video.md) · 内容指纹 `dc59c87e253a`
+[源码](../GVHMR/hmr4d/utils/geo/quaternion.py) · [使用教程](02_video.md) · 内容指纹 `dc59c87e253a`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1079,21 +1033,21 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `qbetween_np(v0, v1)` — find the quaternion used to rotate v0 to v1
 - `lerp(p0, p1, t)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/geo/transforms.py`
+## `GVHMR/hmr4d/utils/geo/transforms.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/geo/transforms.py) · [使用教程](02_video.md) · 内容指纹 `5c3a46a082d4`
+[源码](../GVHMR/hmr4d/utils/geo/transforms.py) · [使用教程](02_video.md) · 内容指纹 `5c3a46a082d4`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `axis_rotate_to_matrix(angle, axis='x')` — Get rotation matrix for rotating around one axis Args:     angle: (N, 1) Returns:     R: (N, 3, 3)
 
-## `Retargeting/GVHMR/hmr4d/utils/geo_transform.py`
+## `GVHMR/hmr4d/utils/geo_transform.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/geo_transform.py) · [使用教程](02_video.md) · 内容指纹 `36bd9bfb09c3`
+[源码](../GVHMR/hmr4d/utils/geo_transform.py) · [使用教程](02_video.md) · 内容指纹 `36bd9bfb09c3`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1135,11 +1089,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_sequence_cammat(w_j3d, c_j3d, cam_rot)` — 行为见对应阶段教程及源码。
 - `ransac_vec(vel, min_multiply=20, verbose=False)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/ik/ccd_ik.py`
+## `GVHMR/hmr4d/utils/ik/ccd_ik.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/ik/ccd_ik.py) · [使用教程](02_video.md) · 内容指纹 `7894d191b232`
+[源码](../GVHMR/hmr4d/utils/ik/ccd_ik.py) · [使用教程](02_video.md) · 内容指纹 `7894d191b232`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1150,11 +1104,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `CCD_IK.optimize(self, i)` — 行为见对应阶段教程及源码。
 - `CCD_IK.get_weight(self, i)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/kpts/kp2d_utils.py`
+## `GVHMR/hmr4d/utils/kpts/kp2d_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/kpts/kp2d_utils.py) · [使用教程](02_video.md) · 内容指纹 `781114ac9cc5`
+[源码](../GVHMR/hmr4d/utils/kpts/kp2d_utils.py) · [使用教程](02_video.md) · 内容指纹 `781114ac9cc5`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1165,11 +1119,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `keypoints_from_heatmaps(heatmaps, center, scale, unbiased=False, post_process='default', kernel=11, valid_radius_factor=0.0546875, use_udp=False, target_type='GaussianHeatmap')` — Get final keypoint predictions from heatmaps and transform them back to the image.
 - `transform_preds(coords, center, scale, output_size, use_udp=False)` — Get final keypoint predictions from heatmaps and apply scaling and translation to map them back to the image.
 
-## `Retargeting/GVHMR/hmr4d/utils/matrix.py`
+## `GVHMR/hmr4d/utils/matrix.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/matrix.py) · [使用教程](02_video.md) · 内容指纹 `998b0c18dcad`
+[源码](../GVHMR/hmr4d/utils/matrix.py) · [使用教程](02_video.md) · 内容指纹 `998b0c18dcad`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1289,11 +1243,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `calc_heading_quat_inv(q, head_ind=0)` — 行为见对应阶段教程及源码。
 - `forward_kinematics(mat, parent)` — _summary_
 
-## `Retargeting/GVHMR/hmr4d/utils/net_utils.py`
+## `GVHMR/hmr4d/utils/net_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/net_utils.py) · [使用教程](02_video.md) · 内容指纹 `4fee83600d51`
+[源码](../GVHMR/hmr4d/utils/net_utils.py) · [使用教程](02_video.md) · 内容指纹 `4fee83600d51`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1316,19 +1270,19 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `gaussian_smooth(x, sigma=3, dim=-1)` — 行为见对应阶段教程及源码。
 - `moving_average_smooth(x, window_size=5, dim=-1)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/__init__.py`
+## `GVHMR/hmr4d/utils/preproc/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/__init__.py) · [使用教程](02_video.md) · 内容指纹 `1ecb4e4dfe59`
+[源码](../GVHMR/hmr4d/utils/preproc/__init__.py) · [使用教程](02_video.md) · 内容指纹 `1ecb4e4dfe59`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py) · [使用教程](02_video.md) · 内容指纹 `3eee39e19b1a`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py) · [使用教程](02_video.md) · 内容指纹 `3eee39e19b1a`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1336,11 +1290,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `Matcher.__init__(self, matcher='sift', args=None)` — 行为见对应阶段教程及源码。
 - `Matcher.match_np(self, img0, img1)` — Args:     img0: np.ndarray, shape (H, W, 3), dtype=np.uint8     img1: np.ndarray, shape (H, W, 3), dtype=np.uint8 Returns:     pts0: np.ndarray, shape (N, 2), dtype=np.float32     pts1: np.ndarray, shape (N, 2), dtype=np.float32
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py) · [使用教程](02_video.md) · 内容指纹 `2b65b623d1a1`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py) · [使用教程](02_video.md) · 内容指纹 `2b65b623d1a1`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1348,11 +1302,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `BaseMatcher.__init__(self, args=None)` — 行为见对应阶段教程及源码。
 - `BaseMatcher.match_np(self, img0, img1)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py) · [使用教程](02_video.md) · 内容指纹 `489460b304bd`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py) · [使用教程](02_video.md) · 内容指纹 `489460b304bd`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1363,11 +1317,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `CV2ORBMather.__init__(self, args=None)` — 行为见对应阶段教程及源码。
 - `CV2ORBMather.match_np(self, img0, img1)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py) · [使用教程](02_video.md) · 内容指纹 `4190dd977ef2`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py) · [使用教程](02_video.md) · 内容指纹 `4190dd977ef2`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1376,11 +1330,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `SimpleVO.compute(self)` — 行为见对应阶段教程及源码。
 - `SimpleVO.process_video_T_w2c_list_np(self, frames, matcher: Matcher, solver: TwoPairSolver)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py) · [使用教程](02_video.md) · 内容指纹 `62b55ad081c0`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py) · [使用教程](02_video.md) · 内容指纹 `62b55ad081c0`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1399,11 +1353,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `TwoPairSolver.solve(self, pts0, pts1)` — Args:     pts0: np.ndarray, shape (N, 2), dtype=np.float32     pts1: np.ndarray, shape (N, 2), dtype=np.float32 Returns:     T: np.ndarray, shape (4, 4), dtype=np.float32
 - `interpolate_missing_frames(T_w2c_list, sample_idxs)` — 对给定的 T_w2c_list（已知帧的变换矩阵）进行平滑插值，生成所有帧的变换矩阵。 其中：   - 平移部分采用线性插值；   - 旋转部分采用自实现的SLERP球面线性插值，保证旋转过渡平滑。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py) · [使用教程](02_video.md) · 内容指纹 `77119cf87540`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py) · [使用教程](02_video.md) · 内容指纹 `77119cf87540`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1412,11 +1366,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `slerp(q0, q1, t)` — 对两个四元数 q0 和 q1 进行球面线性插值（SLERP）。
 - `lerp_missing_frames(T_w2c_list, sample_idxs)` — 对给定的 T_w2c_list（已知帧的变换矩阵）进行平滑插值，生成所有帧的变换矩阵。 其中：   - 平移部分采用线性插值；   - 旋转部分采用自实现的SLERP球面线性插值，保证旋转过渡平滑。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/utils.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/utils.py) · [使用教程](02_video.md) · 内容指纹 `6e54d5fe6a96`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/utils.py) · [使用教程](02_video.md) · 内容指纹 `6e54d5fe6a96`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1426,11 +1380,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `read_video_frame_np(video_path, frame_index)` — 行为见对应阶段教程及源码。
 - `focal_length_from_mm(width, height, mm=24)` — Convert full-frame focal length to image sensor focal length.
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/relpose/viz2d.py`
+## `GVHMR/hmr4d/utils/preproc/relpose/viz2d.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/relpose/viz2d.py) · [使用教程](02_video.md) · 内容指纹 `f3f92b190a5e`
+[源码](../GVHMR/hmr4d/utils/preproc/relpose/viz2d.py) · [使用教程](02_video.md) · 内容指纹 `f3f92b190a5e`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 模块说明：2D visualization primitives based on Matplotlib. 1) Plot images with `plot_images`. 2) Call `plot_keypoints` or `plot_matches` any number of times. 3) Optionally: save a .png or .pdf plot (nice in papers!) with `save_plot`.
 
@@ -1445,11 +1399,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `add_text(idx, text, pos=(0.01, 0.99), fs=15, color='w', lcolor='k', lwidth=2, ha='left', va='top')` — 行为见对应阶段教程及源码。
 - `save_plot(path, **kw)` — Save the current figure without any white margin.
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/slam.py`
+## `GVHMR/hmr4d/utils/preproc/slam.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/slam.py) · [使用教程](02_video.md) · 内容指纹 `4bf43d120024`
+[源码](../GVHMR/hmr4d/utils/preproc/slam.py) · [使用教程](02_video.md) · 内容指纹 `4bf43d120024`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1459,11 +1413,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `SLAMModel.process(self)` — 行为见对应阶段教程及源码。
 - `video_stream(queue, imagedir, intrinsics, stride, skip=0, resize=0.5)` — video generator
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/tracker.py`
+## `GVHMR/hmr4d/utils/preproc/tracker.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/tracker.py) · [使用教程](02_video.md) · 内容指纹 `0b32eeaddbdd`
+[源码](../GVHMR/hmr4d/utils/preproc/tracker.py) · [使用教程](02_video.md) · 内容指纹 `0b32eeaddbdd`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1473,11 +1427,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `Tracker.sort_track_length(track_history, video_path)` — This handles the track history from YOLO tracker.
 - `Tracker.get_one_track(self, video_path)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py`
+## `GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py) · [使用教程](02_video.md) · 内容指纹 `c6cb61ba4b57`
+[源码](../GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py) · [使用教程](02_video.md) · 内容指纹 `c6cb61ba4b57`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1486,11 +1440,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `Extractor.__init__(self, tqdm_leave=True)` — 行为见对应阶段教程及源码。
 - `Extractor.extract_video_features(self, video_path, bbx_xys, img_ds=0.5)` — img_ds makes the image smaller, which is useful for faster processing
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose.py) · [使用教程](02_video.md) · 内容指纹 `0cf3561d064b`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose.py) · [使用教程](02_video.md) · 内容指纹 `0cf3561d064b`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1500,43 +1454,43 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_heatmap_preds(heatmap, normalize_keypoints=True, thr=0.0, soft=False)` — heatmap: (B, J, H, W)
 - `soft_patch_dx_dy(p)` — p (B,J,P,P)
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py) · [使用教程](02_video.md) · 内容指纹 `31e2153aa6e7`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py) · [使用教程](02_video.md) · 内容指纹 `31e2153aa6e7`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。
-
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py`
-
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
-
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。
-
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py`
-
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py) · [使用教程](02_video.md) · 内容指纹 `a03caae1b968`
-
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py) · [使用教程](02_video.md) · 内容指纹 `dc0eafd1f71e`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
+
+使用方式：包注册、常量或参数配置，由上级模块导入。
+
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py`
+
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py) · [使用教程](02_video.md) · 内容指纹 `a03caae1b968`
+
+职责：人体恢复及其内部数学/网络模块。
+
+使用方式：包注册、常量或参数配置，由上级模块导入。
+
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py`
+
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py) · [使用教程](02_video.md) · 内容指纹 `dc0eafd1f71e`
+
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1569,19 +1523,19 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `ViT.forward(self, x)` — 行为见对应阶段教程及源码。
 - `ViT.train(self, mode=True)` — Convert the model into training mode.
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py) · [使用教程](02_video.md) · 内容指纹 `4d3d444fb3bd`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py) · [使用教程](02_video.md) · 内容指纹 `4d3d444fb3bd`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py) · [使用教程](02_video.md) · 内容指纹 `0fd1fab21cfe`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py) · [使用教程](02_video.md) · 内容指纹 `0fd1fab21cfe`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1593,11 +1547,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `TopdownHeatmapBaseHead.decode(self, img_metas, output, **kwargs)` — Decode keypoints from heatmaps.
 - `TopdownHeatmapBaseHead._get_deconv_cfg(deconv_kernel)` — Get configurations for deconv layers.
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py) · [使用教程](02_video.md) · 内容指纹 `8804cb8b8ae7`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py) · [使用教程](02_video.md) · 内容指纹 `8804cb8b8ae7`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1614,37 +1568,37 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `TopdownHeatmapSimpleHead._make_deconv_layer(self, num_layers, num_filters, num_kernels)` — Make deconv layers.
 - `TopdownHeatmapSimpleHead.init_weights(self)` — Initialize model weights.
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py) · [使用教程](02_video.md) · 内容指纹 `97cb0e67a9f7`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py) · [使用教程](02_video.md) · 内容指纹 `97cb0e67a9f7`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `build_model(model_name, checkpoint=None)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py) · [使用教程](02_video.md) · 内容指纹 `f253e8deeeed`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py) · [使用教程](02_video.md) · 内容指纹 `f253e8deeeed`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`pose`, `x`, `net_trt`.
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py) · [使用教程](02_video.md) · 内容指纹 `d8e25fcf789d`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py) · [使用教程](02_video.md) · 内容指纹 `d8e25fcf789d`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 模块说明：Created on Wed Jun 15 15:49:22 2022
 
@@ -1669,30 +1623,30 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `--min_box_area` — default=10; help='filter out tiny boxes'
 - `--mot20` — default=False; action='store_true'; help='test mot20.'
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py) · [使用教程](02_video.md) · 内容指纹 `25e4dc5813e9`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py) · [使用教程](02_video.md) · 内容指纹 `25e4dc5813e9`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`pose`, `device`, `dummy_input`, `repetitions`, `total_time`, `Throughput`.
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py) · [使用教程](02_video.md) · 内容指纹 `73cabf060827`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py) · [使用教程](02_video.md) · 内容指纹 `73cabf060827`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `class CustomFormatter(logging.Formatter)` — 行为见对应阶段教程及源码。
 - `CustomFormatter.format(self, record)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py) · [使用教程](02_video.md) · 内容指纹 `2470d4c1fc27`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py) · [使用教程](02_video.md) · 内容指纹 `2470d4c1fc27`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 模块说明：Created on Wed Jun 15 15:45:33 2022
 
@@ -1700,11 +1654,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 - `pose_points_yolo5(detector, image, pose, tracker, tensorrt)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py) · [使用教程](02_video.md) · 内容指纹 `26d307984ac1`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py) · [使用教程](02_video.md) · 内容指纹 `26d307984ac1`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1715,11 +1669,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `save_images(images, target, joint_target, output, joint_output, joint_visibility, summary_writer=None, step=0, prefix='')` — Creates a grid of images with gt joints and a grid with predicted joints. This is a basic function for debugging purposes only.
 - `check_video_rotation(filename)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py) · [使用教程](02_video.md) · 内容指纹 `72a834269d16`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py) · [使用教程](02_video.md) · 内容指纹 `72a834269d16`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1729,11 +1683,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `Timer.toc(self, average=True)` — 行为见对应阶段教程及源码。
 - `Timer.clear(self)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py) · [使用教程](02_video.md) · 内容指纹 `2bce4edc1c9c`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py) · [使用教程](02_video.md) · 内容指纹 `2bce4edc1c9c`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1741,11 +1695,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_color(idx)` — 行为见对应阶段教程及源码。
 - `plot_tracking(image, tlwhs, obj_ids, scores=None, frame_id=0, fps=0.0, ids2=None)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py`
+## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py) · [使用教程](02_video.md) · 内容指纹 `eb4b353f89a3`
+[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py) · [使用教程](02_video.md) · 内容指纹 `eb4b353f89a3`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1755,11 +1709,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `TRTModule_ViTPose.__init__(self, engine=None, input_names=None, output_names=None, input_flattener=None, output_flattener=None, path=None, device=None)` — 行为见对应阶段教程及源码。
 - `TRTModule_ViTPose.forward(self, *inputs)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/pylogger.py`
+## `GVHMR/hmr4d/utils/pylogger.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/pylogger.py) · [使用教程](02_video.md) · 内容指纹 `7a30993a4190`
+[源码](../GVHMR/hmr4d/utils/pylogger.py) · [使用教程](02_video.md) · 内容指纹 `7a30993a4190`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1767,11 +1721,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `timer(sync_cuda=False, mem=False, loop=1)` — Args:     func: function     sync_cuda: bool, whether to synchronize cuda     mem: bool, whether to log memory
 - `timed(fn)` — example usage: timed(lambda: model(inp))
 
-## `Retargeting/GVHMR/hmr4d/utils/seq_utils.py`
+## `GVHMR/hmr4d/utils/seq_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/seq_utils.py) · [使用教程](02_video.md) · 内容指纹 `b36e307f9a70`
+[源码](../GVHMR/hmr4d/utils/seq_utils.py) · [使用教程](02_video.md) · 内容指纹 `b36e307f9a70`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1785,11 +1739,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `linear_interpolate(data, N_middle_frames)` — Args:     data: (2, C) Returns:     data_interpolated: (1+N+1, C)
 - `find_top_k_span(mask, k=3)` — Args:     mask: (L,) Return:     topk_span: List of tuple, usage: [start, end)
 
-## `Retargeting/GVHMR/hmr4d/utils/smplx_utils.py`
+## `GVHMR/hmr4d/utils/smplx_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/smplx_utils.py) · [使用教程](02_video.md) · 内容指纹 `e4f9a663a068`
+[源码](../GVHMR/hmr4d/utils/smplx_utils.py) · [使用教程](02_video.md) · 内容指纹 `e4f9a663a068`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1810,11 +1764,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `finite_difference_forward(x, dim_t=1, dup_last=True)` — 行为见对应阶段教程及源码。
 - `compute_joints_zero(betas, gender)` — Args:     betas: (16)     gender: 'male' or 'female' Returns:     joints_zero: (22, 3)
 
-## `Retargeting/GVHMR/hmr4d/utils/video_io_utils.py`
+## `GVHMR/hmr4d/utils/video_io_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/video_io_utils.py) · [使用教程](02_video.md) · 内容指纹 `849dfd99c287`
+[源码](../GVHMR/hmr4d/utils/video_io_utils.py) · [使用教程](02_video.md) · 内容指纹 `849dfd99c287`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1828,11 +1782,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `merge_videos_horizontal(in_video_paths: list, out_video_path: str)` — 行为见对应阶段教程及源码。
 - `merge_videos_vertical(in_video_paths: list, out_video_path: str)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/vis/cv2_utils.py`
+## `GVHMR/hmr4d/utils/vis/cv2_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/vis/cv2_utils.py) · [使用教程](02_video.md) · 内容指纹 `6f944c1cb3e9`
+[源码](../GVHMR/hmr4d/utils/vis/cv2_utils.py) · [使用教程](02_video.md) · 内容指纹 `6f944c1cb3e9`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1847,11 +1801,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `draw_coco17_skeleton(img, keypoints, conf_thr=0)` — 行为见对应阶段教程及源码。
 - `draw_coco17_skeleton_batch(imgs, keypoints_batch, conf_thr=0)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/vis/renderer.py`
+## `GVHMR/hmr4d/utils/vis/renderer.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/vis/renderer.py) · [使用教程](02_video.md) · 内容指纹 `3124701b4365`
+[源码](../GVHMR/hmr4d/utils/vis/renderer.py) · [使用教程](02_video.md) · 内容指纹 `3124701b4365`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1875,11 +1829,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_global_cameras_static(verts, beta=4.0, cam_height_degree=30, target_center_height=1.0, use_long_axis=False, vec_rot=45, device='cuda')` — 行为见对应阶段教程及源码。
 - `get_ground_params_from_points(root_points, vert_points)` — xz-plane is the ground plane Args:     root_points: (L, 3), to decide center     vert_points: (L, V, 3), to decide scale
 
-## `Retargeting/GVHMR/hmr4d/utils/vis/renderer_tools.py`
+## `GVHMR/hmr4d/utils/vis/renderer_tools.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/vis/renderer_tools.py) · [使用教程](02_video.md) · 内容指纹 `a15206240963`
+[源码](../GVHMR/hmr4d/utils/vis/renderer_tools.py) · [使用教程](02_video.md) · 内容指纹 `a15206240963`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1896,32 +1850,32 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `vis_keypoints(keypts_list, img_size, radius=6, thickness=3, kpt_score_thr=0.3, dataset='TopDownCocoDataset')` — Visualize keypoints From ViTPose/mmpose/apis/inference.py
 - `imshow_keypoints(img, pose_result, skeleton=None, kpt_score_thr=0.3, pose_kpt_color=None, pose_link_color=None, radius=4, thickness=1, show_keypoint_weight=False)` — Draw keypoints and links on an image. From ViTPose/mmpose/core/visualization/image.py
 
-## `Retargeting/GVHMR/hmr4d/utils/vis/renderer_utils.py`
+## `GVHMR/hmr4d/utils/vis/renderer_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/vis/renderer_utils.py) · [使用教程](02_video.md) · 内容指纹 `2e92146d1301`
+[源码](../GVHMR/hmr4d/utils/vis/renderer_utils.py) · [使用教程](02_video.md) · 内容指纹 `2e92146d1301`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `simple_render_mesh(render_dict)` — Render an camera-space mesh, blank background
 - `simple_render_mesh_background(render_dict, VI=50, colors=[0.8, 0.8, 0.8])` — Render an camera-space mesh, blank background
 
-## `Retargeting/GVHMR/hmr4d/utils/vis/rich_logger.py`
+## `GVHMR/hmr4d/utils/vis/rich_logger.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/vis/rich_logger.py) · [使用教程](02_video.md) · 内容指纹 `c53cc8223aa2`
+[源码](../GVHMR/hmr4d/utils/vis/rich_logger.py) · [使用教程](02_video.md) · 内容指纹 `c53cc8223aa2`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
 - `print_cfg(cfg: DictConfig, use_rich: bool=False)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/hmr4d/utils/wis3d_utils.py`
+## `GVHMR/hmr4d/utils/wis3d_utils.py`
 
-[源码](../Retargeting/GVHMR/hmr4d/utils/wis3d_utils.py) · [使用教程](02_video.md) · 内容指纹 `388be6be8f7a`
+[源码](../GVHMR/hmr4d/utils/wis3d_utils.py) · [使用教程](02_video.md) · 内容指纹 `388be6be8f7a`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1940,19 +1894,19 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `create_checkerboard_mesh(y=0.0, grid_size=1.0, bounds=((-3, -3), (3, 3)))` — example usage:     vertices, faces, vertex_colors = create_checkerboard_mesh()     wis3d.add_mesh(vertices=vertices, faces=faces, vertex_colors=vertex_colors, name="one")
 - `add_a_trimesh(mesh, wis3d, name)` — 行为见对应阶段教程及源码。
 
-## `Retargeting/GVHMR/setup.py`
+## `GVHMR/setup.py`
 
-[源码](../Retargeting/GVHMR/setup.py) · [使用教程](02_video.md) · 内容指纹 `2df0237d08e9`
+[源码](../GVHMR/setup.py) · [使用教程](02_video.md) · 内容指纹 `2df0237d08e9`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
-## `Retargeting/GVHMR/tools/demo/demo.py`
+## `GVHMR/tools/demo/demo.py`
 
-[源码](../Retargeting/GVHMR/tools/demo/demo.py) · [使用教程](02_video.md) · 内容指纹 `ca02504405cd`
+[源码](../GVHMR/tools/demo/demo.py) · [使用教程](02_video.md) · 内容指纹 `ca02504405cd`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -1971,11 +1925,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `--f_mm` — default=None; help='Focal length of fullframe camera in mm. Leave it as None to use default values.For iPhone 15p, the [0.5x, 1x, 2x, 3x] lens have typical values [13, 24, 48, 77].If the camera zoom in a lot, you can try 135, 200 or even larger values.'
 - `--verbose` — action='store_true'; help='If true, draw intermediate results'
 
-## `Retargeting/GVHMR/tools/demo/demo_folder.py`
+## `GVHMR/tools/demo/demo_folder.py`
 
-[源码](../Retargeting/GVHMR/tools/demo/demo_folder.py) · [使用教程](02_video.md) · 内容指纹 `ca35b2cfbdb6`
+[源码](../GVHMR/tools/demo/demo_folder.py) · [使用教程](02_video.md) · 内容指纹 `ca35b2cfbdb6`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
@@ -1985,11 +1939,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `-d, --output_root` — default=None
 - `-s, --static_cam` — action='store_true'; help='If true, skip DPVO'
 
-## `Retargeting/GVHMR/tools/video/merge_folder.py`
+## `GVHMR/tools/video/merge_folder.py`
 
-[源码](../Retargeting/GVHMR/tools/video/merge_folder.py) · [使用教程](02_video.md) · 内容指纹 `cf592cb9d367`
+[源码](../GVHMR/tools/video/merge_folder.py) · [使用教程](02_video.md) · 内容指纹 `cf592cb9d367`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 模块说明：This script will glob two folder, check the mp4 files are one-to-one match precisely, then call merge_horizontal.py to merge them one by one
 
@@ -2004,11 +1958,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `output_dir`
 - `--vertical` — action='store_true'
 
-## `Retargeting/GVHMR/tools/video/merge_horizontal.py`
+## `GVHMR/tools/video/merge_horizontal.py`
 
-[源码](../Retargeting/GVHMR/tools/video/merge_horizontal.py) · [使用教程](02_video.md) · 内容指纹 `91a7142860c0`
+[源码](../GVHMR/tools/video/merge_horizontal.py) · [使用教程](02_video.md) · 内容指纹 `91a7142860c0`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -2019,11 +1973,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `input_videos` — help='Input video paths'
 - `-o, --output` — required=True; help='Output video path'
 
-## `Retargeting/GVHMR/tools/video/merge_vertical.py`
+## `GVHMR/tools/video/merge_vertical.py`
 
-[源码](../Retargeting/GVHMR/tools/video/merge_vertical.py) · [使用教程](02_video.md) · 内容指纹 `ea249422e5d0`
+[源码](../GVHMR/tools/video/merge_vertical.py) · [使用教程](02_video.md) · 内容指纹 `ea249422e5d0`
 
-职责：人体恢复、重定向及其内部数学/网络模块。
+职责：人体恢复及其内部数学/网络模块。
 
 接口与职责：
 
@@ -2033,6 +1987,52 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 - `input_videos` — help='Input video paths'
 - `-o, --output` — required=True; help='Output video path'
+
+## `pipeline/__init__.py`
+
+[源码](../pipeline/__init__.py) · [使用教程](03_motion.md) · 内容指纹 `89b6a7ed6026`
+
+职责：命名动作、时间采样、四元数和正向运动学。
+
+模块说明：Portable motion conversion and validation. See docs/03_motion.md.
+
+使用方式：包注册、常量或参数配置，由上级模块导入。
+
+## `pipeline/convert.py`
+
+[源码](../pipeline/convert.py) · [使用教程](03_motion.md) · 内容指纹 `471c30a43de2`
+
+职责：命名动作、时间采样、四元数和正向运动学。
+
+模块说明：Convert trusted GMR pickle to a named 50 Hz training archive; see docs/03_motion.md.
+
+接口与职责：
+
+- `main()` — 行为见对应阶段教程及源码。
+
+命令行参数（运行所在目录与完整例子见上方教程）：
+
+- `--input` — required=True; help='Trusted local GMR .pkl (pickle executes code)'
+- `--output` — required=True; help='Output .npz archive'
+- `--fps` — default=50; help='Must equal tracking control rate (default 50 Hz)'
+- `--robot-xml` — default=ROBOT_XML
+
+## `pipeline/motion.py`
+
+[源码](../pipeline/motion.py) · [使用教程](03_motion.md) · 内容指纹 `4ae467dec913`
+
+职责：命名动作、时间采样、四元数和正向运动学。
+
+模块说明：Named, validated tracking archive shared by training and deployment.
+
+接口与职责：
+
+- `validate_motion(data)` — Reject ambiguous names, corrupt quaternions, mismatched shapes and NaNs.
+- `load_motion(path)` — Load a non-pickle NPZ, close its descriptor, then validate its contract.
+- `name_indices(actual, requested)` — Map names explicitly; never assume MuJoCo and Isaac use the same order.
+- `resample_qpos(root_pos, root_xyzw, joints, source_fps, target_fps)` — Resample on a seconds-based grid without extending beyond the last frame.
+- `world_angular_velocity(quaternions, fps)` — Differentiate wxyz rotations in the world frame, with sign-invariant SO(3) differences.
+- `qpos_to_motion(qpos, fps, model)` — Evaluate every named link using MuJoCo FK; preserve explicit joint order.
 
 ## `RL_envs/scripts/tracking.py`
 
@@ -2439,7 +2439,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `tests/test_conversion_cli.py`
 
-[源码](../tests/test_conversion_cli.py) · [使用教程](07_validation.md) · 内容指纹 `cdf9bafc66ad`
+[源码](../tests/test_conversion_cli.py) · [使用教程](07_validation.md) · 内容指纹 `67e15bad41b9`
 
 职责：离线回归测试；按测试函数查看保护的行为。
 
@@ -2488,7 +2488,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `tools/audit_docs.py`
 
-[源码](../tools/audit_docs.py) · [使用教程](07_validation.md) · 内容指纹 `41980b835d0d`
+[源码](../tools/audit_docs.py) · [使用教程](07_validation.md) · 内容指纹 `3dfed67015b6`
 
 职责：维护教程覆盖及检查记录。
 

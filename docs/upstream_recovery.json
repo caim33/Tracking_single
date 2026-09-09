@@ -4,32 +4,32 @@
   "files": [
     {
       "source": "hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "source": "hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py",
       "sha256": "a03caae1b968fdc1d2fb70b04c6435247bb9eb03c3d9ec13aee6c0b84a563d64"
     },
     {
       "source": "hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py",
       "sha256": "5966ce965e49c92863b85a8cb8a7737ea1dfbbf01118aaefc177bd14f0518112"
     },
     {
       "source": "hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py",
       "sha256": "4d3d444fb3bd8e72d5ac8d7ce7f878ab5c545210e4a0cce2c74c1b16a954b4b1"
     },
     {
       "source": "hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py",
       "sha256": "0fd1fab21cfe1e884c87174695a4df94c962493af2ac3691873010c738cd1ba9"
     },
     {
       "source": "hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py",
       "sha256": "ea3f69a93f82e73c17d5cbf7239fd8968f4c69dbe6cdf885201b019dce863d69"
     }
   ]

@@ -5,752 +5,752 @@
   "files": [
     {
       "source": "Retargeting/GVHMR/.gitignore",
-      "destination": "Retargeting/GVHMR/.gitignore",
+      "destination": "GVHMR/.gitignore",
       "source_sha256": "658b66c31fda158ee2383db649ab34bdc66df5144e7f6d02ee666ab344501e59"
     },
     {
       "source": "Retargeting/GVHMR/LICENSE",
-      "destination": "Retargeting/GVHMR/LICENSE",
+      "destination": "GVHMR/LICENSE",
       "source_sha256": "39ada5d55fa388ae354b06f952865129cf4f8c60e0948b51a6887efa088c1ce6"
     },
     {
       "source": "Retargeting/GVHMR/pyproject.toml",
-      "destination": "Retargeting/GVHMR/pyproject.toml",
+      "destination": "GVHMR/pyproject.toml",
       "source_sha256": "fb52dc55bcd44b5ccfa360d14c9b509d73ff88f8e2a78758fabebd2f0a0e4ac6"
     },
     {
       "source": "Retargeting/GVHMR/pyrightconfig.json",
-      "destination": "Retargeting/GVHMR/pyrightconfig.json",
+      "destination": "GVHMR/pyrightconfig.json",
       "source_sha256": "fc59a7248a678e9fe445c1456f8d916525ef71169583077f8c0d656bbe57d0c7"
     },
     {
       "source": "Retargeting/GVHMR/README.md",
-      "destination": "Retargeting/GVHMR/README.upstream.md",
+      "destination": "GVHMR/README.upstream.md",
       "source_sha256": "5208fd1d42d1859953f1052b254a10f3a50f4501c1611eab077dce15451bbf40"
     },
     {
       "source": "Retargeting/GVHMR/requirements.txt",
-      "destination": "Retargeting/GVHMR/requirements.txt",
+      "destination": "GVHMR/requirements.txt",
       "source_sha256": "6d8b5d07dbd63f67483c8eafd1977476606e95966eb60cc8f3b09130bd432921"
     },
     {
       "source": "Retargeting/GVHMR/setup.py",
-      "destination": "Retargeting/GVHMR/setup.py",
+      "destination": "GVHMR/setup.py",
       "source_sha256": "d63eb4f337c7186cbba823a6c7e1e451db63dc1fa0a5299483b0bbd2a61a5555"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/build_gvhmr.py",
-      "destination": "Retargeting/GVHMR/hmr4d/build_gvhmr.py",
+      "destination": "GVHMR/hmr4d/build_gvhmr.py",
       "source_sha256": "013ac12a2c61f153f96a47bf4ac78b409f96b9da07edc744e3be75b2ed516246"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/__init__.py",
+      "destination": "GVHMR/hmr4d/__init__.py",
       "source_sha256": "41cd10710afb0b7a6c54f4958df53812c9fbd3a9e45081e8821f1b605749b580"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/configs/demo.yaml",
-      "destination": "Retargeting/GVHMR/hmr4d/configs/demo.yaml",
+      "destination": "GVHMR/hmr4d/configs/demo.yaml",
       "source_sha256": "dc6c4a41fd40b7cffdb49c1fe37bf779fd48d400f7f04a2e17095d7be4888628"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/configs/siga24_release.yaml",
-      "destination": "Retargeting/GVHMR/hmr4d/configs/siga24_release.yaml",
+      "destination": "GVHMR/hmr4d/configs/siga24_release.yaml",
       "source_sha256": "9045f6afd4a24a77d66e15f19edd3c6434d64331e25cd330a5046bb28740a116"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/configs/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/configs/__init__.py",
+      "destination": "GVHMR/hmr4d/configs/__init__.py",
       "source_sha256": "cb16b3982855a45bc40be5ddc8382acaa4752418dae5fe45882098ad292d69a7"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/geo_transform.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/geo_transform.py",
+      "destination": "GVHMR/hmr4d/utils/geo_transform.py",
       "source_sha256": "a93a09e1fd97402b08fe155e43d4d094854e320234109e79b3d8ccb604060dc2"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/matrix.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/matrix.py",
+      "destination": "GVHMR/hmr4d/utils/matrix.py",
       "source_sha256": "dce537f9dcf1d012ff12038bc2265c4477c868d5cd1b7b3d56bd30cca4dcd657"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/net_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/net_utils.py",
+      "destination": "GVHMR/hmr4d/utils/net_utils.py",
       "source_sha256": "517ec67668236432e42a2f967a9f8e0459d26935c77b28e97f263a7dc9671c9a"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/pylogger.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/pylogger.py",
+      "destination": "GVHMR/hmr4d/utils/pylogger.py",
       "source_sha256": "a0965b09871a80c425223fe6319da843a51498a7a3181356f2e87d2e5741aa63"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/seq_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/seq_utils.py",
+      "destination": "GVHMR/hmr4d/utils/seq_utils.py",
       "source_sha256": "80248a7b9f873d3bb533f869d43ed9bbdc7f604c0d6cbabc3d97da4970e17dce"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/smplx_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/smplx_utils.py",
+      "destination": "GVHMR/hmr4d/utils/smplx_utils.py",
       "source_sha256": "46dd122d9136d7060e0e0b4dd798128d81ad0efa7d57c3a6acf45cdd89c405fe"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/video_io_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/video_io_utils.py",
+      "destination": "GVHMR/hmr4d/utils/video_io_utils.py",
       "source_sha256": "4114e07c7266e633f9015db5d3e8d29da21969a04d1eb18e171bbcfdcabbed9b"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/wis3d_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/wis3d_utils.py",
+      "destination": "GVHMR/hmr4d/utils/wis3d_utils.py",
       "source_sha256": "b414d96731c2dc58646a7bab678e38f11305c2b4eac59faaa9e513e801e59f4d"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/configs/hydra/default.yaml",
-      "destination": "Retargeting/GVHMR/hmr4d/configs/hydra/default.yaml",
+      "destination": "GVHMR/hmr4d/configs/hydra/default.yaml",
       "source_sha256": "7c80a2d71489c3e1f24f9205f5ab97472734d7a84c4452a1274290bb5f039b62"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py",
-      "destination": "Retargeting/GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py",
+      "destination": "GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py",
       "source_sha256": "b20dff141f5272ef8d72b82ae48c3a8896aee4f6affc8127229a18b54cd37e56"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py",
-      "destination": "Retargeting/GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py",
+      "destination": "GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py",
       "source_sha256": "bfdaeb7cda09f0202beb763b7f52659431f3a6907f126a4b29445620be0afbbe"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/model/gvhmr/utils/endecoder.py",
-      "destination": "Retargeting/GVHMR/hmr4d/model/gvhmr/utils/endecoder.py",
+      "destination": "GVHMR/hmr4d/model/gvhmr/utils/endecoder.py",
       "source_sha256": "d75115891cb97097e04af39208f87255a34169d6d494e3714c22a0d62b0fb3a4"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/model/gvhmr/utils/postprocess.py",
-      "destination": "Retargeting/GVHMR/hmr4d/model/gvhmr/utils/postprocess.py",
+      "destination": "GVHMR/hmr4d/model/gvhmr/utils/postprocess.py",
       "source_sha256": "cdb20c82921ca2c6b7b0d1101f9b51a1f1d21de41ffcddd255aec9cdcf6b09ac"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py",
-      "destination": "Retargeting/GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py",
+      "destination": "GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py",
       "source_sha256": "4cdcf35771f5edb1c30d35fa680556f5463b5176be2694039185dad495c1cca2"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/gvhmr/relative_transformer.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/gvhmr/relative_transformer.py",
+      "destination": "GVHMR/hmr4d/network/gvhmr/relative_transformer.py",
       "source_sha256": "fd3238790a46ba0ba334957fa4252a102cffdd72984ee079e07665e71b1f595a"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/hmr2.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/hmr2.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/hmr2.py",
       "source_sha256": "33eec07a93cd461c1266bfe788c633d42b63ae52f9a4883deb0e8157c55854c2"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/smpl_head.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/smpl_head.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/smpl_head.py",
       "source_sha256": "959b44fed1fc8d9c6cca2495ec482cba64b4d18ec16744f9d56ee0a0f0885793"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/vit.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/vit.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/vit.py",
       "source_sha256": "cbb08aad4f46b0166eca54f4842f4b0d53db1fe155378b4c1feb59a15d4943c6"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/__init__.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/__init__.py",
       "source_sha256": "51fb4f53243d81744678c3d90b6a8a3cbe8c03cc6c2ba2d786d0349e0a3252fc"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py",
+      "destination": "GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py",
       "source_sha256": "6e57e7408a25f5cc4eed024d5e9748daba21cd958ed449593db5faa1fe97bbf2"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py",
+      "destination": "GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py",
       "source_sha256": "3ada24ee9ba45f828df9c7c67426071fddda58d48a59ae8a536b0e7ee51e8a22"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/base_arch/transformer/layer.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/base_arch/transformer/layer.py",
+      "destination": "GVHMR/hmr4d/network/base_arch/transformer/layer.py",
       "source_sha256": "e2d4d6a850da42daed375d726537d268873ac89c1e42adbefc23e7c114a82640"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/components/pose_transformer.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/components/pose_transformer.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/components/pose_transformer.py",
       "source_sha256": "e7c0711ec66fdaf4b0b21cf00860d03a6803823ed8968e171ecb0b001a39afd5"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py",
       "source_sha256": "a1e390ed7868596cf75fe04527e2ad6495e715464521db371d354399c25c1e36"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/components/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/components/__init__.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/components/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/configs/model_config.yaml",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/configs/model_config.yaml",
+      "destination": "GVHMR/hmr4d/network/hmr2/configs/model_config.yaml",
       "source_sha256": "395d7a82a1d0d7c83d4687b20e08877a47af22f6e5180a6b222d5620bacbed11"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/configs/smpl_mean_params.npz",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/configs/smpl_mean_params.npz",
+      "destination": "GVHMR/hmr4d/network/hmr2/configs/smpl_mean_params.npz",
       "source_sha256": "6fd6dd687800da946d0a0492383f973b92ec20f166a0b829775882868c35fcdd"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/configs/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/configs/__init__.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/configs/__init__.py",
       "source_sha256": "5e248c6b636f982a5a3db335ea68e89c43f4669eff5cc754491f92f96d4d3132"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/utils/geometry.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/utils/geometry.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/utils/geometry.py",
       "source_sha256": "1b0cf5e90d94de0f700fe845c667923c76b3fc02c4cf4ff3e677a7600d9de62a"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/utils/preproc.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/utils/preproc.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/utils/preproc.py",
       "source_sha256": "547c3379e846aa8cde498a241a8330e2b9aa9d940414bde9c0cf6c7062da6e05"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py",
-      "destination": "Retargeting/GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py",
+      "destination": "GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py",
       "source_sha256": "93b2da3d9247cc15c1f56c4d19713ef8d7ad6fe0d7d8fd33d8b4a1cfa56eb3fd"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/body_model.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/body_model.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/body_model.py",
       "source_sha256": "7b5ed049c9cd29b73d472b5b5c0c95b6633ff4cb863bde4ce7edbe9433835d84"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplh.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplh.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/body_model_smplh.py",
       "source_sha256": "a55922e3d908e46e06beb6cd8a85fd893ea1a987c010063ff4fca81c9aa8a63c"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplx.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/body_model_smplx.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/body_model_smplx.py",
       "source_sha256": "89205d282f267adf035b4670484b55cb80052015b0b61ab6e6d65dcc2ec66ed7"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/min_lbs.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/min_lbs.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/min_lbs.py",
       "source_sha256": "cc7c5ca043463b3efc9b67728d187e730c9ae3d03fa3df2b538df762f0a316e4"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/README.md",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/README.md",
+      "destination": "GVHMR/hmr4d/utils/body_model/README.md",
       "source_sha256": "5b85dfcd687e14c3d6af9ead775389a70a6519f65f881b2bba854c4ec439c59f"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smplx_lite.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smplx_lite.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/smplx_lite.py",
       "source_sha256": "f64ce5c324ab406b90de98ad89bb616194412daa9dc0100e5a7c860947fb92d1"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_lite.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_lite.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/smpl_lite.py",
       "source_sha256": "ff88785ea0679ea6b4f01a2cfdc5cb871b3cc52c6bdab0e5c226fd22e1b29654"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_vert_segmentation.json",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_vert_segmentation.json",
+      "destination": "GVHMR/hmr4d/utils/body_model/smpl_vert_segmentation.json",
       "source_sha256": "0af78b5c581a225998b4804b4c9dd8351e155b34253947eb2541160852105ab8"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/utils.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/utils.py",
       "source_sha256": "dec29039e53a80cd05822b464c4a4fbaded6bd1271265d0c945e0dcc86c86bc4"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/body_model/__init__.py",
       "source_sha256": "ab0b77594374544541cbd5df5dd65ad6289afed4a84744f3ee202012a1b12dbb"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/eval/eval_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/eval/eval_utils.py",
+      "destination": "GVHMR/hmr4d/utils/eval/eval_utils.py",
       "source_sha256": "a82023f3e10481ab54f4d7fea95b6cbf890e55e3f85723bab541ef442aa835ce"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/geo/augment_noisy_pose.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/geo/augment_noisy_pose.py",
+      "destination": "GVHMR/hmr4d/utils/geo/augment_noisy_pose.py",
       "source_sha256": "a6a26eed72261f11eae93ea377c8c9bbb6d8bf4d15d1ea03471bae5a32489760"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/geo/flip_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/geo/flip_utils.py",
+      "destination": "GVHMR/hmr4d/utils/geo/flip_utils.py",
       "source_sha256": "eb3eecf24a10c02ba4e078705c8bf566a044408f0a4bbfb8c838db19043092c4"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/geo/hmr_cam.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/geo/hmr_cam.py",
+      "destination": "GVHMR/hmr4d/utils/geo/hmr_cam.py",
       "source_sha256": "55bdb9a985a5c6781fef8393f1de91df6cbcace3aea803c1e8695e2d8e73b983"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/geo/hmr_global.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/geo/hmr_global.py",
+      "destination": "GVHMR/hmr4d/utils/geo/hmr_global.py",
       "source_sha256": "fdf1e035525f94fb651ad009d39d470c03bf1920b4c110c62fe1886cfba08d86"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/geo/quaternion.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/geo/quaternion.py",
+      "destination": "GVHMR/hmr4d/utils/geo/quaternion.py",
       "source_sha256": "97e07531da9d54ec73a6f8c68c624a91f04d7dd189322d099433fc1a39ef1802"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/geo/transforms.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/geo/transforms.py",
+      "destination": "GVHMR/hmr4d/utils/geo/transforms.py",
       "source_sha256": "228c5ba0fcb62cd54732a5f0f415c7a902a68fd77acc168162ab00a114b11727"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/ik/ccd_ik.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/ik/ccd_ik.py",
+      "destination": "GVHMR/hmr4d/utils/ik/ccd_ik.py",
       "source_sha256": "d07492e5bbb3fec58ee73b14343b813da7370eefdcb37de17f07ab4ca46ed5d4"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/kpts/kp2d_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/kpts/kp2d_utils.py",
+      "destination": "GVHMR/hmr4d/utils/kpts/kp2d_utils.py",
       "source_sha256": "fa4b6ae4a489c0b61b5c27977cf6abf1185433b2460af3564af8c6cf2f25145b"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/slam.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/slam.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/slam.py",
       "source_sha256": "d02e51f315cf531c72ef376c6fedd8e9dc0d5f622d42af8b036fbc7bf93077e8"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/tracker.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/tracker.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/tracker.py",
       "source_sha256": "8ff138321a98129ea9538ee55fa89695e9cc82431d94e5529290a0670c574362"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py",
       "source_sha256": "56c39a3784d6e6e24a7f8560df8cb28a11f6a409adfbdce07b60a46775b7fad5"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose.py",
       "source_sha256": "e13982120af980697c11011a05b9065446f94062d47f0a0f42eb42ea8c3dd832"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/__init__.py",
       "source_sha256": "c21bc0b7f456daef00b4d2835411ea0a23968d80a1b28a6d4b3e02dabc5984c9"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/vis/cv2_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/vis/cv2_utils.py",
+      "destination": "GVHMR/hmr4d/utils/vis/cv2_utils.py",
       "source_sha256": "ac2f4816f2bfd72b0807d4de15844e79459f0f2dddc9ec069332f2cd315340b2"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/vis/README.md",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/vis/README.md",
+      "destination": "GVHMR/hmr4d/utils/vis/README.md",
       "source_sha256": "240c03742510a0a1edcb41a9da0749bf079acec7232e570a0267d90d87fdf3c8"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/vis/renderer.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/vis/renderer.py",
+      "destination": "GVHMR/hmr4d/utils/vis/renderer.py",
       "source_sha256": "d42a20f506951408685b348b161469fe5cf378a87b31d8cfe6847ada4f92e1b0"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/vis/renderer_tools.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/vis/renderer_tools.py",
+      "destination": "GVHMR/hmr4d/utils/vis/renderer_tools.py",
       "source_sha256": "a21feb418c5174a80f13158e5aca5accf85472d7460f307a9bb10ee96ac21255"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/vis/renderer_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/vis/renderer_utils.py",
+      "destination": "GVHMR/hmr4d/utils/vis/renderer_utils.py",
       "source_sha256": "206722e1ae82300af5f5d13d6498f630ba6d88a0a1df1ed67dafae3c479d311d"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/vis/rich_logger.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/vis/rich_logger.py",
+      "destination": "GVHMR/hmr4d/utils/vis/rich_logger.py",
       "source_sha256": "bcdc658620f849a62ed9c630d683fb53a6faa2948c2b5af3085547515a6d0c4f"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py",
       "source_sha256": "69c810c4b3e161dae85e9a1362701926428356faab9ee6d14476f66faba0d9b8"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/README.md",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/README.md",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/README.md",
       "source_sha256": "8640ede3641ddb8571da4ff437f1c5591bac97d03e380af2999462c99a5928c9"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py",
       "source_sha256": "bcb17e1662fed4a9ec45b1d0ea18211c81e349a64560a9e559437d2ff2593ad4"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py",
       "source_sha256": "12f9b6d12767683d04da71500ec5645b7e5c5de8cb7ae904ed1e24ee622180cf"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py",
       "source_sha256": "987dde070bf2e104e329c3209b50d5f3f7ce3c8ff5efec36e5708435b7b42372"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/utils.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/utils.py",
       "source_sha256": "630ab2ff10961a02e9931700fa2589169622506136a240ea49932897303cbc8e"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/viz2d.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/viz2d.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/viz2d.py",
       "source_sha256": "c7c1d27e6dd5a51f247f264abda5568c36ceb7ddb3840f1dbc15846e27b999fe"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py",
       "source_sha256": "020b54a30d0a05cd654011d9edfb11e53a447fca736b8948478c6e74b9aee4e8"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py",
       "source_sha256": "e32a297483d38bd22c1bdf25aa430d6fb639649069a4c87591b3207704431d5d"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py",
       "source_sha256": "4f7c7646f935844eb3bdb94bf1324777f3f9a8a4600b2b20c5b9705bc7979683"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py",
       "source_sha256": "da9b719ef8d747b9ca8bb0b7cb62922cc6db17de4c85d56bb3e18e129848423e"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py",
       "source_sha256": "21cb996e528be07f2ca1abcdaff3f68d8aed5e68f7e23fa23a8864aa4771a09b"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py",
       "source_sha256": "4323943f63773fa18896855a1cc873b1a9f53de6921c03b182f93c4b99f064be"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py",
       "source_sha256": "82a9f82d885ed626af24ccb7d2ca244bcb5695fb21fe69caff0e46b92f780ad2"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py",
       "source_sha256": "878f577a686a61c3bf89bdd094d883bab6223ab6511c7bae74745310744d1a05"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py",
       "source_sha256": "07df6aada2c0ba3d8f26dfa68c8c9d2ac022095896187908b8be53d4bdfaabea"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py",
       "source_sha256": "781529fb620ad55659d96e014952eab360941fc8b9a0ae1345b8637af18c39d8"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py",
       "source_sha256": "f09d3604a973687ca95dd9770d6bd1627805e592cbdae817e0eb0be27e98e02a"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py",
       "source_sha256": "51265d5b554f97f9af8730ecef51e976aee43a7755c08e609fbbab1bb7df8f37"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py",
       "source_sha256": "c6d0a55f9d809932c1942ddcd87bae5f2f7ef79624d3155a1ed89c65b3bc66a1"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py",
+      "destination": "GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "source": "Retargeting/GVHMR/tools/demo/demo.py",
-      "destination": "Retargeting/GVHMR/tools/demo/demo.py",
+      "destination": "GVHMR/tools/demo/demo.py",
       "source_sha256": "5b0f9d5671bb0776ccde5acf2963bdd56fbcdccbc12572a7a03d3d986fe62f59"
     },
     {
       "source": "Retargeting/GVHMR/tools/demo/demo_folder.py",
-      "destination": "Retargeting/GVHMR/tools/demo/demo_folder.py",
+      "destination": "GVHMR/tools/demo/demo_folder.py",
       "source_sha256": "08be22011738016fb9e817276521a855cffa1550f11e6a58a2cc0d5a0986c985"
     },
     {
       "source": "Retargeting/GVHMR/tools/video/merge_folder.py",
-      "destination": "Retargeting/GVHMR/tools/video/merge_folder.py",
+      "destination": "GVHMR/tools/video/merge_folder.py",
       "source_sha256": "af3180067eb43d942839c11d677cb3edd4ce99d21a40885d2a5e903562887c8f"
     },
     {
       "source": "Retargeting/GVHMR/tools/video/merge_horizontal.py",
-      "destination": "Retargeting/GVHMR/tools/video/merge_horizontal.py",
+      "destination": "GVHMR/tools/video/merge_horizontal.py",
       "source_sha256": "69d39f5bc58f4ceaed3e4dbc97b9ed8535c2cd3406ab9a34d6801bdb53682633"
     },
     {
       "source": "Retargeting/GVHMR/tools/video/merge_vertical.py",
-      "destination": "Retargeting/GVHMR/tools/video/merge_vertical.py",
+      "destination": "GVHMR/tools/video/merge_vertical.py",
       "source_sha256": "7d86ddf9d32f550f659f953b49a0b0027846d35b5d3bfe2dcc5d53ac512faa9d"
     },
     {
       "source": "Retargeting/GMR/.gitignore",
-      "destination": "Retargeting/GMR/.gitignore",
+      "destination": "GMR/.gitignore",
       "source_sha256": "48abc7fe571b2c57667cd2734b6c0c12061611f872f0f4f42f752cd25d8c3186"
     },
     {
       "source": "Retargeting/GMR/LICENSE",
-      "destination": "Retargeting/GMR/LICENSE",
+      "destination": "GMR/LICENSE",
       "source_sha256": "854bc18609996fb5e427ef8d28a9c7b1bbbe2b76b48f218ea1467823e0258fd4"
     },
     {
       "source": "Retargeting/GMR/README.md",
-      "destination": "Retargeting/GMR/README.upstream.md",
+      "destination": "GMR/README.upstream.md",
       "source_sha256": "5ecbd96d0f4ab7d941ef91d147ca7e9ca3ca0bb75732491e4f1d4b154e5d472a"
     },
     {
       "source": "Retargeting/GMR/setup.py",
-      "destination": "Retargeting/GMR/setup.py",
+      "destination": "GMR/setup.py",
       "source_sha256": "f67e52ec0d80d189b93a2f11369d14475b97173d387687c45e30af8c06784d5c"
     },
     {
       "source": "Retargeting/GMR/__init__.py",
-      "destination": "Retargeting/GMR/__init__.py",
+      "destination": "GMR/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/data_loader.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/data_loader.py",
+      "destination": "GMR/general_motion_retargeting/data_loader.py",
       "source_sha256": "47a21d0eee4b3cf0279211778f6b9eac9041e2cc14da23ea978040a76c1fb6d3"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/kinematics_model.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/kinematics_model.py",
+      "destination": "GMR/general_motion_retargeting/kinematics_model.py",
       "source_sha256": "62d243306007442c1cf3cce3fca3068e6d867c97ed8a0a2f1d85d2fe026988ed"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/motion_retarget.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/motion_retarget.py",
+      "destination": "GMR/general_motion_retargeting/motion_retarget.py",
       "source_sha256": "7cd59ccce8b3903763c66c40d0433e871b978d3709e3fe793a87c583f658b5ff"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/params.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/params.py",
+      "destination": "GMR/general_motion_retargeting/params.py",
       "source_sha256": "e07f54997493ad174131d53c6588a729deb50cca4453cf20a2862e27ab86979e"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/robot_motion_viewer.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/robot_motion_viewer.py",
+      "destination": "GMR/general_motion_retargeting/robot_motion_viewer.py",
       "source_sha256": "0bdc323120ece313e579d96317d67ed24f292d86a3639099add70ea0c09bc0f0"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/rot_utils.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/rot_utils.py",
+      "destination": "GMR/general_motion_retargeting/rot_utils.py",
       "source_sha256": "02c880755192e9ce86e31636ca8b54e4c1e52a1bb39e13e5305e3bd08f06f49a"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/torch_utils.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/torch_utils.py",
+      "destination": "GMR/general_motion_retargeting/torch_utils.py",
       "source_sha256": "0352c85984cd77d437b1c5bb1ce044d6f259117203eb437edb962ca5a856dcd9"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/__init__.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/__init__.py",
+      "destination": "GMR/general_motion_retargeting/__init__.py",
       "source_sha256": "4d36b93ab26b6e5373d1611ba7f3d480604582dc5e5d379ee0bb9564b3edbb5e"
     },
     {
       "source": "Retargeting/GMR/scripts/gvhmr_to_robot.py",
-      "destination": "Retargeting/GMR/scripts/gvhmr_to_robot.py",
+      "destination": "GMR/scripts/gvhmr_to_robot.py",
       "source_sha256": "124db03a7f2bf021b58e488bd5fb62ec250d345dba5c1eb4ab8107f0b35c08fd"
     },
     {
       "source": "Retargeting/GMR/scripts/vis_robot_motion.py",
-      "destination": "Retargeting/GMR/scripts/vis_robot_motion.py",
+      "destination": "GMR/scripts/vis_robot_motion.py",
       "source_sha256": "e3d1af211c8246b3db8c4374708cce7d39686390f2684fc9ccbc470328a002a4"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/g1_custom_collision_29dof.urdf",
-      "destination": "Retargeting/GMR/assets/unitree_g1/g1_custom_collision_29dof.urdf",
+      "destination": "GMR/assets/unitree_g1/g1_custom_collision_29dof.urdf",
       "source_sha256": "e2be8e6323c9af9b1e139f1ba6cfd405b0fa1f144e4fd137ef6c24680c114b2e"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/g1_mocap_29dof.xml",
-      "destination": "Retargeting/GMR/assets/unitree_g1/g1_mocap_29dof.xml",
+      "destination": "GMR/assets/unitree_g1/g1_mocap_29dof.xml",
       "source_sha256": "85a25128d42ad3cc8dd071c089806a2773a59ee0689edcc646aeb0201ae8f4c8"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/g1_mocap_29dof_with_hands.xml",
-      "destination": "Retargeting/GMR/assets/unitree_g1/g1_mocap_29dof_with_hands.xml",
+      "destination": "GMR/assets/unitree_g1/g1_mocap_29dof_with_hands.xml",
       "source_sha256": "167280f50c138ac548c03c85f609ddd96e0d994e9f288d6baa42b67617524ec5"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/LICENSE",
-      "destination": "Retargeting/GMR/assets/unitree_g1/LICENSE",
+      "destination": "GMR/assets/unitree_g1/LICENSE",
       "source_sha256": "84aac59fd3246e3ddc49d1387644e8fcf43b0def4f0b9fe687f372e90446df2d"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/README.md",
-      "destination": "Retargeting/GMR/assets/unitree_g1/README.md",
+      "destination": "GMR/assets/unitree_g1/README.md",
       "source_sha256": "881f2db615b183cd4c4c99ab4f7062ba5ca29d73a8a99266a1ac04ff9b0b27c0"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_g1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_g1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/bvh_to_g1.json",
       "source_sha256": "698334a92520535086f2698dbe5c2937c68eb1b18036d5f79ab2788d6e51eeb0"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_n1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_n1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/bvh_to_n1.json",
       "source_sha256": "8a83a74d8f2168f6a3628a951535610a3765639c5c4d5abf65624ae985b47bf7"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_pm01.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_pm01.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/bvh_to_pm01.json",
       "source_sha256": "598ee68875e147b88dc00fa1ae81fd0a7d380c9e3fc92b42d2cbdb1e33b70b0c"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_t1_29dof.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_t1_29dof.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/bvh_to_t1_29dof.json",
       "source_sha256": "81843130135e11d2d9ea9ba71e7eacfe297b72a5582d73740f0951746c0ac0ba"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_toddy.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/bvh_to_toddy.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/bvh_to_toddy.json",
       "source_sha256": "091bd75a9d0317fa34903a780b05ecc8ec102127341adaf14e57a4c1193d0b21"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/fbx_offline_to_g1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/fbx_offline_to_g1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/fbx_offline_to_g1.json",
       "source_sha256": "b4184c3a22b67200e341fc566acee40472d7d36739018b653e6bd48d99ca5cff"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/fbx_to_g1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/fbx_to_g1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/fbx_to_g1.json",
       "source_sha256": "07d7ffcd875b7749b8dfc1d208fd09068a4fdb7613c6e22c9967afc6b4a98d47"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_adam.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_adam.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_adam.json",
       "source_sha256": "e38f33c581c5c351553e60977b68d0d47caa3ae6daed8b518f0c0fdad2befddf"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_bhl.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_bhl.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_bhl.json",
       "source_sha256": "0ac0ba06ddf5e8ede3eda3ad54d682692374eb8173a0bdd0c5a593b53c122d7e"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_g1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_g1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_g1.json",
       "source_sha256": "e34e04804e19e54a34aae6de2bdc166b12a06dbbbcfd149cf687af56ad437797"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_h1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_h1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_h1.json",
       "source_sha256": "b31df6d46997e56b2cb04590b186e233c5572b67fb0bfdbb04717c57db4c4b4c"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_h1_2.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_h1_2.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_h1_2.json",
       "source_sha256": "611c667c685793282dd349c89aeac8ce15ac6809677ff99e070f3b7773bdc651"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_hi.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_hi.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_hi.json",
       "source_sha256": "32855dd1d913b50b2b8b24c47d38f8e5ecbeb81fdaea8b7fb2fd991adfd6ac9c"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_k1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_k1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_k1.json",
       "source_sha256": "d42f24077143cb2ce53a95e75fc0bce0522a6146d900581f64c33a1512088da3"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_kuavo.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_kuavo.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_kuavo.json",
       "source_sha256": "6e873298d02f3468ceff4b3cdd701e8808e29b86e5cf7a377a90c699d7769543"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_n1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_n1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_n1.json",
       "source_sha256": "b4e401badf9fa49156b410ef4df0aa654a53b57651dc07eb95b912286b5757e0"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_openloong.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_openloong.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_openloong.json",
       "source_sha256": "e34e04804e19e54a34aae6de2bdc166b12a06dbbbcfd149cf687af56ad437797"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_pm01.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_pm01.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_pm01.json",
       "source_sha256": "ee16483b414f2dd51553feece898a4d6474a896ce66dac15a070edcbd9fac4be"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_r1pro.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_r1pro.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_r1pro.json",
       "source_sha256": "d52fc4c292f101b873551505a55913dc577a19c664aee625b1096cdef3fcc929"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_t1.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_t1.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_t1.json",
       "source_sha256": "4d4ed2062a9e6ceffc9161fc1d6b5196ce4fc121f3796128b09d957ac2680cbd"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_t1_29dof.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_t1_29dof.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_t1_29dof.json",
       "source_sha256": "272f94dd66793c9df6d381e7f0460b363eed850d29e3dea69c36d4d0d4b3acbf"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_tienkung.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_tienkung.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_tienkung.json",
       "source_sha256": "b9822b6b009c6e8d16521f2cd1e4cab88ca7d6643d0012eab76086b61b2468db"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_toddy.json",
-      "destination": "Retargeting/GMR/general_motion_retargeting/ik_configs/smplx_to_toddy.json",
+      "destination": "GMR/general_motion_retargeting/ik_configs/smplx_to_toddy.json",
       "source_sha256": "af20a527f9de123b3ec2bb6a0affb3701ba86b2bf4442bb7a19ee9308535324d"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/utils/lafan1.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/utils/lafan1.py",
+      "destination": "GMR/general_motion_retargeting/utils/lafan1.py",
       "source_sha256": "2fef25ebbf313f5bb5089ab6bb7281404790b031ad7769ef112663aa54d916e4"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/utils/smpl.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/utils/smpl.py",
+      "destination": "GMR/general_motion_retargeting/utils/smpl.py",
       "source_sha256": "96a72e57ce56a2b75ea7709ff9fd9e5c00bd010150d8accdcdd076da0bcbd4d9"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/utils/__init__.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/utils/__init__.py",
+      "destination": "GMR/general_motion_retargeting/utils/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/extract.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/extract.py",
+      "destination": "GMR/general_motion_retargeting/utils/lafan_vendor/extract.py",
       "source_sha256": "fa3ae83d68d0a8239df51750bca179dd69dbcbbb2110ed63c3be70ef2273aa18"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/license.txt",
-      "destination": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/license.txt",
+      "destination": "GMR/general_motion_retargeting/utils/lafan_vendor/license.txt",
       "source_sha256": "1c61a60c07391c9831b8fb31e34a0fb6454aa1b8a49f10b9f01f798dbffa03cb"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/utils.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/utils.py",
+      "destination": "GMR/general_motion_retargeting/utils/lafan_vendor/utils.py",
       "source_sha256": "5f666f15f42cb82f7bb403e8fad33bd77b863f6d51af0eeee09908e9985ab50b"
     },
     {
       "source": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py",
-      "destination": "Retargeting/GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py",
+      "destination": "GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -900,357 +900,357 @@
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/head_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/head_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/head_link.STL",
       "source_sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_ankle_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_ankle_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_ankle_pitch_link.STL",
       "source_sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_ankle_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_ankle_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_ankle_roll_link.STL",
       "source_sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_elbow_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_elbow_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_elbow_link.STL",
       "source_sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_index_0_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_index_0_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_index_0_link.STL",
       "source_sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_index_1_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_index_1_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_index_1_link.STL",
       "source_sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_middle_0_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_middle_0_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_middle_0_link.STL",
       "source_sha256": "6b35f2f77211d5a366f0b9a4e47c4ee35e536731266f1a34e9efa12db579b892"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_middle_1_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_middle_1_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_middle_1_link.STL",
       "source_sha256": "9e315ebc8a7a0cb98e033985b586b20d81cf8aa761181ae61ce56fcb14077a06"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_palm_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_palm_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_palm_link.STL",
       "source_sha256": "23a486b75bd78a9bf03cec25d84d87f97f3dae038cf21a743b6d469b337e4004"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_thumb_0_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_thumb_0_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_thumb_0_link.STL",
       "source_sha256": "a90c721661c0622685488a3c74d1e122c7da89242d3a1daef75edb83422d05e0"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_thumb_1_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_thumb_1_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_thumb_1_link.STL",
       "source_sha256": "445c54a45bc13ce36001556f66bc0f49c83cb40321205ae4d676bb2874325684"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_thumb_2_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hand_thumb_2_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hand_thumb_2_link.STL",
       "source_sha256": "3d8dbe5085acfc213d21aa8b0782e89cd79084e9678f3a85fc7b04a86b029db5"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hip_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hip_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hip_pitch_link.STL",
       "source_sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hip_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hip_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hip_roll_link.STL",
       "source_sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_hip_yaw_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_hip_yaw_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_hip_yaw_link.STL",
       "source_sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_knee_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_knee_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_knee_link.STL",
       "source_sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_rubber_hand.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_rubber_hand.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_rubber_hand.STL",
       "source_sha256": "cff2221a690fa69303f61fce68f2d155c1517b52efb6ca9262dd56e0bc6e70fe"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_shoulder_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_shoulder_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_shoulder_pitch_link.STL",
       "source_sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_shoulder_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_shoulder_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_shoulder_roll_link.STL",
       "source_sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_shoulder_yaw_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_shoulder_yaw_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_shoulder_yaw_link.STL",
       "source_sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_wrist_pitch_link.STL",
       "source_sha256": "b251d8e05047f695d0f536cd78c11973cfa4e78d08cfe82759336cc3471de3a9"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_wrist_roll_link.STL",
       "source_sha256": "edc387c9a0ba8c2237e9b296d32531426fabeb6f53e58df45c76106bca74148c"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_roll_rubber_hand.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_roll_rubber_hand.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_wrist_roll_rubber_hand.STL",
       "source_sha256": "e81030abd023bd9e4a308ef376d814a2c12d684d8a7670c335bbd5cd7809c909"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_yaw_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/left_wrist_yaw_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/left_wrist_yaw_link.STL",
       "source_sha256": "83f8fb3a726bf9613d65dd14f0f447cb918c3c95b3938042a0c9c09749267d3b"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/logo_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/logo_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/logo_link.STL",
       "source_sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/pelvis.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/pelvis.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/pelvis.STL",
       "source_sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/pelvis_contour_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/pelvis_contour_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/pelvis_contour_link.STL",
       "source_sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_ankle_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_ankle_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_ankle_pitch_link.STL",
       "source_sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_ankle_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_ankle_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_ankle_roll_link.STL",
       "source_sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_elbow_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_elbow_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_elbow_link.STL",
       "source_sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_index_0_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_index_0_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_index_0_link.STL",
       "source_sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_index_1_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_index_1_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_index_1_link.STL",
       "source_sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_middle_0_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_middle_0_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_middle_0_link.STL",
       "source_sha256": "12ab4300c95e437e834f9aef772b3b431c671bf34338930b52ad11aef73bbd0d"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_middle_1_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_middle_1_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_middle_1_link.STL",
       "source_sha256": "c9c34efce4563cacdcfd29fc838a982976d40f5442c71219811dcbbf3923a33d"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_palm_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_palm_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_palm_link.STL",
       "source_sha256": "86c0b231cc44477d64a6493e5a427ba16617a00738112dd187c652675b086fb9"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_thumb_0_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_thumb_0_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_thumb_0_link.STL",
       "source_sha256": "544298d0ea1088f5b276a10cc6a6a9e533efdd91594955fdc956c46211d07f83"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_thumb_1_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_thumb_1_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_thumb_1_link.STL",
       "source_sha256": "0a9a820da8dd10f298778b714f1364216e8a5976f4fd3a05689ea26327d44bf6"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_thumb_2_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hand_thumb_2_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hand_thumb_2_link.STL",
       "source_sha256": "3f1bfb37668e8f61801c8d25f171fa1949e08666be86c67acad7e0079937cc45"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hip_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hip_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hip_pitch_link.STL",
       "source_sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hip_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hip_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hip_roll_link.STL",
       "source_sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_hip_yaw_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_hip_yaw_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_hip_yaw_link.STL",
       "source_sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_knee_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_knee_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_knee_link.STL",
       "source_sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_rubber_hand.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_rubber_hand.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_rubber_hand.STL",
       "source_sha256": "99533b778bca6246144fa511bb9d4e555e075c641f2a0251e04372869cd99d67"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_shoulder_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_shoulder_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_shoulder_pitch_link.STL",
       "source_sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_shoulder_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_shoulder_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_shoulder_roll_link.STL",
       "source_sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_shoulder_yaw_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_shoulder_yaw_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_shoulder_yaw_link.STL",
       "source_sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_pitch_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_pitch_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_wrist_pitch_link.STL",
       "source_sha256": "d22f8f3b3127f15a63e5be1ee273cd5075786c3142f1c3d9f76cbf43d2a26477"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_wrist_roll_link.STL",
       "source_sha256": "a7ee9212ff5b94d6cb7f52bb1bbf3f352194d5b598acff74f4c77d340c5b344f"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_roll_rubber_hand.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_roll_rubber_hand.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_wrist_roll_rubber_hand.STL",
       "source_sha256": "0729aff1ac4356f9314de13a46906267642e58bc47f0d8a7f17f6590a6242ccf"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_yaw_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/right_wrist_yaw_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/right_wrist_yaw_link.STL",
       "source_sha256": "bc9dece2d12509707e0057ba2e48df8f3d56db0c79410212963a25e8a50f61a6"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_L_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_L_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/torso_constraint_L_link.STL",
       "source_sha256": "82be7f93e85b3d303a1d1e1847e2c916939bd61c424ed1ebd28691ec33909dd1"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_L_rod_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_L_rod_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/torso_constraint_L_rod_link.STL",
       "source_sha256": "c10de1effa7ea797ac268006aa2a739036c7e1f326b2012d711ee2c20c5a6e96"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_R_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_R_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/torso_constraint_R_link.STL",
       "source_sha256": "54ded433a3a0c76027365856fdbd55215643de88846f7d436598a4071e682725"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_R_rod_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/torso_constraint_R_rod_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/torso_constraint_R_rod_link.STL",
       "source_sha256": "cb83fd38a9f06c99e3f301c70f12d94ae770a8f0cf9501f83580a27f908990b4"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/torso_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/torso_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/torso_link.STL",
       "source_sha256": "e96d023f0368a4e3450b86ca5d4f10227d8141156a373e7da8cb3c93266523e0"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/torso_link_23dof_rev_1_0.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/torso_link_23dof_rev_1_0.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/torso_link_23dof_rev_1_0.STL",
       "source_sha256": "3cd0d56fde14b73c1623304684805029971c4f84b596f9914e823ca70a107fd2"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/torso_link_rev_1_0.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/torso_link_rev_1_0.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/torso_link_rev_1_0.STL",
       "source_sha256": "11ddb46f2098efbbd8816b1d65893632d8e78be936376c7cdcd6771899ccc723"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/waist_constraint_L.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/waist_constraint_L.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/waist_constraint_L.STL",
       "source_sha256": "8ebafdcb4de6871113f0ca2c356618d6e46b1d50f6c0bf9e37f47b9d8e100d99"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/waist_constraint_R.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/waist_constraint_R.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/waist_constraint_R.STL",
       "source_sha256": "791902a291ffbd35ab97383b7b44ea5d975de7c80eef838797c970790b382ca9"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/waist_roll_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/waist_roll_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/waist_roll_link.STL",
       "source_sha256": "34f0aa73f41131230be4d25876c944fdf6c24d62553f199ff8b980c15e8913df"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/waist_roll_link_rev_1_0.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/waist_roll_link_rev_1_0.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/waist_roll_link_rev_1_0.STL",
       "source_sha256": "b67c347a05abc3e8ddae600d98a082bee273bb39f8e651647708b0a7140a8a97"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/waist_support_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/waist_support_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/waist_support_link.STL",
       "source_sha256": "1fae9e1bb609848a1667d32eed8d6083ae443538a306843056a2a660f1b2926a"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/waist_yaw_link.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/waist_yaw_link.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/waist_yaw_link.STL",
       "source_sha256": "2883f20e03f09b669b5b4ce10677ee6b5191c0934b584d7cbaef2d0662856ffb"
     },
     {
       "source": "Retargeting/GMR/assets/unitree_g1/meshes/waist_yaw_link_rev_1_0.STL",
-      "destination": "Retargeting/GMR/assets/unitree_g1/meshes/waist_yaw_link_rev_1_0.STL",
+      "destination": "GMR/assets/unitree_g1/meshes/waist_yaw_link_rev_1_0.STL",
       "source_sha256": "ec6db442b11f25eed898b5add07940c85d804f300de24dcbd264ccd8be7d554c"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/coco_aug_dict.pth",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/coco_aug_dict.pth",
+      "destination": "GVHMR/hmr4d/utils/body_model/coco_aug_dict.pth",
       "source_sha256": "9d045cc3e507e1f7d91ef89904cdfa26e29cf18710f52f9fd305a88ae5d4e539"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/seg_part_info.npy",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/seg_part_info.npy",
+      "destination": "GVHMR/hmr4d/utils/body_model/seg_part_info.npy",
       "source_sha256": "a9a9272563da3d16811bc455fb618902d31f3adcf719da2e46197853045a2a10"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_3dpw14_J_regressor_sparse.pt",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_3dpw14_J_regressor_sparse.pt",
+      "destination": "GVHMR/hmr4d/utils/body_model/smpl_3dpw14_J_regressor_sparse.pt",
       "source_sha256": "4c465ff134f92306e57856c8e4a50e880e6664c62f1bd67fa9062b11badbfb66"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_coco17_J_regressor.pt",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_coco17_J_regressor.pt",
+      "destination": "GVHMR/hmr4d/utils/body_model/smpl_coco17_J_regressor.pt",
       "source_sha256": "d5120098310fab61d3561273d5a197ba45013f94476b761ea3c26422a5426813"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_neutral_J_regressor.pt",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smpl_neutral_J_regressor.pt",
+      "destination": "GVHMR/hmr4d/utils/body_model/smpl_neutral_J_regressor.pt",
       "source_sha256": "b190245a293286659bd6b84499e640877e44981e6c9c5679b092f1569d6ec877"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smplx2smpl_sparse.pt",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smplx2smpl_sparse.pt",
+      "destination": "GVHMR/hmr4d/utils/body_model/smplx2smpl_sparse.pt",
       "source_sha256": "1569b32139e55ef310b71cd18854c8cd0fdb3c8e5afe7a424f3ed7a4a40e3361"
     },
     {
       "source": "Retargeting/GVHMR/hmr4d/utils/body_model/smplx_verts437.pt",
-      "destination": "Retargeting/GVHMR/hmr4d/utils/body_model/smplx_verts437.pt",
+      "destination": "GVHMR/hmr4d/utils/body_model/smplx_verts437.pt",
       "source_sha256": "89b3788c86956e0b712b8d3e231fc9a8c412e335937ffb8a467998f31ccff27b"
     }
   ],

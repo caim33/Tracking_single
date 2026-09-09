@@ -22,7 +22,7 @@ def test_convert_cli_from_gmr_to_named_archive(tmp_path,model):
 @pytest.mark.parametrize('frame_count',[2,31])
 def test_gmr_export_includes_frame_zero_and_exact_count(monkeypatch,tmp_path,model,frame_count):
     import importlib.util
-    path=Path(__file__).resolve().parents[1]/'Retargeting/GMR/scripts/gvhmr_to_robot.py'
+    path=Path(__file__).resolve().parents[1]/'GMR/scripts/gvhmr_to_robot.py'
     spec=importlib.util.spec_from_file_location('gvhmr_export_regression',path)
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     source=tmp_path/'result.pt';source.touch()

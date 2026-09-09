@@ -7,7 +7,7 @@
 ```bash
 python -m pytest -q
 python tools/audit_docs.py
-python -m compileall -q pipeline Deploy RL_envs Retargeting
+python -m compileall -q pipeline Deploy RL_envs GVHMR GMR
 ```
 
 CPU 回归检查覆盖：GMR 导出包含第零帧且帧数一致；30→50 Hz 的真实时间插值；PKL→NPZ CLI；文件防覆盖；非有限帧率/重复名称；四元数规范和世界角速度；154 维观测排列；ONNX 包校验；参考结束不回绕；pelvis/torso IMU 坐标一致性；真实 G1 网格加载和短程动力学运行。
@@ -28,7 +28,7 @@ CPU 回归检查覆盖：GMR 导出包含第零帧且帧数一致；30→50 Hz �
 
 ## 源码来源与变更
 
-`migration_manifest.json` 记录 humanoid-lab 的固定提交、目标仓库起点、每个提取文件的原始 SHA-256 和排除范围。修改后的文件可能不再与 source_sha256 相同；该值用于回溯原始输入，不是最终文件校验。
+`migration_manifest.json` 记录 humanoid-lab 的固定提交、目标仓库起点、每个提取文件的原始 SHA-256 和排除范围。source 保留原仓库目录，destination 指向本仓库当前目录（GVHMR、GMR 已移到顶层）。修改后的文件可能不再与 source_sha256 相同；该值用于回溯原始输入，不是最终文件校验。
 
 `upstream_recovery.json` 记录从官方 GVHMR 固定提交补回的 6 个 ViTPose builder 文件。它们在私有源快照中缺失，推理模型会直接引用，因此不是可选装饰文件。
 

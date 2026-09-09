@@ -30,7 +30,7 @@ python tools/audit_docs.py
 ```bash
 conda create -n tracking-gvhmr python=3.10 -y
 conda activate tracking-gvhmr
-cd "$TRACKING_ROOT/Retargeting/GVHMR"
+cd "$TRACKING_ROOT/GVHMR"
 python -m pip install -r requirements.txt
 python -m pip install -e .
 ```
@@ -40,7 +40,7 @@ python -m pip install -e .
 从 [GVHMR 官方安装说明](https://github.com/zju3dv/GVHMR/blob/main/docs/INSTALL.md) 获取预训练资源；下载前按相应网站完成许可证步骤。最终目录必须是：
 
 ```text
-Retargeting/GVHMR/inputs/checkpoints/
+GVHMR/inputs/checkpoints/
   body_models/smplx/SMPLX_NEUTRAL.npz
   body_models/smpl/SMPL_NEUTRAL.pkl
   gvhmr/gvhmr_siga24_release.ckpt
@@ -60,14 +60,14 @@ conda create -n tracking-gmr python=3.10 -y
 conda activate tracking-gmr
 python -m pip install "numpy>=1.23.5,<2.3" "scipy>=1.14,<1.16"
 python -m pip install torch==2.3.0 --index-url https://download.pytorch.org/whl/cpu
-cd "$TRACKING_ROOT/Retargeting/GMR"
+cd "$TRACKING_ROOT/GMR"
 python -m pip install -e .
 ```
 
 GMR 的 SMPL 前向和 IK 可以用 CPU；这不等于 GVHMR 视频网络可以用 CPU。默认 IK 选择 `daqp`，安装声明已经补齐相应 solver。把自己取得授权的 SMPL-X 资源放在：
 
 ```text
-Retargeting/GMR/assets/body_models/smplx/SMPLX_NEUTRAL.npz
+GMR/assets/body_models/smplx/SMPLX_NEUTRAL.npz
 ```
 
 也可通过 `--body-models /absolute/body_models` 指定目录。文件内模型变体必须与 SMPL-X 库要求一致。

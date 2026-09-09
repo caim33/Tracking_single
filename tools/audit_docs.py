@@ -17,7 +17,8 @@ GUIDES = [
     ('Deploy/','05_deploy.md','单动作策略包、观测、PD 与仿真接口'),
     ('pipeline/','03_motion.md','命名动作、时间采样、四元数和正向运动学'),
     ('RL_envs/','04_training.md','tracking_single 的训练、配置与 MDP'),
-    ('Retargeting/','02_video.md','人体恢复、重定向及其内部数学/网络模块'),
+    ('GVHMR/','02_video.md','人体恢复及其内部数学/网络模块'),
+    ('GMR/','02_video.md','人体动作重定向、机器人模型及内部数学模块'),
     ('tests/','07_validation.md','离线回归测试；按测试函数查看保护的行为'),
     ('tools/','07_validation.md','维护教程覆盖及检查记录'),
 ]
@@ -98,7 +99,10 @@ def main():
     errors=[]
     # Authored root/stage/index documents; retained third-party asset READMEs
     # may reference their full upstream repo and are attribution, not tutorials.
-    pages=[ROOT/'README.md',ROOT/'THIRD_PARTY_NOTICES.md',*sorted((ROOT/'docs').glob('*.md'))]
+    pages=[ROOT/'README.md',ROOT/'THIRD_PARTY_NOTICES.md',
+           ROOT/'GVHMR/README.md',ROOT/'GMR/README.md',
+           ROOT/'RL_envs/README.md',ROOT/'Deploy/README.md',
+           *sorted((ROOT/'docs').glob('*.md'))]
     for page in pages:
         for link in re.findall(r'\]\(([^)]+)\)',page.read_text(encoding='utf-8')):
             if '://' in link or link.startswith('#'): continue

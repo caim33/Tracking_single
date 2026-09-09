@@ -7,7 +7,7 @@ outputs/
 logs/
 data/
 bundles/
-Retargeting/GVHMR/inputs/
-Retargeting/GVHMR/outputs/
-Retargeting/GMR/assets/body_models/
+GVHMR/inputs/
+GVHMR/outputs/
+GMR/assets/body_models/
 *.ckpt
