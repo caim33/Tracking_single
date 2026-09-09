@@ -8,7 +8,7 @@ from collections.abc import Sequence
 from dataclasses import MISSING
 from typing import TYPE_CHECKING
 
-from pipeline.motion import load_motion, name_indices
+from GMR.pipeline.motion import load_motion, name_indices
 
 from isaaclab.assets import Articulation
 from isaaclab.managers import CommandTerm, CommandTermCfg

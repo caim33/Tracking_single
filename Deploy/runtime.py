@@ -1,14 +1,14 @@
 """Training-identical single-motion observations and ONNX actions.
 
 Adapts the joint mapping and affine action contract preserved in reference/.
-No transport or robot command is issued here. See docs/05_deploy.md.
+No transport or robot command is issued here. See Deploy/docs/05_deploy.md.
 """
 from pathlib import Path
 import hashlib
 import json
 import numpy as np
 from scipy.spatial.transform import Rotation
-from pipeline.motion import load_motion, name_indices
+from GMR.pipeline.motion import load_motion, name_indices
 
 OBSERVATIONS = [('command', 58), ('motion_anchor_ori_b', 6), ('base_ang_vel', 3),
                 ('joint_pos', 29), ('joint_vel', 29), ('actions', 29)]

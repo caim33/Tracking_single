@@ -13,6 +13,8 @@ mkdir -p data outputs bundles
 
 以下命令默认在仓库根目录，明确写了 `cd` 的 GVHMR/GMR 命令除外。项目采用 editable 安装，机器人网格位于源码树中；不要把单独安装的 wheel 当成完整资源包。
 
+若从旧目录布局更新，请在各个使用本仓库的环境中重新运行对应的根目录 editable 安装命令，使 `GMR.pipeline` 生效。动作转换入口现在为 `python -m GMR.pipeline.convert`，测试会从 `Deploy/tests` 自动发现；教程按阶段位于各模块的 `docs/`。
+
 ## 2. 动作转换和 MuJoCo
 
 ```bash
@@ -20,10 +22,10 @@ conda create -n tracking-tools python=3.10 -y
 conda activate tracking-tools
 python -m pip install -e ".[test,deploy]"
 python -m pytest -q
-python tools/audit_docs.py
+python Deploy/tools/audit_docs.py
 ```
 
-依赖范围记录在根目录 `pyproject.toml`。SciPy 限定在 1.14–1.15，兼容源 GMR 的旋转接口。当前实际 CPU 验证版本另见 [验证记录](07_validation.md)。不要直接把这个环境的 torch 版本覆盖进 Isaac 环境。
+依赖范围记录在根目录 `pyproject.toml`。SciPy 限定在 1.14–1.15，兼容源 GMR 的旋转接口。当前实际 CPU 验证版本另见 [验证记录](../../Deploy/docs/07_validation.md)。不要直接把这个环境的 torch 版本覆盖进 Isaac 环境。
 
 ## 3. GVHMR 推理环境
 
@@ -88,4 +90,4 @@ python RL_envs/scripts/tracking.py --help
 
 ## 6. 安装完成判据
 
-CPU 环境中测试和教程审计通过；GVHMR 权重目录齐全；Isaac 官方示例成功；GMR 能加载机器人 XML。真机 SDK2 环境另外按 [真机教程](06_real_robot.md) 配置。只有满足相关阶段判据后，才继续该阶段。
+CPU 环境中测试和教程审计通过；GVHMR 权重目录齐全；Isaac 官方示例成功；GMR 能加载机器人 XML。真机 SDK2 环境另外按 [真机教程](../../Deploy/docs/06_real_robot.md) 配置。只有满足相关阶段判据后，才继续该阶段。

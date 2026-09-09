@@ -1,27 +1,27 @@
 # 逐文件教程与 API 参考
 
-本索引覆盖 **157 个代码文件**。由 `python tools/audit_docs.py --write` 生成并随代码提交。
+本索引覆盖 **157 个代码文件**。由 `python Deploy/tools/audit_docs.py --write` 生成并随代码提交。
 
 先阅读对应阶段教程完成环境、输入、运行、输出检查和排错，再进入函数或配置。库模块不应逐个直接运行。
 API 索引来自语法树；命令参数来自显式 add_argument 定义。动态框架参数在阶段教程解释。索引覆盖不等于 GPU/真机验收。
 
 ## `Deploy/__init__.py`
 
-[源码](../Deploy/__init__.py) · [使用教程](05_deploy.md) · 内容指纹 `5ece58365c11`
+[源码](../../Deploy/__init__.py) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `45734e10f175`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
-模块说明：Single-motion ONNX deployment. See docs/05_deploy.md.
+模块说明：Single-motion ONNX deployment. See Deploy/docs/05_deploy.md.
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
 ## `Deploy/export.py`
 
-[源码](../Deploy/export.py) · [使用教程](05_deploy.md) · 内容指纹 `eb4334faf769`
+[源码](../../Deploy/export.py) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `a404281b6ae5`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
-模块说明：Export policy/reference/control parameters together. See docs/04_training.md.
+模块说明：Export policy/reference/control parameters together. See RL_envs/docs/04_training.md.
 
 接口与职责：
 
@@ -29,7 +29,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/reference/joint_actions.h`
 
-[源码](../Deploy/reference/joint_actions.h) · [使用教程](05_deploy.md) · 内容指纹 `f4b401cccb86`
+[源码](../../Deploy/reference/joint_actions.h) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `f4b401cccb86`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
@@ -37,7 +37,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/reference/observations.h`
 
-[源码](../Deploy/reference/observations.h) · [使用教程](05_deploy.md) · 内容指纹 `25b663543783`
+[源码](../../Deploy/reference/observations.h) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `25b663543783`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
@@ -45,7 +45,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/reference/unitree_articulation.h`
 
-[源码](../Deploy/reference/unitree_articulation.h) · [使用教程](05_deploy.md) · 内容指纹 `3ded89029b63`
+[源码](../../Deploy/reference/unitree_articulation.h) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `3ded89029b63`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
@@ -53,7 +53,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/robot_state.py`
 
-[源码](../Deploy/robot_state.py) · [使用教程](06_real_robot.md) · 内容指纹 `1d6ee1a1efc9`
+[源码](../../Deploy/robot_state.py) · [使用教程](../../Deploy/docs/06_real_robot.md) · 内容指纹 `298487223ccf`
 
 职责：实测电机/IMU 到训练坐标系的转换。
 
@@ -67,7 +67,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/runtime.py`
 
-[源码](../Deploy/runtime.py) · [使用教程](05_deploy.md) · 内容指纹 `ae08f2961159`
+[源码](../../Deploy/runtime.py) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `0f45a99cc304`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
@@ -85,7 +85,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/sim2real.py`
 
-[源码](../Deploy/sim2real.py) · [使用教程](06_real_robot.md) · 内容指纹 `8f9a91cdd7a1`
+[源码](../../Deploy/sim2real.py) · [使用教程](../../Deploy/docs/06_real_robot.md) · 内容指纹 `fe69b6313bf3`
 
 职责：SDK2 单次动作发布、只读检查和停控。
 
@@ -105,7 +105,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/sim2sim.py`
 
-[源码](../Deploy/sim2sim.py) · [使用教程](05_deploy.md) · 内容指纹 `812d1c97579f`
+[源码](../../Deploy/sim2sim.py) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `dcb4ab5c50f8`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
@@ -124,9 +124,92 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `--steps` — help='Optional upper bound; defaults to full reference'
 - `--output` — help='Optional .npz trace: observations, q, targets, root height'
 
+## `Deploy/tests/conftest.py`
+
+[源码](../../Deploy/tests/conftest.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `68ef23816e62`
+
+职责：动作转换和部署回归测试；按测试函数查看保护的行为。
+
+模块说明：Synthetic infrastructure fixtures, never represented as a trained policy.
+
+接口与职责：
+
+- `model()` — 行为见对应阶段教程及源码。
+- `motion(model)` — 行为见对应阶段教程及源码。
+- `bundle(tmp_path, motion)` — 行为见对应阶段教程及源码。
+
+## `Deploy/tests/test_conversion_cli.py`
+
+[源码](../../Deploy/tests/test_conversion_cli.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `3f29be88c459`
+
+职责：动作转换和部署回归测试；按测试函数查看保护的行为。
+
+模块说明：Exercise actual CLI serialization and the original dropped-frame regression.
+
+接口与职责：
+
+- `test_convert_cli_from_gmr_to_named_archive(tmp_path, model)` — 行为见对应阶段教程及源码。
+- `test_gmr_export_includes_frame_zero_and_exact_count(monkeypatch, tmp_path, model, frame_count)` — 行为见对应阶段教程及源码。
+
+## `Deploy/tests/test_deploy.py`
+
+[源码](../../Deploy/tests/test_deploy.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `54cf8a5d3656`
+
+职责：动作转换和部署回归测试；按测试函数查看保护的行为。
+
+模块说明：CPU ONNX/FK/transport contract tests; no robot or learned checkpoint needed.
+
+接口与职责：
+
+- `test_observation_layout_and_orientation()` — 行为见对应阶段教程及源码。
+- `test_bundle_inference_and_motion_end(bundle)` — 行为见对应阶段教程及源码。
+- `test_bundle_checksum_detects_swapped_motion(bundle)` — 行为见对应阶段教程及源码。
+- `test_bad_observation_order_rejected(bundle)` — 行为见对应阶段教程及源码。
+- `test_cpu_dynamic_smoke_with_synthetic_zero_policy(bundle, tmp_path)` — 行为见对应阶段教程及源码。
+- `test_pelvis_and_torso_imu_equivalence()` — 行为见对应阶段教程及源码。
+
+## `Deploy/tests/test_motion.py`
+
+[源码](../../Deploy/tests/test_motion.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `49bb355b0609`
+
+职责：动作转换和部署回归测试；按测试函数查看保护的行为。
+
+模块说明：Regression coverage for timing, quaternions, names and real robot assets.
+
+接口与职责：
+
+- `test_resampling_preserves_first_frame_duration_and_rotation()` — 行为见对应阶段教程及源码。
+- `test_bad_fps_rejected(motion, fps)` — 行为见对应阶段教程及源码。
+- `test_duplicate_names_and_nan_rejected(motion)` — 行为见对应阶段教程及源码。
+- `test_order_mapping()` — 行为见对应阶段教程及源码。
+- `test_angular_velocity_is_world_frame_and_sign_invariant()` — 行为见对应阶段教程及源码。
+- `test_real_g1_archive_has_named_29_dof_and_unit_quaternions(motion)` — 行为见对应阶段教程及源码。
+- `test_linear_velocity_tracks_com_when_link_origin_is_stationary(model)` — 行为见对应阶段教程及源码。
+- `test_urdf_joint_names_and_meshes_are_complete(model)` — 行为见对应阶段教程及源码。
+
+## `Deploy/tools/audit_docs.py`
+
+[源码](../../Deploy/tools/audit_docs.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `886d4100268c`
+
+职责：维护全流程教程覆盖及检查记录。
+
+模块说明：Generate/check a per-file tutorial and API index. See Deploy/docs/07_validation.md.
+
+接口与职责：
+
+- `sources()` — 行为见对应阶段教程及源码。
+- `guide_for(path)` — 行为见对应阶段教程及源码。
+- `signature(node)` — 行为见对应阶段教程及源码。
+- `render()` — 行为见对应阶段教程及源码。
+- `main()` — 行为见对应阶段教程及源码。
+
+命令行参数（运行所在目录与完整例子见上方教程）：
+
+- `--write` — action='store_true'; help='Regenerate code_reference.md after reviewing guides'
+
 ## `GMR/__init__.py`
 
-[源码](../GMR/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../../GMR/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e3b0c44298fc`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -134,7 +217,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/__init__.py`
 
-[源码](../GMR/general_motion_retargeting/__init__.py) · [使用教程](02_video.md) · 内容指纹 `b1c238b2fd52`
+[源码](../../GMR/general_motion_retargeting/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `b1c238b2fd52`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -142,7 +225,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/data_loader.py`
 
-[源码](../GMR/general_motion_retargeting/data_loader.py) · [使用教程](02_video.md) · 内容指纹 `3811cd168bc0`
+[源码](../../GMR/general_motion_retargeting/data_loader.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `3811cd168bc0`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -152,7 +235,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/kinematics_model.py`
 
-[源码](../GMR/general_motion_retargeting/kinematics_model.py) · [使用教程](02_video.md) · 内容指纹 `869e1bd0d0be`
+[源码](../../GMR/general_motion_retargeting/kinematics_model.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `869e1bd0d0be`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -186,7 +269,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/motion_retarget.py`
 
-[源码](../GMR/general_motion_retargeting/motion_retarget.py) · [使用教程](02_video.md) · 内容指纹 `5c3347df2333`
+[源码](../../GMR/general_motion_retargeting/motion_retarget.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `5c3347df2333`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -208,7 +291,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/params.py`
 
-[源码](../GMR/general_motion_retargeting/params.py) · [使用教程](02_video.md) · 内容指纹 `ab6beccf980b`
+[源码](../../GMR/general_motion_retargeting/params.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `ab6beccf980b`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -216,7 +299,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/robot_motion_viewer.py`
 
-[源码](../GMR/general_motion_retargeting/robot_motion_viewer.py) · [使用教程](02_video.md) · 内容指纹 `802c3fb659f0`
+[源码](../../GMR/general_motion_retargeting/robot_motion_viewer.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `802c3fb659f0`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -230,7 +313,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/rot_utils.py`
 
-[源码](../GMR/general_motion_retargeting/rot_utils.py) · [使用教程](02_video.md) · 内容指纹 `e968bbc7a6c3`
+[源码](../../GMR/general_motion_retargeting/rot_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e968bbc7a6c3`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -247,7 +330,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/torch_utils.py`
 
-[源码](../GMR/general_motion_retargeting/torch_utils.py) · [使用教程](02_video.md) · 内容指纹 `7f135802a296`
+[源码](../../GMR/general_motion_retargeting/torch_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `7f135802a296`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -283,7 +366,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/utils/__init__.py`
 
-[源码](../GMR/general_motion_retargeting/utils/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../../GMR/general_motion_retargeting/utils/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e3b0c44298fc`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -291,7 +374,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/utils/lafan1.py`
 
-[源码](../GMR/general_motion_retargeting/utils/lafan1.py) · [使用教程](02_video.md) · 内容指纹 `83c549b420cd`
+[源码](../../GMR/general_motion_retargeting/utils/lafan1.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `83c549b420cd`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -301,7 +384,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py`
 
-[源码](../GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../../GMR/general_motion_retargeting/utils/lafan_vendor/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e3b0c44298fc`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -309,7 +392,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/utils/lafan_vendor/extract.py`
 
-[源码](../GMR/general_motion_retargeting/utils/lafan_vendor/extract.py) · [使用教程](02_video.md) · 内容指纹 `861165a4fbac`
+[源码](../../GMR/general_motion_retargeting/utils/lafan_vendor/extract.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `861165a4fbac`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -323,7 +406,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/utils/lafan_vendor/utils.py`
 
-[源码](../GMR/general_motion_retargeting/utils/lafan_vendor/utils.py) · [使用教程](02_video.md) · 内容指纹 `9d15e75bb4f5`
+[源码](../../GMR/general_motion_retargeting/utils/lafan_vendor/utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `9d15e75bb4f5`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -348,7 +431,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/general_motion_retargeting/utils/smpl.py`
 
-[源码](../GMR/general_motion_retargeting/utils/smpl.py) · [使用教程](02_video.md) · 内容指纹 `a188049b1ed8`
+[源码](../../GMR/general_motion_retargeting/utils/smpl.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `a188049b1ed8`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -362,13 +445,59 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `get_smplx_data_offline_fast(smplx_data, body_model, smplx_output, tgt_fps=30)` — Must return a dictionary with the following structure: {     "Hips": (position, orientation),     "Spine": (position, orientation),     ... }
 - `get_gvhmr_data_offline_fast(smplx_data, body_model, smplx_output, tgt_fps=30)` — Must return a dictionary with the following structure: {     "Hips": (position, orientation),     "Spine": (position, orientation),     ... }
 
+## `GMR/pipeline/__init__.py`
+
+[源码](../../GMR/pipeline/__init__.py) · [使用教程](../../GMR/docs/03_motion.md) · 内容指纹 `09d400be6cdb`
+
+职责：命名动作、时间采样、四元数和正向运动学。
+
+模块说明：Portable motion conversion and validation. See GMR/docs/03_motion.md.
+
+使用方式：包注册、常量或参数配置，由上级模块导入。
+
+## `GMR/pipeline/convert.py`
+
+[源码](../../GMR/pipeline/convert.py) · [使用教程](../../GMR/docs/03_motion.md) · 内容指纹 `d9c125f2900d`
+
+职责：命名动作、时间采样、四元数和正向运动学。
+
+模块说明：Convert trusted GMR pickle to a named 50 Hz training archive; see GMR/docs/03_motion.md.
+
+接口与职责：
+
+- `main()` — 行为见对应阶段教程及源码。
+
+命令行参数（运行所在目录与完整例子见上方教程）：
+
+- `--input` — required=True; help='Trusted local GMR .pkl (pickle executes code)'
+- `--output` — required=True; help='Output .npz archive'
+- `--fps` — default=50; help='Must equal tracking control rate (default 50 Hz)'
+- `--robot-xml` — default=ROBOT_XML
+
+## `GMR/pipeline/motion.py`
+
+[源码](../../GMR/pipeline/motion.py) · [使用教程](../../GMR/docs/03_motion.md) · 内容指纹 `c64c4db4bf84`
+
+职责：命名动作、时间采样、四元数和正向运动学。
+
+模块说明：Named, validated tracking archive shared by training and deployment.
+
+接口与职责：
+
+- `validate_motion(data)` — Reject ambiguous names, corrupt quaternions, mismatched shapes and NaNs.
+- `load_motion(path)` — Load a non-pickle NPZ, close its descriptor, then validate its contract.
+- `name_indices(actual, requested)` — Map names explicitly; never assume MuJoCo and Isaac use the same order.
+- `resample_qpos(root_pos, root_xyzw, joints, source_fps, target_fps)` — Resample on a seconds-based grid without extending beyond the last frame.
+- `world_angular_velocity(quaternions, fps)` — Differentiate wxyz rotations in the world frame, with sign-invariant SO(3) differences.
+- `qpos_to_motion(qpos, fps, model)` — Evaluate every named link using MuJoCo FK; preserve explicit joint order.
+
 ## `GMR/scripts/gvhmr_to_robot.py`
 
-[源码](../GMR/scripts/gvhmr_to_robot.py) · [使用教程](02_video.md) · 内容指纹 `8ad24e99c5d9`
+[源码](../../GMR/scripts/gvhmr_to_robot.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `005cf5857a89`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
-模块说明：Retarget every GVHMR frame to G1; headless CLI. See docs/02_video.md.
+模块说明：Retarget every GVHMR frame to G1; headless CLI. See GVHMR/docs/02_video.md.
 
 接口与职责：
 
@@ -385,11 +514,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/scripts/vis_robot_motion.py`
 
-[源码](../GMR/scripts/vis_robot_motion.py) · [使用教程](02_video.md) · 内容指纹 `d7c70196c250`
+[源码](../../GMR/scripts/vis_robot_motion.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `d9c623c9f405`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
-模块说明：Preview one GMR motion and close the viewer/recorder cleanly. See docs/02_video.md.
+模块说明：Preview one GMR motion and close the viewer/recorder cleanly. See GVHMR/docs/02_video.md.
 
 接口与职责：
 
@@ -405,7 +534,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GMR/setup.py`
 
-[源码](../GMR/setup.py) · [使用教程](02_video.md) · 内容指纹 `15dbddb85731`
+[源码](../../GMR/setup.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `7051941f489d`
 
 职责：人体动作重定向、机器人模型及内部数学模块。
 
@@ -413,7 +542,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/__init__.py`
 
-[源码](../GVHMR/hmr4d/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e8d5a0266592`
+[源码](../../GVHMR/hmr4d/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e8d5a0266592`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -423,7 +552,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/build_gvhmr.py`
 
-[源码](../GVHMR/hmr4d/build_gvhmr.py) · [使用教程](02_video.md) · 内容指纹 `b89c4ebbc104`
+[源码](../../GVHMR/hmr4d/build_gvhmr.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `b89c4ebbc104`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -433,7 +562,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/configs/__init__.py`
 
-[源码](../GVHMR/hmr4d/configs/__init__.py) · [使用教程](02_video.md) · 内容指纹 `7607de90bd8c`
+[源码](../../GVHMR/hmr4d/configs/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `7607de90bd8c`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -449,7 +578,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py`
 
-[源码](../GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py) · [使用教程](02_video.md) · 内容指纹 `0e866c8f486b`
+[源码](../../GVHMR/hmr4d/model/gvhmr/gvhmr_pl_demo.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `0e866c8f486b`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -462,7 +591,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py`
 
-[源码](../GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py) · [使用教程](02_video.md) · 内容指纹 `c99d514136d3`
+[源码](../../GVHMR/hmr4d/model/gvhmr/pipeline/gvhmr_pipeline.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `c99d514136d3`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -478,7 +607,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/model/gvhmr/utils/endecoder.py`
 
-[源码](../GVHMR/hmr4d/model/gvhmr/utils/endecoder.py) · [使用教程](02_video.md) · 内容指纹 `dd26cda551ec`
+[源码](../../GVHMR/hmr4d/model/gvhmr/utils/endecoder.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `dd26cda551ec`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -497,7 +626,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/model/gvhmr/utils/postprocess.py`
 
-[源码](../GVHMR/hmr4d/model/gvhmr/utils/postprocess.py) · [使用教程](02_video.md) · 内容指纹 `4125839f3925`
+[源码](../../GVHMR/hmr4d/model/gvhmr/utils/postprocess.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `4125839f3925`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -509,7 +638,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py`
 
-[源码](../GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py) · [使用教程](02_video.md) · 内容指纹 `102d34db55d5`
+[源码](../../GVHMR/hmr4d/model/gvhmr/utils/stats_compose.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `102d34db55d5`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -519,7 +648,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py`
 
-[源码](../GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py) · [使用教程](02_video.md) · 内容指纹 `590f00248bc5`
+[源码](../../GVHMR/hmr4d/network/base_arch/embeddings/rotary_embedding.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `590f00248bc5`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -534,7 +663,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py`
 
-[源码](../GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py) · [使用教程](02_video.md) · 内容指纹 `ee979aff549f`
+[源码](../../GVHMR/hmr4d/network/base_arch/transformer/encoder_rope.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `ee979aff549f`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -550,7 +679,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/base_arch/transformer/layer.py`
 
-[源码](../GVHMR/hmr4d/network/base_arch/transformer/layer.py) · [使用教程](02_video.md) · 内容指纹 `17394bafe0a8`
+[源码](../../GVHMR/hmr4d/network/base_arch/transformer/layer.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `17394bafe0a8`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -560,7 +689,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/gvhmr/relative_transformer.py`
 
-[源码](../GVHMR/hmr4d/network/gvhmr/relative_transformer.py) · [使用教程](02_video.md) · 内容指纹 `436fc3d71232`
+[源码](../../GVHMR/hmr4d/network/gvhmr/relative_transformer.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `436fc3d71232`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -573,7 +702,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/__init__.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/__init__.py) · [使用教程](02_video.md) · 内容指纹 `4cd96c68e3cc`
+[源码](../../GVHMR/hmr4d/network/hmr2/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `4cd96c68e3cc`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -583,7 +712,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/components/__init__.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/components/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../../GVHMR/hmr4d/network/hmr2/components/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e3b0c44298fc`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -591,7 +720,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/components/pose_transformer.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/components/pose_transformer.py) · [使用教程](02_video.md) · 内容指纹 `36419f21f247`
+[源码](../../GVHMR/hmr4d/network/hmr2/components/pose_transformer.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `36419f21f247`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -632,7 +761,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py) · [使用教程](02_video.md) · 内容指纹 `7346d751ffaf`
+[源码](../../GVHMR/hmr4d/network/hmr2/components/t_cond_mlp.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `7346d751ffaf`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -658,7 +787,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/configs/__init__.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/configs/__init__.py) · [使用教程](02_video.md) · 内容指纹 `3d995db69b12`
+[源码](../../GVHMR/hmr4d/network/hmr2/configs/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `3d995db69b12`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -672,7 +801,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/hmr2.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/hmr2.py) · [使用教程](02_video.md) · 内容指纹 `486676043f87`
+[源码](../../GVHMR/hmr4d/network/hmr2/hmr2.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `486676043f87`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -684,7 +813,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/smpl_head.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/smpl_head.py) · [使用教程](02_video.md) · 内容指纹 `72008bf76b23`
+[源码](../../GVHMR/hmr4d/network/hmr2/smpl_head.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `72008bf76b23`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -696,7 +825,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/utils/geometry.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/utils/geometry.py) · [使用教程](02_video.md) · 内容指纹 `6c39dcf44e0b`
+[源码](../../GVHMR/hmr4d/network/hmr2/utils/geometry.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `6c39dcf44e0b`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -709,7 +838,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/utils/preproc.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/utils/preproc.py) · [使用教程](02_video.md) · 内容指纹 `79c2c177f2f6`
+[源码](../../GVHMR/hmr4d/network/hmr2/utils/preproc.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `79c2c177f2f6`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -720,7 +849,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py) · [使用教程](02_video.md) · 内容指纹 `b2c49a214ae8`
+[源码](../../GVHMR/hmr4d/network/hmr2/utils/smpl_wrapper.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `b2c49a214ae8`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -732,7 +861,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/network/hmr2/vit.py`
 
-[源码](../GVHMR/hmr4d/network/hmr2/vit.py) · [使用教程](02_video.md) · 内容指纹 `faf546a0d9a2`
+[源码](../../GVHMR/hmr4d/network/hmr2/vit.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `faf546a0d9a2`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -771,7 +900,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/__init__.py) · [使用教程](02_video.md) · 内容指纹 `ab0b77594374`
+[源码](../../GVHMR/hmr4d/utils/body_model/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `ab0b77594374`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -779,7 +908,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/body_model.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/body_model.py) · [使用教程](02_video.md) · 内容指纹 `4f5789bcc883`
+[源码](../../GVHMR/hmr4d/utils/body_model/body_model.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `4f5789bcc883`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -792,7 +921,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/body_model_smplh.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/body_model_smplh.py) · [使用教程](02_video.md) · 内容指纹 `a55922e3d908`
+[源码](../../GVHMR/hmr4d/utils/body_model/body_model_smplh.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `a55922e3d908`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -805,7 +934,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/body_model_smplx.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/body_model_smplx.py) · [使用教程](02_video.md) · 内容指纹 `89205d282f26`
+[源码](../../GVHMR/hmr4d/utils/body_model/body_model_smplx.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `89205d282f26`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -819,7 +948,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/min_lbs.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/min_lbs.py) · [使用教程](02_video.md) · 内容指纹 `ab2a94fb71d9`
+[源码](../../GVHMR/hmr4d/utils/body_model/min_lbs.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `ab2a94fb71d9`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -832,7 +961,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/smpl_lite.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/smpl_lite.py) · [使用教程](02_video.md) · 内容指纹 `ff88785ea067`
+[源码](../../GVHMR/hmr4d/utils/body_model/smpl_lite.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `ff88785ea067`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -850,7 +979,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/smplx_lite.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/smplx_lite.py) · [使用教程](02_video.md) · 内容指纹 `f64ce5c324ab`
+[源码](../../GVHMR/hmr4d/utils/body_model/smplx_lite.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `f64ce5c324ab`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -878,7 +1007,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/body_model/utils.py`
 
-[源码](../GVHMR/hmr4d/utils/body_model/utils.py) · [使用教程](02_video.md) · 内容指纹 `dec29039e53a`
+[源码](../../GVHMR/hmr4d/utils/body_model/utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `dec29039e53a`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -888,7 +1017,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/eval/eval_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/eval/eval_utils.py) · [使用教程](02_video.md) · 内容指纹 `6c32fea0b006`
+[源码](../../GVHMR/hmr4d/utils/eval/eval_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `6c32fea0b006`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -914,7 +1043,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/geo/augment_noisy_pose.py`
 
-[源码](../GVHMR/hmr4d/utils/geo/augment_noisy_pose.py) · [使用教程](02_video.md) · 内容指纹 `5fb1ddffea99`
+[源码](../../GVHMR/hmr4d/utils/geo/augment_noisy_pose.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `5fb1ddffea99`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -935,7 +1064,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/geo/flip_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/geo/flip_utils.py) · [使用教程](02_video.md) · 内容指纹 `c0c8190637e9`
+[源码](../../GVHMR/hmr4d/utils/geo/flip_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `c0c8190637e9`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -949,7 +1078,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/geo/hmr_cam.py`
 
-[源码](../GVHMR/hmr4d/utils/geo/hmr_cam.py) · [使用教程](02_video.md) · 内容指纹 `d81e2528b10a`
+[源码](../../GVHMR/hmr4d/utils/geo/hmr_cam.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `d81e2528b10a`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -979,7 +1108,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/geo/hmr_global.py`
 
-[源码](../GVHMR/hmr4d/utils/geo/hmr_global.py) · [使用教程](02_video.md) · 内容指纹 `2bf268e8b504`
+[源码](../../GVHMR/hmr4d/utils/geo/hmr_global.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `2bf268e8b504`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1002,7 +1131,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/geo/quaternion.py`
 
-[源码](../GVHMR/hmr4d/utils/geo/quaternion.py) · [使用教程](02_video.md) · 内容指纹 `dc59c87e253a`
+[源码](../../GVHMR/hmr4d/utils/geo/quaternion.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `dc59c87e253a`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1035,7 +1164,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/geo/transforms.py`
 
-[源码](../GVHMR/hmr4d/utils/geo/transforms.py) · [使用教程](02_video.md) · 内容指纹 `5c3a46a082d4`
+[源码](../../GVHMR/hmr4d/utils/geo/transforms.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `5c3a46a082d4`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1045,7 +1174,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/geo_transform.py`
 
-[源码](../GVHMR/hmr4d/utils/geo_transform.py) · [使用教程](02_video.md) · 内容指纹 `36bd9bfb09c3`
+[源码](../../GVHMR/hmr4d/utils/geo_transform.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `36bd9bfb09c3`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1091,7 +1220,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/ik/ccd_ik.py`
 
-[源码](../GVHMR/hmr4d/utils/ik/ccd_ik.py) · [使用教程](02_video.md) · 内容指纹 `7894d191b232`
+[源码](../../GVHMR/hmr4d/utils/ik/ccd_ik.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `7894d191b232`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1106,7 +1235,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/kpts/kp2d_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/kpts/kp2d_utils.py) · [使用教程](02_video.md) · 内容指纹 `781114ac9cc5`
+[源码](../../GVHMR/hmr4d/utils/kpts/kp2d_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `781114ac9cc5`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1121,7 +1250,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/matrix.py`
 
-[源码](../GVHMR/hmr4d/utils/matrix.py) · [使用教程](02_video.md) · 内容指纹 `998b0c18dcad`
+[源码](../../GVHMR/hmr4d/utils/matrix.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `998b0c18dcad`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1245,7 +1374,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/net_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/net_utils.py) · [使用教程](02_video.md) · 内容指纹 `4fee83600d51`
+[源码](../../GVHMR/hmr4d/utils/net_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `4fee83600d51`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1272,7 +1401,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/__init__.py) · [使用教程](02_video.md) · 内容指纹 `1ecb4e4dfe59`
+[源码](../../GVHMR/hmr4d/utils/preproc/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `1ecb4e4dfe59`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1280,7 +1409,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py) · [使用教程](02_video.md) · 内容指纹 `3eee39e19b1a`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/matcher_wrapper.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `3eee39e19b1a`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1292,7 +1421,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py) · [使用教程](02_video.md) · 内容指纹 `2b65b623d1a1`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/model/base_matcher.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `2b65b623d1a1`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1304,7 +1433,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py) · [使用教程](02_video.md) · 内容指纹 `489460b304bd`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/model/cv2_matcher.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `489460b304bd`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1319,7 +1448,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py) · [使用教程](02_video.md) · 内容指纹 `4190dd977ef2`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/simple_vo.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `4190dd977ef2`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1332,7 +1461,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py) · [使用教程](02_video.md) · 内容指纹 `62b55ad081c0`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/solver_two_view.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `62b55ad081c0`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1355,7 +1484,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py) · [使用教程](02_video.md) · 内容指纹 `77119cf87540`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/transformation_np.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `77119cf87540`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1368,7 +1497,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/utils.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/utils.py) · [使用教程](02_video.md) · 内容指纹 `6e54d5fe6a96`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `6e54d5fe6a96`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1382,7 +1511,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/relpose/viz2d.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/relpose/viz2d.py) · [使用教程](02_video.md) · 内容指纹 `f3f92b190a5e`
+[源码](../../GVHMR/hmr4d/utils/preproc/relpose/viz2d.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `f3f92b190a5e`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1401,7 +1530,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/slam.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/slam.py) · [使用教程](02_video.md) · 内容指纹 `4bf43d120024`
+[源码](../../GVHMR/hmr4d/utils/preproc/slam.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `4bf43d120024`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1415,7 +1544,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/tracker.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/tracker.py) · [使用教程](02_video.md) · 内容指纹 `0b32eeaddbdd`
+[源码](../../GVHMR/hmr4d/utils/preproc/tracker.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `0b32eeaddbdd`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1429,7 +1558,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py) · [使用教程](02_video.md) · 内容指纹 `c6cb61ba4b57`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitfeat_extractor.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `c6cb61ba4b57`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1442,7 +1571,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose.py) · [使用教程](02_video.md) · 内容指纹 `0cf3561d064b`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `0cf3561d064b`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1456,7 +1585,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py) · [使用教程](02_video.md) · 内容指纹 `31e2153aa6e7`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `31e2153aa6e7`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1464,7 +1593,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e3b0c44298fc`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1472,7 +1601,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e3b0c44298fc`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1480,7 +1609,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py) · [使用教程](02_video.md) · 内容指纹 `a03caae1b968`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `a03caae1b968`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1488,7 +1617,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py) · [使用教程](02_video.md) · 内容指纹 `dc0eafd1f71e`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/backbones/vit.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `dc0eafd1f71e`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1525,7 +1654,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py) · [使用教程](02_video.md) · 内容指纹 `4d3d444fb3bd`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `4d3d444fb3bd`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1533,7 +1662,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py) · [使用教程](02_video.md) · 内容指纹 `0fd1fab21cfe`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_base_head.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `0fd1fab21cfe`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1549,7 +1678,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py) · [使用教程](02_video.md) · 内容指纹 `8804cb8b8ae7`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/builder/heads/topdown_heatmap_simple_head.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `8804cb8b8ae7`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1570,7 +1699,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py) · [使用教程](02_video.md) · 内容指纹 `97cb0e67a9f7`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/model_builder.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `97cb0e67a9f7`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1580,7 +1709,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py) · [使用教程](02_video.md) · 内容指纹 `e3b0c44298fc`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/__init__.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e3b0c44298fc`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1588,7 +1717,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py) · [使用教程](02_video.md) · 内容指纹 `f253e8deeeed`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/convert_to_trt.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `f253e8deeeed`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1596,7 +1725,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py) · [使用教程](02_video.md) · 内容指纹 `d8e25fcf789d`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/general_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `d8e25fcf789d`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1625,7 +1754,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py) · [使用教程](02_video.md) · 内容指纹 `25e4dc5813e9`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/inference_test.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `25e4dc5813e9`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1633,7 +1762,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py) · [使用教程](02_video.md) · 内容指纹 `73cabf060827`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/logger_helper.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `73cabf060827`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1644,7 +1773,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py) · [使用教程](02_video.md) · 内容指纹 `2470d4c1fc27`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `2470d4c1fc27`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1656,7 +1785,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py) · [使用教程](02_video.md) · 内容指纹 `26d307984ac1`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/pose_viz.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `26d307984ac1`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1671,7 +1800,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py) · [使用教程](02_video.md) · 内容指纹 `72a834269d16`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/timerr.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `72a834269d16`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1685,7 +1814,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py) · [使用教程](02_video.md) · 内容指纹 `2bce4edc1c9c`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/visualizer.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `2bce4edc1c9c`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1697,7 +1826,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py`
 
-[源码](../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py) · [使用教程](02_video.md) · 内容指纹 `eb4b353f89a3`
+[源码](../../GVHMR/hmr4d/utils/preproc/vitpose_pytorch/src/vitpose_infer/pose_utils/ViTPose_trt.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `eb4b353f89a3`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1711,7 +1840,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/pylogger.py`
 
-[源码](../GVHMR/hmr4d/utils/pylogger.py) · [使用教程](02_video.md) · 内容指纹 `7a30993a4190`
+[源码](../../GVHMR/hmr4d/utils/pylogger.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `7a30993a4190`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1723,7 +1852,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/seq_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/seq_utils.py) · [使用教程](02_video.md) · 内容指纹 `b36e307f9a70`
+[源码](../../GVHMR/hmr4d/utils/seq_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `b36e307f9a70`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1741,7 +1870,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/smplx_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/smplx_utils.py) · [使用教程](02_video.md) · 内容指纹 `e4f9a663a068`
+[源码](../../GVHMR/hmr4d/utils/smplx_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `e4f9a663a068`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1766,7 +1895,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/video_io_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/video_io_utils.py) · [使用教程](02_video.md) · 内容指纹 `849dfd99c287`
+[源码](../../GVHMR/hmr4d/utils/video_io_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `849dfd99c287`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1784,7 +1913,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/vis/cv2_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/vis/cv2_utils.py) · [使用教程](02_video.md) · 内容指纹 `6f944c1cb3e9`
+[源码](../../GVHMR/hmr4d/utils/vis/cv2_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `6f944c1cb3e9`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1803,7 +1932,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/vis/renderer.py`
 
-[源码](../GVHMR/hmr4d/utils/vis/renderer.py) · [使用教程](02_video.md) · 内容指纹 `3124701b4365`
+[源码](../../GVHMR/hmr4d/utils/vis/renderer.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `3124701b4365`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1831,7 +1960,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/vis/renderer_tools.py`
 
-[源码](../GVHMR/hmr4d/utils/vis/renderer_tools.py) · [使用教程](02_video.md) · 内容指纹 `a15206240963`
+[源码](../../GVHMR/hmr4d/utils/vis/renderer_tools.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `a15206240963`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1852,7 +1981,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/vis/renderer_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/vis/renderer_utils.py) · [使用教程](02_video.md) · 内容指纹 `2e92146d1301`
+[源码](../../GVHMR/hmr4d/utils/vis/renderer_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `2e92146d1301`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1863,7 +1992,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/vis/rich_logger.py`
 
-[源码](../GVHMR/hmr4d/utils/vis/rich_logger.py) · [使用教程](02_video.md) · 内容指纹 `c53cc8223aa2`
+[源码](../../GVHMR/hmr4d/utils/vis/rich_logger.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `c53cc8223aa2`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1873,7 +2002,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/hmr4d/utils/wis3d_utils.py`
 
-[源码](../GVHMR/hmr4d/utils/wis3d_utils.py) · [使用教程](02_video.md) · 内容指纹 `388be6be8f7a`
+[源码](../../GVHMR/hmr4d/utils/wis3d_utils.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `388be6be8f7a`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1896,7 +2025,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/setup.py`
 
-[源码](../GVHMR/setup.py) · [使用教程](02_video.md) · 内容指纹 `2df0237d08e9`
+[源码](../../GVHMR/setup.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `2df0237d08e9`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1904,7 +2033,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/tools/demo/demo.py`
 
-[源码](../GVHMR/tools/demo/demo.py) · [使用教程](02_video.md) · 内容指纹 `ca02504405cd`
+[源码](../../GVHMR/tools/demo/demo.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `f497b74a0fce`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1927,7 +2056,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/tools/demo/demo_folder.py`
 
-[源码](../GVHMR/tools/demo/demo_folder.py) · [使用教程](02_video.md) · 内容指纹 `ca35b2cfbdb6`
+[源码](../../GVHMR/tools/demo/demo_folder.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `ca35b2cfbdb6`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1941,7 +2070,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/tools/video/merge_folder.py`
 
-[源码](../GVHMR/tools/video/merge_folder.py) · [使用教程](02_video.md) · 内容指纹 `cf592cb9d367`
+[源码](../../GVHMR/tools/video/merge_folder.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `cf592cb9d367`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1960,7 +2089,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/tools/video/merge_horizontal.py`
 
-[源码](../GVHMR/tools/video/merge_horizontal.py) · [使用教程](02_video.md) · 内容指纹 `91a7142860c0`
+[源码](../../GVHMR/tools/video/merge_horizontal.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `91a7142860c0`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1975,7 +2104,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `GVHMR/tools/video/merge_vertical.py`
 
-[源码](../GVHMR/tools/video/merge_vertical.py) · [使用教程](02_video.md) · 内容指纹 `ea249422e5d0`
+[源码](../../GVHMR/tools/video/merge_vertical.py) · [使用教程](../../GVHMR/docs/02_video.md) · 内容指纹 `ea249422e5d0`
 
 职责：人体恢复及其内部数学/网络模块。
 
@@ -1988,59 +2117,13 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `input_videos` — help='Input video paths'
 - `-o, --output` — required=True; help='Output video path'
 
-## `pipeline/__init__.py`
-
-[源码](../pipeline/__init__.py) · [使用教程](03_motion.md) · 内容指纹 `89b6a7ed6026`
-
-职责：命名动作、时间采样、四元数和正向运动学。
-
-模块说明：Portable motion conversion and validation. See docs/03_motion.md.
-
-使用方式：包注册、常量或参数配置，由上级模块导入。
-
-## `pipeline/convert.py`
-
-[源码](../pipeline/convert.py) · [使用教程](03_motion.md) · 内容指纹 `471c30a43de2`
-
-职责：命名动作、时间采样、四元数和正向运动学。
-
-模块说明：Convert trusted GMR pickle to a named 50 Hz training archive; see docs/03_motion.md.
-
-接口与职责：
-
-- `main()` — 行为见对应阶段教程及源码。
-
-命令行参数（运行所在目录与完整例子见上方教程）：
-
-- `--input` — required=True; help='Trusted local GMR .pkl (pickle executes code)'
-- `--output` — required=True; help='Output .npz archive'
-- `--fps` — default=50; help='Must equal tracking control rate (default 50 Hz)'
-- `--robot-xml` — default=ROBOT_XML
-
-## `pipeline/motion.py`
-
-[源码](../pipeline/motion.py) · [使用教程](03_motion.md) · 内容指纹 `4ae467dec913`
-
-职责：命名动作、时间采样、四元数和正向运动学。
-
-模块说明：Named, validated tracking archive shared by training and deployment.
-
-接口与职责：
-
-- `validate_motion(data)` — Reject ambiguous names, corrupt quaternions, mismatched shapes and NaNs.
-- `load_motion(path)` — Load a non-pickle NPZ, close its descriptor, then validate its contract.
-- `name_indices(actual, requested)` — Map names explicitly; never assume MuJoCo and Isaac use the same order.
-- `resample_qpos(root_pos, root_xyzw, joints, source_fps, target_fps)` — Resample on a seconds-based grid without extending beyond the last frame.
-- `world_angular_velocity(quaternions, fps)` — Differentiate wxyz rotations in the world frame, with sign-invariant SO(3) differences.
-- `qpos_to_motion(qpos, fps, model)` — Evaluate every named link using MuJoCo FK; preserve explicit joint order.
-
 ## `RL_envs/scripts/tracking.py`
 
-[源码](../RL_envs/scripts/tracking.py) · [使用教程](04_training.md) · 内容指纹 `86fd82cbe534`
+[源码](../scripts/tracking.py) · [使用教程](04_training.md) · 内容指纹 `afcb4f01adb9`
 
 职责：tracking_single 的训练、配置与 MDP。
 
-模块说明：Train, play or export a single reference. See docs/04_training.md. Requires Isaac Lab 2.3.x and RSL-RL 3.0.1. Help does not start Isaac.
+模块说明：Train, play or export a single reference. See RL_envs/docs/04_training.md. Requires Isaac Lab 2.3.x and RSL-RL 3.0.1. Help does not start Isaac.
 
 接口与职责：
 
@@ -2060,7 +2143,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/setup.py`
 
-[源码](../RL_envs/source/WBC/setup.py) · [使用教程](04_training.md) · 内容指纹 `8b247c61b3aa`
+[源码](../source/WBC/setup.py) · [使用教程](04_training.md) · 内容指纹 `8b247c61b3aa`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2070,7 +2153,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/__init__.py) · [使用教程](04_training.md) · 内容指纹 `6c5f6194937e`
+[源码](../source/WBC/WBC/__init__.py) · [使用教程](04_training.md) · 内容指纹 `6c5f6194937e`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2080,7 +2163,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/assets/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/assets/__init__.py) · [使用教程](04_training.md) · 内容指纹 `d8a22be14aab`
+[源码](../source/WBC/WBC/assets/__init__.py) · [使用教程](04_training.md) · 内容指纹 `d8a22be14aab`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2088,7 +2171,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/__init__.py) · [使用教程](04_training.md) · 内容指纹 `432ce95be658`
+[源码](../source/WBC/WBC/tasks/__init__.py) · [使用教程](04_training.md) · 内容指纹 `432ce95be658`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2098,7 +2181,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/__init__.py) · [使用教程](04_training.md) · 内容指纹 `07b7c09af478`
+[源码](../source/WBC/WBC/tasks/manager_based/__init__.py) · [使用教程](04_training.md) · 内容指纹 `07b7c09af478`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2108,7 +2191,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/__init__.py) · [使用教程](04_training.md) · 内容指纹 `e3b0c44298fc`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/__init__.py) · [使用教程](04_training.md) · 内容指纹 `e3b0c44298fc`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2116,7 +2199,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/agents/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/agents/__init__.py) · [使用教程](04_training.md) · 内容指纹 `3849c25159e7`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/agents/__init__.py) · [使用教程](04_training.md) · 内容指纹 `3849c25159e7`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2124,7 +2207,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/agents/rsl_rl_ppo_cfg.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/agents/rsl_rl_ppo_cfg.py) · [使用教程](04_training.md) · 内容指纹 `4fd03aedc7d7`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/agents/rsl_rl_ppo_cfg.py) · [使用教程](04_training.md) · 内容指纹 `4fd03aedc7d7`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2134,7 +2217,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/__init__.py) · [使用教程](04_training.md) · 内容指纹 `ed866b92f65e`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/__init__.py) · [使用教程](04_training.md) · 内容指纹 `ed866b92f65e`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2142,7 +2225,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/commands.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/commands.py) · [使用教程](04_training.md) · 内容指纹 `75a7b116c225`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/commands.py) · [使用教程](04_training.md) · 内容指纹 `7c2416434171`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2187,7 +2270,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/events.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/events.py) · [使用教程](04_training.md) · 内容指纹 `544cd928c1d0`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/events.py) · [使用教程](04_training.md) · 内容指纹 `544cd928c1d0`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2198,7 +2281,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/observations.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/observations.py) · [使用教程](04_training.md) · 内容指纹 `84f0bef77e08`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/observations.py) · [使用教程](04_training.md) · 内容指纹 `84f0bef77e08`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2214,7 +2297,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/rewards.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/rewards.py) · [使用教程](04_training.md) · 内容指纹 `5d24b072398c`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/rewards.py) · [使用教程](04_training.md) · 内容指纹 `5d24b072398c`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2231,7 +2314,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/terminations.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/terminations.py) · [使用教程](04_training.md) · 内容指纹 `7bc154d8021a`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/terminations.py) · [使用教程](04_training.md) · 内容指纹 `7bc154d8021a`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2245,17 +2328,17 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/__init__.py) · [使用教程](04_training.md) · 内容指纹 `8864c8928c14`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/__init__.py) · [使用教程](04_training.md) · 内容指纹 `c7f803d0598c`
 
 职责：tracking_single 的训练、配置与 MDP。
 
-模块说明：G1 robot variants for single-reference tracking; see docs/04_training.md.
+模块说明：G1 robot variants for single-reference tracking; see RL_envs/docs/04_training.md.
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/actuator.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/actuator.py) · [使用教程](04_training.md) · 内容指纹 `b095687e937f`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/actuator.py) · [使用教程](04_training.md) · 内容指纹 `b095687e937f`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2269,7 +2352,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/__init__.py) · [使用教程](04_training.md) · 内容指纹 `e3b0c44298fc`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/__init__.py) · [使用教程](04_training.md) · 内容指纹 `e3b0c44298fc`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2277,7 +2360,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/__init__.py) · [使用教程](04_training.md) · 内容指纹 `3e5042c3cfc7`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/__init__.py) · [使用教程](04_training.md) · 内容指纹 `3e5042c3cfc7`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2285,7 +2368,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/g1.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/g1.py) · [使用教程](04_training.md) · 内容指纹 `3b1dad411aa2`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/g1.py) · [使用教程](04_training.md) · 内容指纹 `7f4c14a84796`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2293,7 +2376,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/tracking_env_cfg.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2312,7 +2395,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py) · [使用教程](04_training.md) · 内容指纹 `0e642282ad62`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py) · [使用教程](04_training.md) · 内容指纹 `0e642282ad62`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2320,7 +2403,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py) · [使用教程](04_training.md) · 内容指纹 `3b1dad411aa2`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py) · [使用教程](04_training.md) · 内容指纹 `7f4c14a84796`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2328,7 +2411,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2347,7 +2430,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py) · [使用教程](04_training.md) · 内容指纹 `7a625636b5e7`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py) · [使用教程](04_training.md) · 内容指纹 `7a625636b5e7`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2355,7 +2438,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py) · [使用教程](04_training.md) · 内容指纹 `3b1dad411aa2`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py) · [使用教程](04_training.md) · 内容指纹 `7f4c14a84796`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2363,7 +2446,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2382,7 +2465,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py) · [使用教程](04_training.md) · 内容指纹 `4b74ae7d7053`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py) · [使用教程](04_training.md) · 内容指纹 `4b74ae7d7053`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2390,7 +2473,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py) · [使用教程](04_training.md) · 内容指纹 `3b1dad411aa2`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py) · [使用教程](04_training.md) · 内容指纹 `7f4c14a84796`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2398,7 +2481,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2417,91 +2500,8 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py`
 
-[源码](../RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py) · [使用教程](04_training.md) · 内容指纹 `d043f68af8f2`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py) · [使用教程](04_training.md) · 内容指纹 `d043f68af8f2`
 
 职责：tracking_single 的训练、配置与 MDP。
 
 使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`SMPL_HUMANOID_CFG`.
-
-## `tests/conftest.py`
-
-[源码](../tests/conftest.py) · [使用教程](07_validation.md) · 内容指纹 `e369124fcc8e`
-
-职责：离线回归测试；按测试函数查看保护的行为。
-
-模块说明：Synthetic infrastructure fixtures, never represented as a trained policy.
-
-接口与职责：
-
-- `model()` — 行为见对应阶段教程及源码。
-- `motion(model)` — 行为见对应阶段教程及源码。
-- `bundle(tmp_path, motion)` — 行为见对应阶段教程及源码。
-
-## `tests/test_conversion_cli.py`
-
-[源码](../tests/test_conversion_cli.py) · [使用教程](07_validation.md) · 内容指纹 `67e15bad41b9`
-
-职责：离线回归测试；按测试函数查看保护的行为。
-
-模块说明：Exercise actual CLI serialization and the original dropped-frame regression.
-
-接口与职责：
-
-- `test_convert_cli_from_gmr_to_named_archive(tmp_path, model)` — 行为见对应阶段教程及源码。
-- `test_gmr_export_includes_frame_zero_and_exact_count(monkeypatch, tmp_path, model, frame_count)` — 行为见对应阶段教程及源码。
-
-## `tests/test_deploy.py`
-
-[源码](../tests/test_deploy.py) · [使用教程](07_validation.md) · 内容指纹 `54cf8a5d3656`
-
-职责：离线回归测试；按测试函数查看保护的行为。
-
-模块说明：CPU ONNX/FK/transport contract tests; no robot or learned checkpoint needed.
-
-接口与职责：
-
-- `test_observation_layout_and_orientation()` — 行为见对应阶段教程及源码。
-- `test_bundle_inference_and_motion_end(bundle)` — 行为见对应阶段教程及源码。
-- `test_bundle_checksum_detects_swapped_motion(bundle)` — 行为见对应阶段教程及源码。
-- `test_bad_observation_order_rejected(bundle)` — 行为见对应阶段教程及源码。
-- `test_cpu_dynamic_smoke_with_synthetic_zero_policy(bundle, tmp_path)` — 行为见对应阶段教程及源码。
-- `test_pelvis_and_torso_imu_equivalence()` — 行为见对应阶段教程及源码。
-
-## `tests/test_motion.py`
-
-[源码](../tests/test_motion.py) · [使用教程](07_validation.md) · 内容指纹 `5bc2e8c200e5`
-
-职责：离线回归测试；按测试函数查看保护的行为。
-
-模块说明：Regression coverage for timing, quaternions, names and real robot assets.
-
-接口与职责：
-
-- `test_resampling_preserves_first_frame_duration_and_rotation()` — 行为见对应阶段教程及源码。
-- `test_bad_fps_rejected(motion, fps)` — 行为见对应阶段教程及源码。
-- `test_duplicate_names_and_nan_rejected(motion)` — 行为见对应阶段教程及源码。
-- `test_order_mapping()` — 行为见对应阶段教程及源码。
-- `test_angular_velocity_is_world_frame_and_sign_invariant()` — 行为见对应阶段教程及源码。
-- `test_real_g1_archive_has_named_29_dof_and_unit_quaternions(motion)` — 行为见对应阶段教程及源码。
-- `test_linear_velocity_tracks_com_when_link_origin_is_stationary(model)` — 行为见对应阶段教程及源码。
-- `test_urdf_joint_names_and_meshes_are_complete(model)` — 行为见对应阶段教程及源码。
-
-## `tools/audit_docs.py`
-
-[源码](../tools/audit_docs.py) · [使用教程](07_validation.md) · 内容指纹 `3dfed67015b6`
-
-职责：维护教程覆盖及检查记录。
-
-模块说明：Generate/check a per-file tutorial and API index. See docs/07_validation.md.
-
-接口与职责：
-
-- `sources()` — 行为见对应阶段教程及源码。
-- `guide_for(path)` — 行为见对应阶段教程及源码。
-- `signature(node)` — 行为见对应阶段教程及源码。
-- `render()` — 行为见对应阶段教程及源码。
-- `main()` — 行为见对应阶段教程及源码。
-
-命令行参数（运行所在目录与完整例子见上方教程）：
-
-- `--write` — action='store_true'; help='Regenerate code_reference.md after reviewing guides'

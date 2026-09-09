@@ -1,4 +1,4 @@
-"""Train, play or export a single reference. See docs/04_training.md.
+"""Train, play or export a single reference. See RL_envs/docs/04_training.md.
 Requires Isaac Lab 2.3.x and RSL-RL 3.0.1. Help does not start Isaac.
 """
 import argparse
@@ -31,7 +31,7 @@ def main():
         parser.error('export requires --output')
     if args.output is not None and args.output.exists():
         parser.error('--output must be a new directory')
-    from pipeline.motion import load_motion
+    from GMR.pipeline.motion import load_motion
     motion = load_motion(args.motion)
     app = AppLauncher(args).app
     env = None

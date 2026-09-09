@@ -7,7 +7,7 @@
 ```bash
 conda activate tracking-tools
 cd "$TRACKING_ROOT"
-python -m pipeline.convert \
+python -m GMR.pipeline.convert \
   --input outputs/gmr/dance.pkl \
   --output data/dance_50hz.npz --fps 50
 ```
@@ -39,7 +39,7 @@ python -m pipeline.convert \
 ## 程序内检查
 
 ```python
-from pipeline.motion import load_motion
+from GMR.pipeline.motion import load_motion
 motion = load_motion("data/dance_50hz.npz")
 print(float(motion["fps"]), motion["joint_pos"].shape)
 print(motion["joint_names"])

@@ -1,4 +1,4 @@
-"""Export policy/reference/control parameters together. See docs/04_training.md."""
+"""Export policy/reference/control parameters together. See RL_envs/docs/04_training.md."""
 from pathlib import Path
 import hashlib
 import json

@@ -1,4 +1,4 @@
-"""Convert trusted GMR pickle to a named 50 Hz training archive; see docs/03_motion.md."""
+"""Convert trusted GMR pickle to a named 50 Hz training archive; see GMR/docs/03_motion.md."""
 import argparse
 from pathlib import Path
 from .motion import ROBOT_XML, resample_qpos, qpos_to_motion

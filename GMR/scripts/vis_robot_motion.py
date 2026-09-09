@@ -1,4 +1,4 @@
-"""Preview one GMR motion and close the viewer/recorder cleanly. See docs/02_video.md."""
+"""Preview one GMR motion and close the viewer/recorder cleanly. See GVHMR/docs/02_video.md."""
 import argparse
 from pathlib import Path
 

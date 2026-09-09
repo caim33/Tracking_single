@@ -1,4 +1,4 @@
-"""Retarget every GVHMR frame to G1; headless CLI. See docs/02_video.md."""
+"""Retarget every GVHMR frame to G1; headless CLI. See GVHMR/docs/02_video.md."""
 import argparse
 from pathlib import Path
 

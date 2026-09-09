@@ -1,6 +1,6 @@
 # tracking_single 训练、回放和导出
 
-运行前完成 [安装](01_install.md) 和 [动作转换](03_motion.md)。本地迁移检查没有启动 Isaac，也没有生成一个已学会动作的 checkpoint。
+运行前完成 [安装](01_install.md) 和 [动作转换](../../GMR/docs/03_motion.md)。本地迁移检查没有启动 Isaac，也没有生成一个已学会动作的 checkpoint。
 
 ## 1. 小规模启动检查
 

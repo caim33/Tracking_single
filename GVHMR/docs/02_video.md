@@ -1,6 +1,6 @@
 # 视频 → GVHMR → GMR
 
-目标：从一个单人视频得到 G1 的根位姿与 29 个关节轨迹。输入、输出、姿态网络、SMPL-X 与 IK 的内部文件索引见 [代码参考](code_reference.md)。
+目标：从一个单人视频得到 G1 的根位姿与 29 个关节轨迹。输入、输出、姿态网络、SMPL-X 与 IK 的内部文件索引见 [代码参考](../../RL_envs/docs/code_reference.md)。
 
 ## 1. 准备 30 fps 视频
 

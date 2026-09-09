@@ -49,4 +49,4 @@ python -m Deploy.sim2real --bundle bundles/dance \
 
 ## 6. 开发与离线检查
 
-`tests/test_deploy.py` 验证 pelvis/torso 姿态变换一致性、154 维观测、ONNX 和 MuJoCo 接口。它没有模拟网络失联或真实电机响应。对硬件入口的任何修改，都需要重新做上面的只读、启动、遥控停止和超时验证，不能把 CPU 测试通过当成实机验收。
+`Deploy/tests/test_deploy.py` 验证 pelvis/torso 姿态变换一致性、154 维观测、ONNX 和 MuJoCo 接口。它没有模拟网络失联或真实电机响应。对硬件入口的任何修改，都需要重新做上面的只读、启动、遥控停止和超时验证，不能把 CPU 测试通过当成实机验收。

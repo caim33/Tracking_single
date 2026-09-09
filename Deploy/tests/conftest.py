@@ -3,7 +3,7 @@ import hashlib
 import json
 import numpy as np
 import pytest
-from pipeline.motion import ROBOT_XML, qpos_to_motion
+from GMR.pipeline.motion import ROBOT_XML, qpos_to_motion
 from Deploy.runtime import OBSERVATIONS
 
 @pytest.fixture(scope='session')

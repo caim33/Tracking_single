@@ -2,10 +2,12 @@
 
 本目录加载 `RL_envs` 导出的一个策略包，按参考动作从第 0 帧顺序推理，参考结束后退出。默认不循环、不切换其他动作。
 
-- [策略包、154 维观测、MuJoCo 运行及排错](../docs/05_deploy.md)
-- [G1 通信、IMU、只读检查和单次执行](../docs/06_real_robot.md)
-- [逐文件职责和 API 索引](../docs/code_reference.md)
-- [验证范围与待验收项目](../docs/07_validation.md)
+`tests/` 保存动作转换和部署回归检查；`tools/audit_docs.py` 检查四个模块的教程覆盖及链接。从仓库根目录分别运行 `python -m pytest -q` 和 `python Deploy/tools/audit_docs.py`。
+
+- [策略包、154 维观测、MuJoCo 运行及排错](docs/05_deploy.md)
+- [G1 通信、IMU、只读检查和单次执行](docs/06_real_robot.md)
+- [逐文件职责和 API 索引](../RL_envs/docs/code_reference.md)
+- [验证范围与待验收项目](docs/07_validation.md)
 
 完成安装和策略导出后，在仓库根目录运行：
 

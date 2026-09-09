@@ -2,7 +2,7 @@
 import numpy as np
 import pytest
 from scipy.spatial.transform import Rotation
-from pipeline.motion import resample_qpos, validate_motion, name_indices, world_angular_velocity, qpos_to_motion
+from GMR.pipeline.motion import resample_qpos, validate_motion, name_indices, world_angular_velocity, qpos_to_motion
 
 def test_resampling_preserves_first_frame_duration_and_rotation():
     n=31
@@ -51,7 +51,7 @@ def test_linear_velocity_tracks_com_when_link_origin_is_stationary(model):
 
 def test_urdf_joint_names_and_meshes_are_complete(model):
     import xml.etree.ElementTree as ET
-    from pipeline.motion import ROBOT_URDF
+    from GMR.pipeline.motion import ROBOT_URDF
     tree=ET.parse(ROBOT_URDF)
     names=[joint.attrib['name'] for joint in tree.findall('joint') if joint.attrib['type']=='revolute']
     assert set(names)=={model.joint(i).name for i in range(1,model.njnt)}

@@ -2,7 +2,7 @@ import isaaclab.sim as sim_utils
 from isaaclab.actuators import ImplicitActuatorCfg
 from isaaclab.assets.articulation import ArticulationCfg
 
-from pipeline.motion import ROBOT_URDF
+from GMR.pipeline.motion import ROBOT_URDF
 
 ARMATURE_5020 = 0.003609725
 ARMATURE_7520_14 = 0.010177520

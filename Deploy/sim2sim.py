@@ -1,7 +1,7 @@
 """Run a single reference policy in MuJoCo, with CPU ONNX inference.
 
 python -m Deploy.sim2sim --bundle bundles/dance --headless --steps 100
-See docs/05_deploy.md. A mechanics smoke test does not establish policy quality.
+See Deploy/docs/05_deploy.md. A mechanics smoke test does not establish policy quality.
 """
 import argparse
 import contextlib
@@ -9,7 +9,7 @@ from pathlib import Path
 import time
 import xml.etree.ElementTree as ET
 import numpy as np
-from pipeline.motion import ROBOT_XML, name_indices
+from GMR.pipeline.motion import ROBOT_XML, name_indices
 from .runtime import TrackingPolicy, rotation
 
 def simulation_model(xml_path, dt=0.005):

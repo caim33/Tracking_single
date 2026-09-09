@@ -6,23 +6,23 @@ import sys
 import types
 import numpy as np
 import pytest
-from pipeline.motion import load_motion
+from GMR.pipeline.motion import load_motion
 
 def test_convert_cli_from_gmr_to_named_archive(tmp_path,model):
     raw=dict(root_pos=np.tile([0,0,0.8],(31,1)),root_rot=np.tile([0,0,0,1],(31,1)),dof_pos=np.zeros((31,29)),fps=30)
     input_path=tmp_path/'gmr.pkl';output=tmp_path/'motion.npz'
     input_path.write_bytes(pickle.dumps(raw))
-    command=[sys.executable,'-m','pipeline.convert','--input',str(input_path),'--output',str(output)]
-    result=subprocess.run(command,capture_output=True,text=True)
+    command=[sys.executable,'-m','GMR.pipeline.convert','--input',str(input_path),'--output',str(output)]
+    result=subprocess.run(command,capture_output=True,text=True,cwd=tmp_path)
     assert result.returncode==0,result.stderr
     motion=load_motion(output)
     assert len(motion['joint_pos'])==51 and motion['fps']==50
-    assert subprocess.run(command,capture_output=True).returncode!=0
+    assert subprocess.run(command,capture_output=True,cwd=tmp_path).returncode!=0
 
 @pytest.mark.parametrize('frame_count',[2,31])
 def test_gmr_export_includes_frame_zero_and_exact_count(monkeypatch,tmp_path,model,frame_count):
     import importlib.util
-    path=Path(__file__).resolve().parents[1]/'GMR/scripts/gvhmr_to_robot.py'
+    path=Path(__file__).resolve().parents[2]/'GMR/scripts/gvhmr_to_robot.py'
     spec=importlib.util.spec_from_file_location('gvhmr_export_regression',path)
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     source=tmp_path/'result.pt';source.touch()

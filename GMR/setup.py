@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
   name = 'general_motion_retargeting',
-  packages = find_packages(),
+  packages = find_packages(include=['general_motion_retargeting', 'general_motion_retargeting.*']),
   author="Yanjie Ze",
   author_email="lastyanjieze@gmail.com",
   description="General Motion Retargeting (GMR) for Humanoid Robots",

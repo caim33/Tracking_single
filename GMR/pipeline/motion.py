@@ -1,13 +1,13 @@
 """Named, validated tracking archive shared by training and deployment.
 
 Lengths are metres, angles radians, quaternions wxyz, velocities world-frame.
-Use ``python -m pipeline.convert`` for GMR xyzw pickle conversion.
+Use ``python -m GMR.pipeline.convert`` for GMR xyzw pickle conversion.
 """
 from pathlib import Path
 import numpy as np
 from scipy.spatial.transform import Rotation, Slerp
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 ROBOT_DIR = ROOT / 'GMR/assets/unitree_g1'
 ROBOT_XML = ROBOT_DIR / 'g1_mocap_29dof.xml'
 ROBOT_URDF = ROBOT_DIR / 'g1_custom_collision_29dof.urdf'
@@ -19,7 +19,7 @@ def validate_motion(data):
     required = set(ARRAY_DIMS) | {'fps', 'joint_names', 'body_names', 'schema_version'}
     missing = required - data.keys()
     if missing:
-        raise ValueError(f'Motion missing fields {sorted(missing)}; regenerate with pipeline.convert')
+        raise ValueError(f'Motion missing fields {sorted(missing)}; regenerate with GMR.pipeline.convert')
     if np.asarray(data['schema_version']).size != 1 or np.asarray(data['schema_version']).item() != 1:
         raise ValueError('Unsupported motion schema_version')
     fps_array = np.asarray(data['fps'])

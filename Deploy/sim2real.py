@@ -1,14 +1,14 @@
 """G1 29-DoF single-motion transport; read-only unless --execute is supplied.
 
 The low-command transport follows Unitree SDK2's G1 PR-mode protocol. Real robot
-validation is still required. See docs/06_real_robot.md before executing.
+validation is still required. See Deploy/docs/06_real_robot.md before executing.
 """
 import argparse
 from pathlib import Path
 import threading
 import time
 import numpy as np
-from pipeline.motion import name_indices
+from GMR.pipeline.motion import name_indices
 from .runtime import TrackingPolicy, rotation
 from .robot_state import RobotState, MOTOR_NAMES
 

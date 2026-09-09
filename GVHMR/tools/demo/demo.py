@@ -64,7 +64,7 @@ def parse_args_to_cfg():
     fps = capture.get(cv2.CAP_PROP_FPS)
     capture.release()
     if not np.isclose(fps, 30.0, atol=0.05):
-        raise ValueError(f"Input must be normalized to 30 fps, got {fps}. See docs/02_video.md")
+        raise ValueError(f"Input must be normalized to 30 fps, got {fps}. See GVHMR/docs/02_video.md")
     Log.info(f"[Input]: {video_path}")
     Log.info(f"(L, W, H) = ({length}, {width}, {height})")
     # Cfg
@@ -229,7 +229,7 @@ def render_incam(cfg):
     fps = capture.get(cv2.CAP_PROP_FPS)
     capture.release()
     if not np.isclose(fps, 30.0, atol=0.05):
-        raise ValueError(f"Input must be normalized to 30 fps, got {fps}. See docs/02_video.md")
+        raise ValueError(f"Input must be normalized to 30 fps, got {fps}. See GVHMR/docs/02_video.md")
     K = pred["K_fullimg"][0]
 
     # renderer
@@ -299,7 +299,7 @@ def render_global(cfg):
     fps = capture.get(cv2.CAP_PROP_FPS)
     capture.release()
     if not np.isclose(fps, 30.0, atol=0.05):
-        raise ValueError(f"Input must be normalized to 30 fps, got {fps}. See docs/02_video.md")
+        raise ValueError(f"Input must be normalized to 30 fps, got {fps}. See GVHMR/docs/02_video.md")
     _, _, K = create_camera_sensor(width, height, 24)  # render as 24mm lens
 
     # renderer

@@ -1,9 +1,9 @@
 """Convert Unitree motor/IMU measurements to the actor's pelvis/torso frames.
 
-The selected IMU frame must match the robot firmware. See docs/06_real_robot.md.
+The selected IMU frame must match the robot firmware. See Deploy/docs/06_real_robot.md.
 """
 import numpy as np
-from pipeline.motion import ROBOT_XML
+from GMR.pipeline.motion import ROBOT_XML
 from .runtime import rotation
 
 MOTOR_NAMES = (
