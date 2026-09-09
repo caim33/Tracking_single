@@ -9,6 +9,8 @@
 - [逐文件职责和 API 索引](../RL_envs/docs/code_reference.md)
 - [验证范围与待验收项目](docs/07_validation.md)
 
+运行前可执行 `python -m Deploy.preflight --stage sim2sim --bundle bundles/dance`，逐项检查本地依赖、机器人资源和策略包。仓库提供部署实现和模型；实际 `policy.onnx`、`motion.npz`、`manifest.json` 需要在完成训练后导出。
+
 完成安装和策略导出后，在仓库根目录运行：
 
 ```bash

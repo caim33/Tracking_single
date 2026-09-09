@@ -9,7 +9,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('mode', choices=['train', 'play', 'export'])
     parser.add_argument('--motion', required=True, type=Path)
-    parser.add_argument('--task', default='G1-Tracking-Dance-demo')
+    parser.add_argument('--task', choices=['G1-Tracking-Dance-demo'], default='G1-Tracking-Dance-demo')
+    parser.add_argument('--debug-vis', action='store_true', help='Reference frame markers; requires Isaac Nucleus frame asset')
     parser.add_argument('--checkpoint', type=Path)
     parser.add_argument('--output', type=Path)
     parser.add_argument('--num-envs', type=int, default=4096)
@@ -49,7 +50,7 @@ def main():
         from datetime import datetime
         cfg = parse_env_cfg(args.task, device=args.device, num_envs=args.num_envs if args.mode=='train' else 1)
         cfg.commands.motion.motion_file = str(args.motion.resolve())
-        cfg.commands.motion.debug_vis = args.mode == 'play'
+        cfg.commands.motion.debug_vis = args.debug_vis and not args.headless
         cfg.seed = args.seed
         if not np.isclose(float(motion['fps']) * cfg.decimation * cfg.sim.dt, 1):
             raise ValueError('Motion fps must match configured control frequency')

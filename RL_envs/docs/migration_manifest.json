@@ -803,11 +803,6 @@
       "source_sha256": "5d0952c61f1a3ca76d86526c46725c3568cf7ad8bf8b7b309b341bc3ab3a73c4"
     },
     {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py",
-      "source_sha256": "e35a469cf7afb619153fcbd79b89337512bd1727879dee4a525c06a5265a57c4"
-    },
-    {
       "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/__init__.py",
       "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/__init__.py",
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -826,51 +821,6 @@
       "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/__init__.py",
       "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/__init__.py",
       "source_sha256": "9bcc8616dd53882f275fab6e744f86b1fd0f16530b57d19c7753f872a941b26d"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py",
-      "source_sha256": "c1503ed8fb685dba2837fb915388d9f882d817303adc4d355679bd55fbb3719a"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py",
-      "source_sha256": "9458284fa7d4ba0f07315278f20d43f3dd070625ecdcdcfd670d1a1894ba506b"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py",
-      "source_sha256": "eb4e1ba5fd87f4fb9d67169d87de90fc4909daa342552f991ed153fe7d60aa19"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py",
-      "source_sha256": "c1503ed8fb685dba2837fb915388d9f882d817303adc4d355679bd55fbb3719a"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py",
-      "source_sha256": "31c1caa676968c74699deec551196e1c986a02892d73bfc90f31c5fd1a888735"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py",
-      "source_sha256": "d6409d6760a2b2ba5bf6764584b67161e834b7c5507f1cffe87aaf10579fa9a8"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py",
-      "source_sha256": "c1503ed8fb685dba2837fb915388d9f882d817303adc4d355679bd55fbb3719a"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py",
-      "source_sha256": "150f015ce552d693671800538676a3ee4911e4e4863f009595c60feee5ad4c38"
-    },
-    {
-      "source": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py",
-      "destination": "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py",
-      "source_sha256": "8d214db72104e0c8dde207453a97e40eadb86a55233f3c0efb3e25f19a864f93"
     },
     {
       "source": "RL_envs/source/WBC/WBC/__init__.py",
@@ -1317,7 +1267,17 @@
     "Retargeting/GMR/scripts/smplx_to_robot.py",
     "Retargeting/GMR/scripts/smplx_to_robot_dataset.py",
     "Retargeting/GMR/scripts/smpl_to_smplx.py",
-    "Retargeting/GMR/scripts/vis_robot_urdf.py"
+    "Retargeting/GMR/scripts/vis_robot_urdf.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py",
+    "RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py"
   ],
   "notes": [
     "Source hashes record pre-edit contents; current files may include documented fixes.",

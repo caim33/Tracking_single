@@ -28,6 +28,8 @@ python -m Deploy.sim2real --bundle bundles/dance \
 
 把网卡和 IMU 选项换成实际配置。默认只订阅 `rt/lowstate` 并检查数据，不创建 motor-command publisher。应看到实测关节速度、mode 和按键位持续更新。没有数据或数据超过 100 ms 未更新会报错。检查静止时速度接近零，转动机器人时 IMU 的方向与选择相符。
 
+连接前可运行 `python -m Deploy.preflight --stage sim2real --bundle bundles/dance --interface enp3s0`，检查策略包、Linux timerfd、SDK2/CycloneDDS 和本地网卡。此检查不建立机器人连接，也不能确认固件或 IMU 数据的实际定义。
+
 ## 4. 执行一次动作
 
 ```bash

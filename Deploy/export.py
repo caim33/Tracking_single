@@ -6,9 +6,22 @@ import shutil
 import numpy as np
 from .runtime import OBSERVATIONS, validate_manifest
 
+def export_actor_onnx(policy, path):
+    """Export the actor and its normalizer on CPU without importing the simulator."""
+    import copy
+    import torch
+    if policy.is_recurrent:
+        raise ValueError('Only a stateless MLP actor can be exported')
+    actor = torch.nn.Sequential(copy.deepcopy(policy.actor_obs_normalizer),
+                                copy.deepcopy(policy.actor)).cpu().eval()
+    # Explicitly use the stable TorchScript exporter, including on newer Torch
+    # versions whose default exporter uses dynamo and additional dependencies.
+    torch.onnx.export(actor, torch.zeros(1, 154), str(path), export_params=True,
+                      opset_version=18, input_names=['obs'], output_names=['actions'],
+                      dynamic_axes={}, dynamo=False)
+
 def export_bundle(env, runner, motion_path, output, task, action_clip):
     """Derive mapping, offsets, gains and scaling from the running training task."""
-    from isaaclab_rl.rsl_rl import export_policy_as_onnx
     output = Path(output)
     robot = env.scene['robot']
     action = env.action_manager.get_term('joint_pos')
@@ -38,8 +51,7 @@ def export_bundle(env, runner, motion_path, output, task, action_clip):
         raise ValueError('Action offset differs from the default position observation convention')
     validate_manifest(config)
     output.mkdir(parents=True, exist_ok=False)
-    export_policy_as_onnx(runner.alg.policy, path=str(output),
-                          normalizer=runner.alg.policy.actor_obs_normalizer, filename='policy.onnx')
+    export_actor_onnx(runner.alg.policy, output/'policy.onnx')
     shutil.copyfile(motion_path, output/'motion.npz')
     config['sha256'] = {name: hashlib.sha256((output/name).read_bytes()).hexdigest() for name in ('policy.onnx','motion.npz')}
     (output/'manifest.json').write_text(json.dumps(config, indent=2)+'\n',encoding='utf-8')

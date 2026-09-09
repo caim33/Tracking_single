@@ -23,6 +23,7 @@ DOCS = {
 }
 SKIP = {'.git','__pycache__','.pytest_cache','.venv','outputs','logs','data','bundles'}
 GUIDES = [
+    ('Deploy/preflight.py','07_validation.md','训练和部署所需依赖、模型、动作及策略包的启动前检查'),
     ('Deploy/tests/','07_validation.md','动作转换和部署回归测试；按测试函数查看保护的行为'),
     ('Deploy/tools/','07_validation.md','维护全流程教程覆盖及检查记录'),
     ('Deploy/sim2real.py','06_real_robot.md','SDK2 单次动作发布、只读检查和停控'),

@@ -11,6 +11,7 @@ dependencies = ["numpy>=1.23.5,<2.3", "scipy>=1.14,<1.16", "mujoco>=3.2,<4"]
 
 [project.optional-dependencies]
 deploy = ["onnxruntime>=1.19,<2"]
+train = ["numpy<2", "rsl-rl-lib==3.0.1", "onnx>=1.16,<2", "onnxruntime>=1.19,<2", "onnxscript>=0.5,<1"]
 test = ["pytest>=8,<10", "onnx>=1.16,<2", "onnxruntime>=1.19,<2"]
 
 [tool.setuptools.packages.find]

@@ -80,13 +80,15 @@ GMR/assets/body_models/smplx/SMPLX_NEUTRAL.npz
 
 ```bash
 cd "$TRACKING_ROOT"
-python -m pip install -e ".[deploy]"
+python -m pip install -e ".[train]"
 python -m pip install -e RL_envs/source/WBC
-python -m pip install rsl-rl-lib==3.0.1 onnx
+python -m pip check
 python RL_envs/scripts/tracking.py --help
 ```
 
 `python` 必须是该 Isaac 环境中的解释器。若使用 `isaaclab.sh -p`，将后续教程中的 `python` 替换为该启动方式。本入口固定使用 RSL-RL 3.0.1 的策略和观测 API；更换大版本前需要适配并重新验证。
+
+`train` 依赖组补齐 RSL-RL、ONNX、ONNX Runtime 与官方 RL 环境使用的 ONNXScript，并限制 NumPy 为 1.x；它不安装 Isaac Sim、Isaac Lab 或 GPU 驱动。Isaac Lab 2.3 的 RL 包要求 Torch >=2.7、NumPy <2，详见 [官方安装定义](https://github.com/isaac-sim/IsaacLab/blob/v2.3.0/source/isaaclab_rl/setup.py)。先安装与 Isaac Sim 匹配的 CUDA Torch，避免在该环境中安装视频阶段的 Torch 2.3。
 
 ## 6. 安装完成判据
 

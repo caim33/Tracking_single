@@ -2,6 +2,8 @@
 
 本目录包含 Isaac Lab 的 G1 29 DoF tracking_single 环境，以及训练、回放和策略导出入口。输入是 GMR 动作经 `GMR.pipeline.convert` 转换得到的命名 `motion.npz`；导出策略包交给顶层 `Deploy`。
 
+仅保留 `robots/g1_29dof/dance_demo` 配置，任务 ID 为 `G1-Tracking-Dance-demo`；不同动作通过 `--motion` 指定。环境、奖励、PPO 配置和机器人资源已包含在仓库中，实际参考动作与 Isaac/GPU 运行环境需要另行准备。可先运行 `python -m Deploy.preflight --stage train --motion data/dance_50hz.npz` 查看缺项。
+
 - [环境安装与版本](docs/01_install.md)
 - [准备参考动作](../GMR/docs/03_motion.md)
 - [训练、恢复、回放和导出完整教程](docs/04_training.md)

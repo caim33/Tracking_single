@@ -2,6 +2,14 @@
 
 运行前完成 [安装](01_install.md) 和 [动作转换](../../GMR/docs/03_motion.md)。本地迁移检查没有启动 Isaac，也没有生成一个已学会动作的 checkpoint。
 
+在准备好的 Isaac 环境中先检查依赖与真实参考动作：
+
+```bash
+python -m Deploy.preflight --stage train --motion data/dance_50hz.npz
+```
+
+检查不启动模拟器。它会报告缺失的 Isaac/WBC/RSL-RL 安装、CUDA、模型、关节/身体名称或动作文件；全部通过后仍需执行下面的两轮启动检查。
+
 ## 1. 小规模启动检查
 
 ```bash
@@ -19,7 +27,7 @@ python RL_envs/scripts/tracking.py train \
   --output logs/dance_train --headless --device cuda:0
 ```
 
-根据 GPU 显存调整 `--num-envs`。默认任务为 `G1-Tracking-Dance-demo`，可通过 `--task` 选择源代码保留的其他注册任务，准确 ID 见各变体 `__init__.py` 和代码参考。所有变体都必须显式传入自己的 `--motion`。
+根据 GPU 显存调整 `--num-envs`。仅保留 `dance_demo` 配置，注册 ID 为 `G1-Tracking-Dance-demo`。不同动作通过 `--motion` 指定，无需复制一套机器人配置。
 
 ## 2. 恢复训练
 
@@ -41,6 +49,8 @@ python RL_envs/scripts/tracking.py play \
 
 示例文件名须按实际 checkpoint 替换。回放关闭观测噪声和随机事件，从参考第 0 帧开始。失败终止后由 Isaac 重置；完整动作结束也会从第 0 帧重置。这与 deploy 的单次执行后结束不同。训练时继续保留自适应片段采样和源奖励设置。
 
+默认使用本地生成的地面材质，不加载参考坐标轴的外部 USD。需要查看参考坐标轴时增加 `--debug-vis`，并确保 Isaac Nucleus 的 `Props/UIElements/frame_prim.usd` 可访问；无窗口模式下不会开启标记。
+
 ## 4. 导出完整部署包
 
 ```bash
@@ -55,12 +65,12 @@ python RL_envs/scripts/tracking.py export \
 
 ## 5. 源代码阅读顺序
 
-1. 机器人变体 `__init__.py`：Gym 注册 ID。
+1. `robots/g1_29dof/dance_demo/__init__.py`：唯一 Gym 注册 ID。
 2. `tracking_env_cfg.py`：场景、动作、观测、奖励、终止、随机化、控制周期。
 3. `g1.py`：URDF、关节初始值、PD 和动作缩放。
 4. `agents/rsl_rl_ppo_cfg.py`：MLP 和 PPO 参数。
 5. `mdp/commands.py`：命名动作载入、参考状态、片段采样、重置、可视化。
-6. `mdp/observations.py`、`rewards.py`、`terminations.py`、`events.py`：对应计算函数。源内部辅助 `actuator.py`、`smpl.py` 保留供研究阅读，当前 G1 默认配置不直接使用。
+6. `mdp/observations.py`、`rewards.py`、`terminations.py`、`events.py`：对应计算函数。辅助 `actuator.py` 保留供研究阅读，当前 G1 默认配置不直接使用。不包含 SMPL 机器人训练配置。
 
 根 WBC 注册仅导入 tracking_single，不会自动加载源仓库其他任务。
 

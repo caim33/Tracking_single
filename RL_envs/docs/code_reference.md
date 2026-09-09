@@ -1,6 +1,6 @@
 # 逐文件教程与 API 参考
 
-本索引覆盖 **157 个代码文件**。由 `python Deploy/tools/audit_docs.py --write` 生成并随代码提交。
+本索引覆盖 **150 个代码文件**。由 `python Deploy/tools/audit_docs.py --write` 生成并随代码提交。
 
 先阅读对应阶段教程完成环境、输入、运行、输出检查和排错，再进入函数或配置。库模块不应逐个直接运行。
 API 索引来自语法树；命令参数来自显式 add_argument 定义。动态框架参数在阶段教程解释。索引覆盖不等于 GPU/真机验收。
@@ -17,7 +17,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `Deploy/export.py`
 
-[源码](../../Deploy/export.py) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `a404281b6ae5`
+[源码](../../Deploy/export.py) · [使用教程](../../Deploy/docs/05_deploy.md) · 内容指纹 `8bf87d425b64`
 
 职责：单动作策略包、观测、PD 与仿真接口。
 
@@ -25,7 +25,33 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 接口与职责：
 
+- `export_actor_onnx(policy, path)` — Export the actor and its normalizer on CPU without importing the simulator.
 - `export_bundle(env, runner, motion_path, output, task, action_clip)` — Derive mapping, offsets, gains and scaling from the running training task.
+
+## `Deploy/preflight.py`
+
+[源码](../../Deploy/preflight.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `d0f8d1f0aa4c`
+
+职责：训练和部署所需依赖、模型、动作及策略包的启动前检查。
+
+模块说明：Check training/deployment prerequisites without starting Isaac or robot transport.
+
+接口与职责：
+
+- `dependency(distribution, module, minimum=None, series=None, exact=None)` — Check installed metadata and module discovery without importing simulator modules.
+- `available_module(module)` — Support simulator modules provided by the Isaac launcher as well as pip installs.
+- `robot_assets()` — Check XML/URDF joint declarations and every referenced mesh path.
+- `training_motion(path)` — Validate a real reference against the retained training task and robot model.
+- `deploy_bundle(path)` — Validate policy/motion/checksums and their mapping to the actual robot.
+- `check_setup(stage, motion=None, bundle=None, interface=None)` — Collect every prerequisite failure; never create a robot command publisher.
+- `main()` — 行为见对应阶段教程及源码。
+
+命令行参数（运行所在目录与完整例子见上方教程）：
+
+- `--stage` — required=True; choices=['train', 'sim2sim', 'sim2real']
+- `--motion`
+- `--bundle`
+- `--interface`
 
 ## `Deploy/reference/joint_actions.h`
 
@@ -187,9 +213,40 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `test_linear_velocity_tracks_com_when_link_origin_is_stationary(model)` — 行为见对应阶段教程及源码。
 - `test_urdf_joint_names_and_meshes_are_complete(model)` — 行为见对应阶段教程及源码。
 
+## `Deploy/tests/test_preflight.py`
+
+[源码](../../Deploy/tests/test_preflight.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `8a3283b9c1aa`
+
+职责：动作转换和部署回归测试；按测试函数查看保护的行为。
+
+模块说明：Prerequisite checks must detect missing inputs and broken deployment bundles.
+
+接口与职责：
+
+- `test_sim2sim_prerequisites_use_real_bundle_and_assets(bundle)` — 行为见对应阶段教程及源码。
+- `test_missing_bundle_has_nonzero_exit_and_actionable_report(tmp_path)` — 行为见对应阶段教程及源码。
+- `test_training_motion_matches_retained_body_list(tmp_path, motion)` — 行为见对应阶段教程及源码。
+- `test_only_demo_is_registered_and_all_internal_imports_exist()` — 行为见对应阶段教程及源码。
+
+## `Deploy/tests/test_rsl_export.py`
+
+[源码](../../Deploy/tests/test_rsl_export.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `1d67e489c60d`
+
+职责：动作转换和部署回归测试；按测试函数查看保护的行为。
+
+模块说明：Optional real RSL-RL CPU checks, without claiming an Isaac or robot rollout.
+
+接口与职责：
+
+- `settings(name)` — Use the retained task's actual MLP/PPO parameters without importing Isaac.
+- `cpu_threads()` — 行为见对应阶段教程及源码。
+- `observations(count)` — 行为见对应阶段教程及源码。
+- `test_real_rsl_ppo_updates_with_retained_config()` — 行为见对应阶段教程及源码。
+- `test_real_rsl_bundle_export_matches_torch(tmp_path, motion, normalized)` — 行为见对应阶段教程及源码。
+
 ## `Deploy/tools/audit_docs.py`
 
-[源码](../../Deploy/tools/audit_docs.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `886d4100268c`
+[源码](../../Deploy/tools/audit_docs.py) · [使用教程](../../Deploy/docs/07_validation.md) · 内容指纹 `38ddcd0663c4`
 
 职责：维护全流程教程覆盖及检查记录。
 
@@ -2119,7 +2176,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/scripts/tracking.py`
 
-[源码](../scripts/tracking.py) · [使用教程](04_training.md) · 内容指纹 `afcb4f01adb9`
+[源码](../scripts/tracking.py) · [使用教程](04_training.md) · 内容指纹 `85641df269d2`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2133,7 +2190,8 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 - `mode` — choices=['train', 'play', 'export']
 - `--motion` — required=True
-- `--task` — default='G1-Tracking-Dance-demo'
+- `--task` — default='G1-Tracking-Dance-demo'; choices=['G1-Tracking-Dance-demo']
+- `--debug-vis` — action='store_true'; help='Reference frame markers; requires Isaac Nucleus frame asset'
 - `--checkpoint`
 - `--output`
 - `--num-envs` — default=4096
@@ -2153,11 +2211,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/__init__.py`
 
-[源码](../source/WBC/WBC/__init__.py) · [使用教程](04_training.md) · 内容指纹 `6c5f6194937e`
+[源码](../source/WBC/WBC/__init__.py) · [使用教程](04_training.md) · 内容指纹 `7ab90d6b3c04`
 
 职责：tracking_single 的训练、配置与 MDP。
 
-模块说明：WBC: capability-layered RL package for G1 humanoid loco-manipulation.
+模块说明：WBC: G1 single-reference motion tracking.
 
 使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`__all__`.
 
@@ -2171,11 +2229,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/__init__.py`
 
-[源码](../source/WBC/WBC/tasks/__init__.py) · [使用教程](04_training.md) · 内容指纹 `432ce95be658`
+[源码](../source/WBC/WBC/tasks/__init__.py) · [使用教程](04_training.md) · 内容指纹 `d1f173f8878d`
 
 职责：tracking_single 的训练、配置与 MDP。
 
-模块说明：Register only the four migrated tracking environments after AppLauncher starts.
+模块说明：Register the single G1 tracking environment after AppLauncher starts.
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
@@ -2217,7 +2275,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/mdp/__init__.py`
 
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/__init__.py) · [使用教程](04_training.md) · 内容指纹 `ed866b92f65e`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/mdp/__init__.py) · [使用教程](04_training.md) · 内容指纹 `8fdf46f42db2`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2328,11 +2386,11 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/__init__.py`
 
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/__init__.py) · [使用教程](04_training.md) · 内容指纹 `c7f803d0598c`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/__init__.py) · [使用教程](04_training.md) · 内容指纹 `df36ef47fe6a`
 
 职责：tracking_single 的训练、配置与 MDP。
 
-模块说明：G1 robot variants for single-reference tracking; see RL_envs/docs/04_training.md.
+模块说明：G1 single-reference tracking configuration; see RL_envs/docs/04_training.md.
 
 使用方式：包注册、常量或参数配置，由上级模块导入。
 
@@ -2376,7 +2434,7 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 
 ## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/tracking_env_cfg.py`
 
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
+[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_demo/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `907075f0b9f4`
 
 职责：tracking_single 的训练、配置与 MDP。
 
@@ -2392,116 +2450,3 @@ API 索引来自语法树；命令参数来自显式 add_argument 定义。动�
 - `class TrackingCurriculumCfg()` — 行为见对应阶段教程及源码。
 - `class TrackingEnvCfg(ManagerBasedRLEnvCfg)` — 行为见对应阶段教程及源码。
 - `TrackingEnvCfg.__post_init__(self)` — 行为见对应阶段教程及源码。
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/__init__.py) · [使用教程](04_training.md) · 内容指纹 `0e642282ad62`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/g1.py) · [使用教程](04_training.md) · 内容指纹 `7f4c14a84796`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`ARMATURE_5020`, `ARMATURE_7520_14`, `ARMATURE_7520_22`, `ARMATURE_4010`, `NATURAL_FREQ`, `DAMPING_RATIO`, `STIFFNESS_5020`, `STIFFNESS_7520_14`, `STIFFNESS_7520_22`, `STIFFNESS_4010`, `DAMPING_5020`, `DAMPING_7520_14`, `DAMPING_7520_22`, `DAMPING_4010`, `G1_CYLINDER_CFG`, `G1_ACTION_SCALE`.
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-接口与职责：
-
-- `class TrackingSceneCfg(InteractiveSceneCfg)` — 行为见对应阶段教程及源码。
-- `class TrackingCommandsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingObservationsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingActionsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingTerminationsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingEventsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingRewardsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingCurriculumCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingEnvCfg(ManagerBasedRLEnvCfg)` — 行为见对应阶段教程及源码。
-- `TrackingEnvCfg.__post_init__(self)` — 行为见对应阶段教程及源码。
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/__init__.py) · [使用教程](04_training.md) · 内容指纹 `7a625636b5e7`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/g1.py) · [使用教程](04_training.md) · 内容指纹 `7f4c14a84796`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`ARMATURE_5020`, `ARMATURE_7520_14`, `ARMATURE_7520_22`, `ARMATURE_4010`, `NATURAL_FREQ`, `DAMPING_RATIO`, `STIFFNESS_5020`, `STIFFNESS_7520_14`, `STIFFNESS_7520_22`, `STIFFNESS_4010`, `DAMPING_5020`, `DAMPING_7520_14`, `DAMPING_7520_22`, `DAMPING_4010`, `G1_CYLINDER_CFG`, `G1_ACTION_SCALE`.
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo1_0/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-接口与职责：
-
-- `class TrackingSceneCfg(InteractiveSceneCfg)` — 行为见对应阶段教程及源码。
-- `class TrackingCommandsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingObservationsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingActionsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingTerminationsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingEventsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingRewardsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingCurriculumCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingEnvCfg(ManagerBasedRLEnvCfg)` — 行为见对应阶段教程及源码。
-- `TrackingEnvCfg.__post_init__(self)` — 行为见对应阶段教程及源码。
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/__init__.py) · [使用教程](04_training.md) · 内容指纹 `4b74ae7d7053`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/g1.py) · [使用教程](04_training.md) · 内容指纹 `7f4c14a84796`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`ARMATURE_5020`, `ARMATURE_7520_14`, `ARMATURE_7520_22`, `ARMATURE_4010`, `NATURAL_FREQ`, `DAMPING_RATIO`, `STIFFNESS_5020`, `STIFFNESS_7520_14`, `STIFFNESS_7520_22`, `STIFFNESS_4010`, `DAMPING_5020`, `DAMPING_7520_14`, `DAMPING_7520_22`, `DAMPING_4010`, `G1_CYLINDER_CFG`, `G1_ACTION_SCALE`.
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/g1_29dof/dance_mo_fps60/tracking_env_cfg.py) · [使用教程](04_training.md) · 内容指纹 `9ce02a574eb0`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-接口与职责：
-
-- `class TrackingSceneCfg(InteractiveSceneCfg)` — 行为见对应阶段教程及源码。
-- `class TrackingCommandsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingObservationsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingActionsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingTerminationsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingEventsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingRewardsCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingCurriculumCfg()` — 行为见对应阶段教程及源码。
-- `class TrackingEnvCfg(ManagerBasedRLEnvCfg)` — 行为见对应阶段教程及源码。
-- `TrackingEnvCfg.__post_init__(self)` — 行为见对应阶段教程及源码。
-
-## `RL_envs/source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py`
-
-[源码](../source/WBC/WBC/tasks/manager_based/tracking_single/robots/smpl.py) · [使用教程](04_training.md) · 内容指纹 `d043f68af8f2`
-
-职责：tracking_single 的训练、配置与 MDP。
-
-使用方式：包注册、常量或参数配置，由上级模块导入。 顶层配置：`SMPL_HUMANOID_CFG`.

@@ -40,6 +40,8 @@ python -m Deploy.sim2sim --bundle bundles/dance \
 
 应完成指定策略步数，或在参考结束时停止。输出记录 `observation[T,154]`、`joint_pos[T,29]`、`target[T,29]` 和 `root_height[T]`。检测到非有限状态或 pelvis 高度低于 0.25 米会报错结束。输出文件必须是新路径。
 
+正式运行前可执行 `python -m Deploy.preflight --stage sim2sim --bundle bundles/dance`。它检查依赖、真实机器人资源及完整策略包，不启动窗口。这里的 `bundles/dance` 必须是你实际训练并导出的目录，仓库不附可用于真实跟踪的预训练策略。
+
 ## 4. 可视化完整动作
 
 ```bash
@@ -55,6 +57,7 @@ python -m Deploy.sim2sim --bundle bundles/dance
 - `runtime.py`：`TrackingPolicy(bundle)` 加载/校验；`step(frame,q,dq,base_gyro,anchor_wxyz)` 返回关节目标和完整观测；`reset()` 清空上一帧动作。
 - `sim2sim.py`：模型、时钟、PD 和窗口/日志；可以作为独立仿真入口。
 - `export.py`：从活跃 Isaac 环境提取参数；由训练入口调用，不单独执行。
+- `preflight.py`：按 train / sim2sim / sim2real 阶段汇总缺少的依赖、动作或策略包；不连接机器人。
 - `robot_state.py`：通过真实关节 FK 统一 pelvis/torso IMU；用于真机输入适配。
 - `sim2real.py`：SDK2 的读状态、启动核对、策略更新和低层发布。
 - `reference/*.h`：从源 deploy 保留的关节映射、观测、动作接口对照。它们依赖原 C++ 框架，不作为本提取版的独立可编译控制器。本版可运行部署入口是上述 Python 实现。
