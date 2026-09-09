@@ -18,7 +18,7 @@ video (30 fps)
 Tracking_single/
 ├── GVHMR/       # 视频 → 人体动作；docs/ 包含视频教程和依赖来源
 ├── GMR/         # 人体动作 → G1；pipeline/ 动作转换；docs/ 格式教程
-├── RL_envs/     # 训练、回放和导出；docs/ 安装、训练、全量索引及迁移记录
+├── RL_envs/     # 训练、回放和导出；docs/ 安装、训练、全量索引及文件记录
 └── Deploy/      # 单动作部署；docs/ 部署和验收；tests/ 回归；tools/ 文档检查
 ```
 
@@ -43,4 +43,4 @@ python Deploy/tools/audit_docs.py
 
 完整视频、训练和实机流程还需要授权 SMPL/SMPL-X 模型、GVHMR 权重、Linux CUDA/Isaac Lab 环境及实际机器人。CPU 自动检查已经覆盖文件格式、推理接口和 MuJoCo 短程运行；尚未完成完整 GPU 管线或真机动作质量验收。不要把测试用零输出策略当成训练结果。
 
-源码提取自 humanoid-lab 的固定版本，迁移记录在 `RL_envs/docs/migration_manifest.json`。源配置依赖未入库的机器人 URDF，本版统一使用已迁移的 GMR G1 模型；旧 checkpoint 需重新验证模型一致性。发布与使用请阅读 [来源及许可证说明](THIRD_PARTY_NOTICES.md)。
+本仓库统一使用 GMR G1 模型进行动作转换、训练和部署。使用已有 checkpoint 时，请核对机器人模型、关节顺序及控制参数的一致性。各组件的作者与许可信息见 [第三方组件与许可证说明](THIRD_PARTY_NOTICES.md)。

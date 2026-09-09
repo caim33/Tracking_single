@@ -1,5 +1,4 @@
 {
-  "source_repository": "https://github.com/liubingqi7/humanoid-lab",
   "source_commit": "e33558f6343cd5190c8fc98ff68c0ccf30311643",
   "target_base_commit": "40d11c4bb4ddc643651f82501c0065c63d88dabe",
   "files": [

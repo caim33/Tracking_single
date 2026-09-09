@@ -26,11 +26,11 @@ CPU 回归检查覆盖：GMR 导出包含第零帧且帧数一致；30→50 Hz �
 | MuJoCo | CPU ONNX 与真实机器人模型短程测试通过 | 用真实训练策略完成整段动作并检查稳定性 |
 | 真机 | SDK2 入口、IMU 转换和停控路径已实现 | G1 上只读、短程、急停/超时、完整动作逐项验收 |
 
-## 源码来源与变更
+## 代码适配与文件记录
 
-[迁移记录](../../RL_envs/docs/migration_manifest.json) 记录 humanoid-lab 的固定提交、目标仓库起点、每个提取文件的原始 SHA-256 和排除范围。source 保留原仓库目录，destination 以仓库根目录为起点，指向当前文件。修改后的文件可能不再与 source_sha256 相同；该值用于回溯原始输入，不是最终文件校验。
+[文件记录](../../RL_envs/docs/migration_manifest.json) 保存输入版本、仓库起点、原始文件 SHA-256 和整理范围。source 记录输入文件路径，destination 以仓库根目录为起点，指向当前文件。修改后的文件可能不再与 source_sha256 相同；该值用于回溯原始输入，不是最终文件校验。
 
-[依赖恢复记录](../../GVHMR/docs/upstream_recovery.json) 记录从官方 GVHMR 固定提交补回的 6 个 ViTPose builder 文件。它们在私有源快照中缺失，推理模型会直接引用，因此不是可选装饰文件。
+[依赖恢复记录](../../GVHMR/docs/upstream_recovery.json) 记录从官方 GVHMR 固定提交补齐的 6 个 ViTPose builder 文件。推理模型会直接引用这些文件，运行时必须保留。
 
 主要修改包括：删除 GMR 导出首帧丢失和无限循环保存路径；增加 headless；替换未入库 URDF；命名动作格式及真实时间重采样；训练加载时映射名称并检查频率；修复两个不存在的 anchor velocity 属性；修复短动作采样熵除零；推理只注册实际存在的模型组件；单动作训练/导出/deploy 入口。
 

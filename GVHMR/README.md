@@ -1,6 +1,6 @@
 # GVHMR 视频推理
 
-本目录来自 humanoid-lab 的 GVHMR 快照，服务于 Tracking_single 的视频输入阶段。
+本模块使用 GVHMR 将单人视频恢复为人体动作，为后续 GMR 重定向提供输入。
 
 - [安装、CUDA 和模型目录](../RL_envs/docs/01_install.md)
 - [完整视频运行步骤与排错](docs/02_video.md)
