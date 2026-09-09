@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.venv/
+outputs/
+logs/
+data/
+bundles/
+Retargeting/GVHMR/inputs/
+Retargeting/GVHMR/outputs/
+Retargeting/GMR/assets/body_models/
+*.ckpt
